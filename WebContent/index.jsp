@@ -5,16 +5,54 @@
 <html>
 <head>
 <title>首页</title>
-<style>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#linkClass")
+				.click(
+						function() {
+							$("#ifContent")
+									.attr("src",
+											"${pageContext.request.contextPath }/servlet/ClassListUIServlet");
+						});
 
+		$("#linkContact")
+				.click(
+						function() {
+							$("#ifContent")
+									.attr("src",
+											"${pageContext.request.contextPath }/servlet/ContactListUIServlet");
+						});
+	});
+</script>
+<style>
+	.title
+	{
+		margin:10px;
+		padding-left:50px;	
+	}
+	#left
+	{
+		float:left;
+		width:120px;
+		padding:5px;
+	}
+	#main
+	{
+		float:left;
+	}
 </style>
 </head>
 <body>
-	<h1>管理首页</h1>
-
-	<div id="container">
-		<a href="${pageContext.request.contextPath }/servlet/ClassListUIServlet">班级管理</a><br/>
-		<a href="${pageContext.request.contextPath }/servlet/ContactListUIServlet">联系人管理</a><br/>
+	<div class="title">
+		<h2> 通讯录</h2>
+	</div>
+	<div id="left">
+		<a id="linkClass" href="#">班级管理</a><br /> <a id="linkContact" href="#">联系人管理</a><br />
+	</div>
+	<div id="main">
+		<iframe width="1100px" height="550px" id="ifContent" src="${pageContext.request.contextPath }/servlet/ClassListUIServlet" name="Content" frameborder="0"> </iframe>
 	</div>
 </body>
 </html>

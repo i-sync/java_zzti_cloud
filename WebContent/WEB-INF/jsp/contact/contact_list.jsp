@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,13 +32,10 @@
 </head>
 <body>
 	<div id="container">
-		<div class="title">
-			<h2>联系人列表</h2>
-		</div>
 		<div class="main">
 			<div>
-				<a href="${pageContext.request.contextPath }/servlet/ContactAddUIServlet">添加</a>
-				<a href="${pageContext.request.contextPath }/index.jsp">首页</a>
+				<a href="${pageContext.request.contextPath }/servlet/ContactAddUIServlet">添加联系人</a>
+				<%-- <a href="${pageContext.request.contextPath }/index.jsp">首页</a> --%>
 			</div>
 			<br/>
 			<div class="divSearch">
@@ -86,10 +84,10 @@
 						<td>${item.email }</td>
 						<td>${item.living }</td>
 						<td>${item.company }</td>
-						<td>${item.remark }</td>
+						<td title="${item.remark }">${fn:length(item.remark)>25?fn:substring(item.remark,0,20).concat('......') :item.remark }</td>
 						<td>
 							<a href="${pageContext.request.contextPath }/servlet/ContactUpdateUIServlet?id=${item.id}">修改</a>
-							<a href="${pageContext.request.contextPath }/servlet/ContactDeleteServlet?id=${item.id}">删除</a>
+							<a onclick="return confirm('您确定要删除‘${item.name}’吗？请不要随便删除别人的信息噢！');" href="${pageContext.request.contextPath }/servlet/ContactDeleteServlet?id=${item.id}">删除</a>
 						</td>
 					</tr>
 				</c:forEach>

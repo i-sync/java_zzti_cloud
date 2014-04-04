@@ -10,13 +10,10 @@
 </head>
 <body>
 	<div id="container">
-		<div class="title">
-			<h2>班级列表</h2>
-		</div>
 		<div class="main">
 			<div>
-				<a href="${pageContext.request.contextPath }/servlet/ClassAddUIServlet">添加</a>
-				<a href="${pageContext.request.contextPath }/index.jsp">首页</a>
+				<a href="${pageContext.request.contextPath }/servlet/ClassAddUIServlet">添加班级</a>
+				<%-- <a href="${pageContext.request.contextPath }/index.jsp">首页</a> --%>
 			</div>
 			<br/>
 			<table class="hovertable">
@@ -34,7 +31,7 @@
 						<td>${item.vocational }</td>
 						<td>
 							<a href="${pageContext.request.contextPath }/servlet/ClassUpdateUIServlet?id=${item.id}">修改</a>
-							<a href="${pageContext.request.contextPath }/servlet/ClassDeleteServlet?id=${item.id}">删除</a>
+							<a onclick="return confirm('你确定要删除‘${item.name}’吗？')" href="${pageContext.request.contextPath }/servlet/ClassDeleteServlet?id=${item.id}">删除</a>
 						</td>
 					</tr>
 				</c:forEach>
