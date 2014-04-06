@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.zzti.business.ClassBusiness;
 import com.zzti.service.ListResult;
-import com.zzti.service.Result;
 
 /**
  * Servlet implementation class ClassListUIServlet
@@ -18,7 +17,9 @@ import com.zzti.service.Result;
 @WebServlet("/ClassListUIServlet")
 public class ClassListUIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
+	private int pageIndex = 1;
+	private int pageSize = 10;
     /**
      * @see HttpServlet#HttpServlet()
      */
