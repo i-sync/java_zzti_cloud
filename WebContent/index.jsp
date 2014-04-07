@@ -46,8 +46,10 @@
 </head>
 <body>
 	<div class="title">
-		<h2> 通讯录</h2>
+		<h2 style="display:inline;"> 通讯录</h2>
+		<a style="padding-left:50px;" href="${pageContext.request.contextPath }/android/java_zzti_contact.apk">android版下载</a>
 	</div>
+	<div class="clear"></div>
 	<div id="left">
 		<a id="linkClass" href="#">班级管理</a><br /> <a id="linkContact" href="#">联系人管理</a><br />
 	</div>
