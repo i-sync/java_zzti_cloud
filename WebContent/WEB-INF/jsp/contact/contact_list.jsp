@@ -99,7 +99,7 @@
 		</table>
 		<br />
 		<page:pageOut
-			url="${pageContext.request.contextPath }/servlet/ContactListUIServlet"
+			url="${pageContext.request.contextPath }/servlet/ContactListUIServlet?name=${form.name }&phone=${form.phone }&cid=${form.cid }"
 			pageIndex="${page.pageIndex }" pageMax="${page.totalCount }"></page:pageOut>
 	</div>
 </body>

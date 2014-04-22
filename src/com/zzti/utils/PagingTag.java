@@ -27,8 +27,8 @@ public class PagingTag extends TagSupport {
 	}
 
 	public void setPageMax(int pageMax) {
-		if(pageMax==0)
-			this.pageMax =  this.pageIndex;
+		if (pageMax == 0)
+			this.pageMax = this.pageIndex;
 		else
 			this.pageMax = pageMax;
 	}
@@ -38,7 +38,7 @@ public class PagingTag extends TagSupport {
 	}
 
 	public void setUrl(String url) {
-		this.url = url;
+		this.url = url.contains("?") ? url + "&" : url + "?";
 	}
 
 	public PagingTag() {
@@ -51,14 +51,14 @@ public class PagingTag extends TagSupport {
 		if (pageIndex == 1) {
 			str += "首页 上一页 ";
 		} else {
-			str += " <a href='" + url + "?pageIndex=1'>首页</a> " + "<a href='"
-					+ url + "?pageIndex=" + (pageIndex - 1) + "'>上一页</a> ";
+			str += " <a href='" + url + "pageIndex=1'>首页</a> " + "<a href='"
+					+ url + "pageIndex=" + (pageIndex - 1) + "'>上一页</a> ";
 		}
 		if (pageIndex / 6 < 1.0 || pageMax < 10) {
 			for (int i = 1; i <= 9; i++) {
 				if (i <= pageMax) {
 					if (pageIndex != i) {
-						str += "<a href='" + url + "?pageIndex=" + i + "'>[" + i
+						str += "<a href='" + url + "pageIndex=" + i + "'>[" + i
 								+ "]</a> ";
 					} else {
 						str += "  " + i + " ";
@@ -78,7 +78,7 @@ public class PagingTag extends TagSupport {
 			for (int i = fri; i <= max; i++) {
 				if (i <= pageMax) {
 					if (pageIndex != i) {
-						str += "<a href='" + url + "?pageIndex=" + i + "'>[" + i
+						str += "<a href='" + url + "pageIndex=" + i + "'>[" + i
 								+ "]</a> ";
 					} else {
 						str += "  " + i + " ";
@@ -89,8 +89,8 @@ public class PagingTag extends TagSupport {
 		if (pageIndex == pageMax || pageMax < 2) {
 			str += "下一页 尾页";
 		} else {
-			str += "<a href='" + url + "?pageIndex=" + (pageIndex + 1)
-					+ "'>下一页</a> " + "<a href='" + url + "?pageIndex=" + pageMax
+			str += "<a href='" + url + "pageIndex=" + (pageIndex + 1)
+					+ "'>下一页</a> " + "<a href='" + url + "pageIndex=" + pageMax
 					+ "'>尾页</a>";
 		}
 		try {
