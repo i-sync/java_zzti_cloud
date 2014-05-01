@@ -42,4 +42,27 @@ public class WebUtils {
 			throw new RuntimeException(e);
 		}
 	}
+
+	/**
+	 * 
+	 * <p>
+	 * Discription:HttpServletRequest获取客户端IP方法
+	 * </p>
+	 * 
+	 * @param request
+	 * @return
+	 */
+	public static String getRemoteAddress(HttpServletRequest request) {
+		String ip = request.getHeader("x-forwarded-for");
+		if (ip == null || ip.length() == 0 || ip.equalsIgnoreCase("unknown"))
+			ip = request.getHeader("Proxy-Client-IP");
+		System.out.println(ip);
+		if (ip == null || ip.length() == 0 || ip.equalsIgnoreCase("unknown"))
+			ip = request.getHeader("WL-Proxy-Client-IP");
+		System.out.println(ip);
+		if (ip == null || ip.length() == 0 || ip.equalsIgnoreCase("unknown"))
+			ip = request.getRemoteAddr();
+		System.out.println(ip);
+		return ip;
+	}
 }

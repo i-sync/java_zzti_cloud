@@ -1,18 +1,21 @@
 package com.zzti.web.controller;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import com.zzti.business.ClassBusiness;
 import com.zzti.business.ContactBusiness;
 import com.zzti.service.Contact;
 import com.zzti.service.ListResult;
 import com.zzti.service.Result;
+import com.zzti.utils.DateUtils;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ContactForm;
 
@@ -56,7 +59,7 @@ public class ContactAddServlet extends HttpServlet {
 		
 		Contact data = new Contact();
 		WebUtils.copyBean(form, data);
-		
+		data.setIp(WebUtils.getRemoteAddress(request));
 		//添加联系人
 		Result result = new ContactBusiness().add(data);
 		if(result.getResult()!=1)

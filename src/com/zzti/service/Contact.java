@@ -3,7 +3,9 @@ package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -16,16 +18,19 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="addDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="cid" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="cname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="company" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="ip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="living" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="page" type="{http://service.zzti.com/}page" minOccurs="0"/>
  *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="remark" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="updateDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,29 +41,61 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "contact", propOrder = {
+    "addDate",
     "cid",
     "cname",
     "company",
     "email",
     "id",
+    "ip",
     "living",
     "name",
     "page",
     "phone",
-    "remark"
+    "remark",
+    "updateDate"
 })
 public class Contact {
 
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar addDate;
     protected int cid;
     protected String cname;
     protected String company;
     protected String email;
     protected int id;
+    protected String ip;
     protected String living;
     protected String name;
     protected Page page;
     protected String phone;
     protected String remark;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar updateDate;
+
+    /**
+     * 获取addDate属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getAddDate() {
+        return addDate;
+    }
+
+    /**
+     * 设置addDate属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setAddDate(XMLGregorianCalendar value) {
+        this.addDate = value;
+    }
 
     /**
      * 获取cid属性的值。
@@ -162,6 +199,30 @@ public class Contact {
      */
     public void setId(int value) {
         this.id = value;
+    }
+
+    /**
+     * 获取ip属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    /**
+     * 设置ip属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIp(String value) {
+        this.ip = value;
     }
 
     /**
@@ -282,6 +343,30 @@ public class Contact {
      */
     public void setRemark(String value) {
         this.remark = value;
+    }
+
+    /**
+     * 获取updateDate属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getUpdateDate() {
+        return updateDate;
+    }
+
+    /**
+     * 设置updateDate属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setUpdateDate(XMLGregorianCalendar value) {
+        this.updateDate = value;
     }
 
 }
