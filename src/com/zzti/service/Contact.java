@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>contact complex typeµÄ Java Àà¡£
+ * <p>contact complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="contact">
@@ -74,7 +74,7 @@ public class Contact {
     protected XMLGregorianCalendar updateDate;
 
     /**
-     * »ñÈ¡addDateÊôĞÔµÄÖµ¡£
+     * è·å–addDateå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃaddDateÊôĞÔµÄÖµ¡£
+     * è®¾ç½®addDateå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡cidÊôĞÔµÄÖµ¡£
+     * è·å–cidå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getCid() {
@@ -106,7 +106,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃcidÊôĞÔµÄÖµ¡£
+     * è®¾ç½®cidå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setCid(int value) {
@@ -114,7 +114,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡cnameÊôĞÔµÄÖµ¡£
+     * è·å–cnameå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -126,7 +126,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃcnameÊôĞÔµÄÖµ¡£
+     * è®¾ç½®cnameå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -138,7 +138,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡companyÊôĞÔµÄÖµ¡£
+     * è·å–companyå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -150,7 +150,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃcompanyÊôĞÔµÄÖµ¡£
+     * è®¾ç½®companyå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -162,7 +162,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡emailÊôĞÔµÄÖµ¡£
+     * è·å–emailå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -174,7 +174,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃemailÊôĞÔµÄÖµ¡£
+     * è®¾ç½®emailå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -186,7 +186,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡idÊôĞÔµÄÖµ¡£
+     * è·å–idå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getId() {
@@ -194,7 +194,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃidÊôĞÔµÄÖµ¡£
+     * è®¾ç½®idå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setId(int value) {
@@ -202,7 +202,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡ipÊôĞÔµÄÖµ¡£
+     * è·å–ipå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -214,7 +214,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃipÊôĞÔµÄÖµ¡£
+     * è®¾ç½®ipå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -226,7 +226,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡livingÊôĞÔµÄÖµ¡£
+     * è·å–livingå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -238,7 +238,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃlivingÊôĞÔµÄÖµ¡£
+     * è®¾ç½®livingå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -250,7 +250,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡nameÊôĞÔµÄÖµ¡£
+     * è·å–nameå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -262,7 +262,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃnameÊôĞÔµÄÖµ¡£
+     * è®¾ç½®nameå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -274,7 +274,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡pageÊôĞÔµÄÖµ¡£
+     * è·å–pageå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -286,7 +286,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃpageÊôĞÔµÄÖµ¡£
+     * è®¾ç½®pageå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -298,7 +298,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡phoneÊôĞÔµÄÖµ¡£
+     * è·å–phoneå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -310,7 +310,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃphoneÊôĞÔµÄÖµ¡£
+     * è®¾ç½®phoneå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -322,7 +322,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡remarkÊôĞÔµÄÖµ¡£
+     * è·å–remarkå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -334,7 +334,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃremarkÊôĞÔµÄÖµ¡£
+     * è®¾ç½®remarkå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -346,7 +346,7 @@ public class Contact {
     }
 
     /**
-     * »ñÈ¡updateDateÊôĞÔµÄÖµ¡£
+     * è·å–updateDateå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -358,7 +358,7 @@ public class Contact {
     }
 
     /**
-     * ÉèÖÃupdateDateÊôĞÔµÄÖµ¡£
+     * è®¾ç½®updateDateå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is

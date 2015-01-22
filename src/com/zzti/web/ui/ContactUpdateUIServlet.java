@@ -1,4 +1,4 @@
-package com.zzti.web.ui;
+ï»¿package com.zzti.web.ui;
 
 import java.io.IOException;
 
@@ -38,14 +38,14 @@ public class ContactUpdateUIServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
-		//ÅĞ¶Ï²ÎÊıÊÇ·ñÕıÈ·
+		//åˆ¤æ–­å‚æ•°æ˜¯å¦æ­£ç¡®
 		if (!RegexUtil.isInteger(id)) {
-			request.setAttribute("message", "²ÎÊı´íÎó£¡");
+			request.setAttribute("message", "å‚æ•°é”™è¯¯ï¼");
 			request.getRequestDispatcher("/message.jsp").forward(request,
 					response);
 			return;
 		}
-		//»ñÈ¡°à¼¶ÁĞ±í
+		//è·å–ç­çº§åˆ—è¡¨
 		ListResult<Class> result = new ClassBusiness().getList();
 		if (result.getResult() != 1) {
 			request.setAttribute("message", result.getMessage());
@@ -55,7 +55,7 @@ public class ContactUpdateUIServlet extends HttpServlet {
 		}
 		request.setAttribute("list", result.getList());
 		
-		//»ñÈ¡ÁªÏµ¶ÔÏó 
+		//è·å–è”ç³»å¯¹è±¡ 
 		Contact data = new Contact();
 		data.setId(Integer.parseInt(id));
 		TResult<Contact> result1 = new ContactBusiness().getModel(data);

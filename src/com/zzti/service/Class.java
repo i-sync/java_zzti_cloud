@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>class complex typeµÄ Java Àà¡£
+ * <p>class complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="class">
@@ -40,7 +40,7 @@ public class Class {
     protected String vocational;
 
     /**
-     * »ñÈ¡idÊôĞÔµÄÖµ¡£
+     * è·å–idå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getId() {
@@ -48,7 +48,7 @@ public class Class {
     }
 
     /**
-     * ÉèÖÃidÊôĞÔµÄÖµ¡£
+     * è®¾ç½®idå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setId(int value) {
@@ -56,7 +56,7 @@ public class Class {
     }
 
     /**
-     * »ñÈ¡nameÊôĞÔµÄÖµ¡£
+     * è·å–nameå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class Class {
     }
 
     /**
-     * ÉèÖÃnameÊôĞÔµÄÖµ¡£
+     * è®¾ç½®nameå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class Class {
     }
 
     /**
-     * »ñÈ¡vocationalÊôĞÔµÄÖµ¡£
+     * è·å–vocationalå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class Class {
     }
 
     /**
-     * ÉèÖÃvocationalÊôĞÔµÄÖµ¡£
+     * è®¾ç½®vocationalå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is

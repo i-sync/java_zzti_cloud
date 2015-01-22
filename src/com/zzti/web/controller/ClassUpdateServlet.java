@@ -1,4 +1,4 @@
-package com.zzti.web.controller;
+﻿package com.zzti.web.controller;
 
 import java.io.IOException;
 
@@ -34,7 +34,7 @@ public class ClassUpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ClassForm form = WebUtils.requestToBean(request, ClassForm.class);
 		boolean flag = form.validate();
-		if(!flag)//��֤ʧ��
+		if(!flag)//ÑéÖ¤Ê§°Ü
 		{
 			request.setAttribute("form", form);
 			request.getRequestDispatcher("/WEB-INF/jsp/class/class_update.jsp").forward(request, response);

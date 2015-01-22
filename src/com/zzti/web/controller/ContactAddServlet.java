@@ -1,4 +1,4 @@
-package com.zzti.web.controller;
+ï»¿package com.zzti.web.controller;
 
 import java.io.IOException;
 import java.util.Date;
@@ -39,10 +39,10 @@ public class ContactAddServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ContactForm form = WebUtils.requestToBean(request, ContactForm.class);
 		boolean flag = form.validate();
-		//ÑéÖ¤
+		//éªŒè¯
 		if(!flag)
 		{
-			//»ñÈ¡°à¼¶ÁĞ±í 
+			//è·å–ç­çº§åˆ—è¡¨ 
 			ListResult<com.zzti.service.Class> result = new ClassBusiness().getList();
 			if(result.getResult()!=1)
 			{
@@ -51,7 +51,7 @@ public class ContactAddServlet extends HttpServlet {
 				return;
 			}
 			request.setAttribute("list", result.getList());
-			//±íµ¥
+			//è¡¨å•
 			request.setAttribute("form", form);
 			request.getRequestDispatcher("/WEB-INF/jsp/contact/contact_add.jsp").forward(request, response);
 			return;
@@ -60,19 +60,19 @@ public class ContactAddServlet extends HttpServlet {
 		Contact data = new Contact();
 		WebUtils.copyBean(form, data);
 		data.setIp(WebUtils.getRemoteAddress(request));
-		//Ìí¼ÓÁªÏµÈË
+		//æ·»åŠ è”ç³»äºº
 		Result result = new ContactBusiness().add(data);
 		if(result.getResult()!=1)
 		{
-			if(result.getResult()==-1)//ËµÃ÷ÓÃ»§ÃûÒÑ´æÔÚ
+			if(result.getResult()==-1)//è¯´æ˜ç”¨æˆ·åå·²å­˜åœ¨
 			{
-				//´íÎóĞÅÏ¢
+				//é”™è¯¯ä¿¡æ¯
 				form.getErrors().put("name", result.getMessage());
-				//»ñÈ¡°à¼¶ÁĞ±í 
+				//è·å–ç­çº§åˆ—è¡¨ 
 				ListResult<com.zzti.service.Class> result1 = new ClassBusiness().getList();				
 				request.setAttribute("list", result1.getList());				
 				
-				//±íµ¥
+				//è¡¨å•
 				request.setAttribute("form", form);
 				request.getRequestDispatcher("/WEB-INF/jsp/contact/contact_add.jsp").forward(request, response);
 				return;
@@ -82,7 +82,7 @@ public class ContactAddServlet extends HttpServlet {
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
 			return;
 		}
-		//Ìí¼Ó³É¹¦  Ìø×ªµ½ÁĞ±íÒ³Ãæ
+		//æ·»åŠ æˆåŠŸ  è·³è½¬åˆ°åˆ—è¡¨é¡µé¢
 		response.sendRedirect(request.getContextPath()+"/servlet/ContactListUIServlet");		
 	}
 

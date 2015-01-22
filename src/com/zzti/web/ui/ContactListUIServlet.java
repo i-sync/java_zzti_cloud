@@ -1,4 +1,4 @@
-package com.zzti.web.ui;
+ï»¿package com.zzti.web.ui;
 
 import java.io.IOException;
 
@@ -46,7 +46,7 @@ public class ContactListUIServlet extends HttpServlet {
 		page.setPageIndex(pageIndex);
 		page.setPageSize(10);
 		data.setPage(page);
-		// »ñÈ¡°à¼¶ÁĞ±í
+		// è·å–ç­çº§åˆ—è¡¨
 		ListResult<com.zzti.service.Class> result = new ClassBusiness()
 				.getList();
 		if (result.getResult() != 1) {
@@ -57,7 +57,7 @@ public class ContactListUIServlet extends HttpServlet {
 		}
 		request.setAttribute("cList", result.getList());
 
-		// ²éÑ¯ÁªÏµÈËÁĞ±í
+		// æŸ¥è¯¢è”ç³»äººåˆ—è¡¨
 		ListResult<Contact> result1 = new ContactBusiness().getList(data);
 		if (result1.getResult() != 1) {
 			request.setAttribute("message", result1.getMessage());

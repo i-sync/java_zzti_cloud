@@ -1,4 +1,4 @@
-package com.zzti.business;
+锘縫ackage com.zzti.business;
 
 import com.zzti.service.ContactSEI;
 import com.zzti.service.ListResult;
@@ -9,7 +9,7 @@ public class ClassBusiness {
 	private ContactSEI service = Common.getInstace().getService();
 	
 	/**
-	 * 添加班级对象
+	 * 娣诲姞鐝骇瀵硅薄
 	 * @param data
 	 * @return
 	 */
@@ -18,7 +18,7 @@ public class ClassBusiness {
 		return service.classAdd(data);
 	}
 	/**
-	 * 修改班级对象
+	 * 淇敼鐝骇瀵硅薄
 	 * @param data
 	 * @return
 	 */
@@ -27,7 +27,7 @@ public class ClassBusiness {
 		return service.classUpdate(data);
 	}
 	/**
-	 * 删除班级对象
+	 * 鍒犻櫎鐝骇瀵硅薄
 	 * @param data
 	 * @return
 	 */
@@ -36,7 +36,7 @@ public class ClassBusiness {
 		return service.classDelete(data);
 	}
 	/**
-	 * 获取班级对象
+	 * 鑾峰彇鐝骇瀵硅薄
 	 * @param data
 	 * @return
 	 */
@@ -45,7 +45,7 @@ public class ClassBusiness {
 		return service.classGetModel(data);
 	}
 	/**
-	 * 获取班级对象列表
+	 * 鑾峰彇鐝骇瀵硅薄鍒楄〃
 	 * @return
 	 */
 	public ListResult<com.zzti.service.Class> getList()

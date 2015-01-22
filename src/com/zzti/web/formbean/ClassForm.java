@@ -1,4 +1,4 @@
-package com.zzti.web.formbean;
+锘縫ackage com.zzti.web.formbean;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public class ClassForm {
 	}
 	
 	/**
-	 * 验证
+	 * 楠岃瘉
 	 * @return
 	 */
 	public boolean validate()
@@ -48,12 +48,12 @@ public class ClassForm {
 		boolean flag = true;
 		if(this.name ==null ||this.name.trim().equals(""))
 		{
-			this.errors.put("name", "名称不能为空");
+			this.errors.put("name", "鍚嶇О涓嶈兘涓虹┖");
 			flag =false;
 		}
 		if(this.vocational ==null || this.vocational.trim().equals(""))
 		{
-			this.errors.put("vocational", "专业不能为空");
+			this.errors.put("vocational", "涓撲笟涓嶈兘涓虹┖");
 			flag = false;
 		}
 		

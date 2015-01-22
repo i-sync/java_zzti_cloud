@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>contact_existsResponse complex typeµÄ Java Àà¡£
+ * <p>contact_existsResponse complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="contact_existsResponse">
@@ -36,7 +36,7 @@ public class ContactExistsResponse {
     protected boolean _return;
 
     /**
-     * »ñÈ¡returnÊôĞÔµÄÖµ¡£
+     * è·å–returnå±æ€§çš„å€¼ã€‚
      * 
      */
     public boolean isReturn() {
@@ -44,7 +44,7 @@ public class ContactExistsResponse {
     }
 
     /**
-     * ÉèÖÃreturnÊôĞÔµÄÖµ¡£
+     * è®¾ç½®returnå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setReturn(boolean value) {

@@ -1,4 +1,4 @@
-package com.zzti.business;
+ï»¿package com.zzti.business;
 
 import com.zzti.service.Contact;
 import com.zzti.service.ContactSEI;
@@ -11,7 +11,7 @@ public class ContactBusiness {
 	public ContactBusiness() {
 	}
 	/**
-	 * Ìí¼ÓÁªÏµÈË
+	 * æ·»åŠ è”ç³»äºº
 	 * @param data
 	 * @return
 	 */
@@ -20,7 +20,7 @@ public class ContactBusiness {
 		return service.contactAdd(data);
 	}
 	/**
-	 * ĞŞ¸ÄÁªÏµÈË
+	 * ä¿®æ”¹è”ç³»äºº
 	 * @param data
 	 * @return
 	 */
@@ -29,7 +29,7 @@ public class ContactBusiness {
 		return service.contactUpdate(data);
 	}
 	/**
-	 * É¾³ıÁªÏµÈË
+	 * åˆ é™¤è”ç³»äºº
 	 * @param data
 	 * @return
 	 */
@@ -38,7 +38,7 @@ public class ContactBusiness {
 		return service.contactDelete(data);
 	}
 	/**
-	 * »ñÈ¡ÁªÏµÈË¶ÔÏó
+	 * è·å–è”ç³»äººå¯¹è±¡
 	 * @param data
 	 * @return
 	 */
@@ -47,7 +47,7 @@ public class ContactBusiness {
 		return service.contactGetModel(data);
 	}
 	/**
-	 * »ñÈ¡ÁªÏµÈËÁĞ±í 
+	 * è·å–è”ç³»äººåˆ—è¡¨ 
 	 * @param data
 	 * @return
 	 */

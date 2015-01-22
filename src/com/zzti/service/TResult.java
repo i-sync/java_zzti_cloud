@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>tResult complex typeµÄ Java Àà¡£
+ * <p>tResult complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="tResult">
@@ -36,7 +36,7 @@ public class TResult<T>
     protected T t;
 
     /**
-     * »ñÈ¡tÊôĞÔµÄÖµ¡£
+     * è·å–tå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class TResult<T>
     }
 
     /**
-     * ÉèÖÃtÊôĞÔµÄÖµ¡£
+     * è®¾ç½®tå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is

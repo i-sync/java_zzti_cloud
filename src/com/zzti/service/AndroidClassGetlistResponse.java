@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>android_class_getlistResponse complex typeµÄ Java Àà¡£
+ * <p>android_class_getlistResponse complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="android_class_getlistResponse">
@@ -36,7 +36,7 @@ public class AndroidClassGetlistResponse {
     protected String _return;
 
     /**
-     * »ñÈ¡returnÊôĞÔµÄÖµ¡£
+     * è·å–returnå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class AndroidClassGetlistResponse {
     }
 
     /**
-     * ÉèÖÃreturnÊôĞÔµÄÖµ¡£
+     * è®¾ç½®returnå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is

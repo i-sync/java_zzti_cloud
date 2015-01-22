@@ -1,4 +1,4 @@
-package com.zzti.web.controller;
+ï»¿package com.zzti.web.controller;
 
 import java.io.IOException;
 
@@ -38,9 +38,9 @@ public class ContactUpdateServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		ContactForm form = WebUtils.requestToBean(request, ContactForm.class);
 		boolean flag = form.validate();
-		// ÑéÖ¤
+		// éªŒè¯
 		if (!flag) {
-			// »ñÈ¡°à¼¶ÁĞ±í
+			// è·å–ç­çº§åˆ—è¡¨
 			ListResult<com.zzti.service.Class> result = new ClassBusiness()
 					.getList();
 			if (result.getResult() != 1) {
@@ -50,7 +50,7 @@ public class ContactUpdateServlet extends HttpServlet {
 				return;
 			}
 			request.setAttribute("list", result.getList());
-			// ±íµ¥
+			// è¡¨å•
 			request.setAttribute("form", form);
 			request.getRequestDispatcher(
 					"/WEB-INF/jsp/contact/contact_update.jsp").forward(request,
@@ -61,19 +61,19 @@ public class ContactUpdateServlet extends HttpServlet {
 		Contact data = new Contact();
 		WebUtils.copyBean(form, data);
 		data.setIp(WebUtils.getRemoteAddress(request));
-		// ĞŞ¸ÄÁªÏµÈË
+		// ä¿®æ”¹è”ç³»äºº
 		Result result = new ContactBusiness().update(data);
-		if (result.getResult() != 1)// ´íÎó
+		if (result.getResult() != 1)// é”™è¯¯
 		{
-			if (result.getResult() == -1)// ËµÃ÷ÓÃ»§ÃûÒÑ´æÔÚ
+			if (result.getResult() == -1)// è¯´æ˜ç”¨æˆ·åå·²å­˜åœ¨
 			{
 				form.getErrors().put("name", result.getMessage());
-				// »ñÈ¡°à¼¶ÁĞ±í
+				// è·å–ç­çº§åˆ—è¡¨
 				ListResult<com.zzti.service.Class> result1 = new ClassBusiness()
 						.getList();
 				request.setAttribute("list", result1.getList());
 
-				// ±íµ¥
+				// è¡¨å•
 				request.setAttribute("form", form);
 				request.getRequestDispatcher(
 						"/WEB-INF/jsp/contact/contact_update.jsp").forward(
@@ -86,7 +86,7 @@ public class ContactUpdateServlet extends HttpServlet {
 					response);
 			return;
 		}
-		// ĞŞ¸Ä³É¹¦ Ìø×ªµ½ÁĞ±íÒ³Ãæ
+		// ä¿®æ”¹æˆåŠŸ è·³è½¬åˆ°åˆ—è¡¨é¡µé¢
 		response.sendRedirect(request.getContextPath()
 				+ "/servlet/ContactListUIServlet");
 	}

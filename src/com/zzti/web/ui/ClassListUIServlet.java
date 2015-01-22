@@ -1,4 +1,4 @@
-package com.zzti.web.ui;
+锘縫ackage com.zzti.web.ui;
 
 import java.io.IOException;
 
@@ -32,7 +32,7 @@ public class ClassListUIServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//获取班级列表 
+		//鑾峰彇鐝骇鍒楄〃 
 		ListResult<com.zzti.service.Class> result = new ClassBusiness().getList();
 		if(result.getResult()==0)
 		{

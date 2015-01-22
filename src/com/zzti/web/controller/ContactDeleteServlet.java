@@ -1,4 +1,4 @@
-package com.zzti.web.controller;
+ï»¿package com.zzti.web.controller;
 
 import java.io.IOException;
 
@@ -32,9 +32,9 @@ public class ContactDeleteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
-		// ÅĞ¶Ï²ÎÊıÊÇ·ñÕıÈ·
+		// åˆ¤æ–­å‚æ•°æ˜¯å¦æ­£ç¡®
 		if (!RegexUtil.isInteger(id)) {
-			request.setAttribute("message", "²ÎÊı´íÎó£¡");
+			request.setAttribute("message", "å‚æ•°é”™è¯¯ï¼");
 			request.getRequestDispatcher("/message.jsp").forward(request,
 					response);
 			return;

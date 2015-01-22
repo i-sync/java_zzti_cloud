@@ -1,4 +1,4 @@
-package com.zzti.web.ui;
+锘縫ackage com.zzti.web.ui;
 
 import java.io.IOException;
 
@@ -31,7 +31,7 @@ public class ContactAddUIServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//获取班级列表
+		//鑾峰彇鐝骇鍒楄〃
 		ListResult<Class> result = new ClassBusiness().getList();
 		if(result.getResult()!=1)
 		{

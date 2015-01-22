@@ -1,4 +1,4 @@
-package com.zzti.utils;
+锘縫ackage com.zzti.utils;
 
 import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
@@ -9,9 +9,9 @@ public class WebUtils {
 	public static <T> T requestToBean(HttpServletRequest request,
 			Class<T> beanClass) {
 		try {
-			// 1/创建要封装数据的Bean
+			// 1/鍒涘缓瑕佸皝瑁呮暟鎹殑Bean
 			T bean = beanClass.newInstance();
-			// 2/把request中的数据库封装到Bean
+			// 2/鎶妑equest涓殑鏁版嵁搴撳皝瑁呭埌Bean
 			Enumeration<String> e = request.getParameterNames();
 			while (e.hasMoreElements()) {
 				String name = e.nextElement();
@@ -46,7 +46,7 @@ public class WebUtils {
 	/**
 	 * 
 	 * <p>
-	 * Discription:HttpServletRequest获取客户端IP方法
+	 * Discription:HttpServletRequest鑾峰彇瀹㈡埛绔疘P鏂规硶
 	 * </p>
 	 * 
 	 * @param request

@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>page complex typeµÄ Java Àà¡£
+ * <p>page complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="page">
@@ -50,7 +50,7 @@ public class Page {
     protected int totalCount;
 
     /**
-     * »ñÈ¡endDateÊôĞÔµÄÖµ¡£
+     * è·å–endDateå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -62,7 +62,7 @@ public class Page {
     }
 
     /**
-     * ÉèÖÃendDateÊôĞÔµÄÖµ¡£
+     * è®¾ç½®endDateå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -74,7 +74,7 @@ public class Page {
     }
 
     /**
-     * »ñÈ¡pageIndexÊôĞÔµÄÖµ¡£
+     * è·å–pageIndexå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getPageIndex() {
@@ -82,7 +82,7 @@ public class Page {
     }
 
     /**
-     * ÉèÖÃpageIndexÊôĞÔµÄÖµ¡£
+     * è®¾ç½®pageIndexå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setPageIndex(int value) {
@@ -90,7 +90,7 @@ public class Page {
     }
 
     /**
-     * »ñÈ¡pageSizeÊôĞÔµÄÖµ¡£
+     * è·å–pageSizeå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getPageSize() {
@@ -98,7 +98,7 @@ public class Page {
     }
 
     /**
-     * ÉèÖÃpageSizeÊôĞÔµÄÖµ¡£
+     * è®¾ç½®pageSizeå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setPageSize(int value) {
@@ -106,7 +106,7 @@ public class Page {
     }
 
     /**
-     * »ñÈ¡stratDateÊôĞÔµÄÖµ¡£
+     * è·å–stratDateå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -118,7 +118,7 @@ public class Page {
     }
 
     /**
-     * ÉèÖÃstratDateÊôĞÔµÄÖµ¡£
+     * è®¾ç½®stratDateå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -130,7 +130,7 @@ public class Page {
     }
 
     /**
-     * »ñÈ¡totalCountÊôĞÔµÄÖµ¡£
+     * è·å–totalCountå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getTotalCount() {
@@ -138,7 +138,7 @@ public class Page {
     }
 
     /**
-     * ÉèÖÃtotalCountÊôĞÔµÄÖµ¡£
+     * è®¾ç½®totalCountå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setTotalCount(int value) {

@@ -1,4 +1,4 @@
-package com.zzti.web.ui;
+ï»¿package com.zzti.web.ui;
 
 import java.io.IOException;
 
@@ -35,26 +35,26 @@ public class ClassUpdateUIServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id=request.getParameter("id");
-		//ÅĞ¶Ï²ÎÊıÊÇ·ñÕıÈ·
+		//åˆ¤æ–­å‚æ•°æ˜¯å¦æ­£ç¡®
 		if(!RegexUtil.isInteger(id))
 		{
-			request.setAttribute("message", "²ÎÊı´íÎó£¡");
+			request.setAttribute("message", "å‚æ•°é”™è¯¯ï¼");
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
 			return;
 		}
 		
-		//¸ù¾İID»ñÈ¡¶ÔÏó
+		//æ ¹æ®IDè·å–å¯¹è±¡
 		Class data =  new Class();
 		data.setId(Integer.parseInt(id));
 		
 		TResult<Class> result = new ClassBusiness().getModel(data);
-		if(result.getResult()!=1)//Èç¹û»ñÈ¡Ê§°Ü
+		if(result.getResult()!=1)//å¦‚æœè·å–å¤±è´¥
 		{
 			request.setAttribute("message", result.getMessage());
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
 			return;
 		}
-		//°Ñ½á¹û×ª»»Îªformbean
+		//æŠŠç»“æœè½¬æ¢ä¸ºformbean
 		ClassForm form = new ClassForm();
 		WebUtils.copyBean(result.getT(), form);
 		request.setAttribute("form", form);

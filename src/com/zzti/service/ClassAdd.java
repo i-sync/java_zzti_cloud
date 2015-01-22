@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>class_add complex typeµÄ Java Àà¡£
+ * <p>class_add complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="class_add">
@@ -34,7 +34,7 @@ public class ClassAdd {
     protected Class arg0;
 
     /**
-     * »ñÈ¡arg0ÊôĞÔµÄÖµ¡£
+     * è·å–arg0å±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class ClassAdd {
     }
 
     /**
-     * ÉèÖÃarg0ÊôĞÔµÄÖµ¡£
+     * è®¾ç½®arg0å±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is

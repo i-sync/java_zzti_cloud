@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>result complex typeµÄ Java Àà¡£
+ * <p>result complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="result">
@@ -45,7 +45,7 @@ public class Result {
     protected int result;
 
     /**
-     * »ñÈ¡messageÊôĞÔµÄÖµ¡£
+     * è·å–messageå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -57,7 +57,7 @@ public class Result {
     }
 
     /**
-     * ÉèÖÃmessageÊôĞÔµÄÖµ¡£
+     * è®¾ç½®messageå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -69,7 +69,7 @@ public class Result {
     }
 
     /**
-     * »ñÈ¡objÊôĞÔµÄÖµ¡£
+     * è·å–objå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -81,7 +81,7 @@ public class Result {
     }
 
     /**
-     * ÉèÖÃobjÊôĞÔµÄÖµ¡£
+     * è®¾ç½®objå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -93,7 +93,7 @@ public class Result {
     }
 
     /**
-     * »ñÈ¡resultÊôĞÔµÄÖµ¡£
+     * è·å–resultå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getResult() {
@@ -101,7 +101,7 @@ public class Result {
     }
 
     /**
-     * ÉèÖÃresultÊôĞÔµÄÖµ¡£
+     * è®¾ç½®resultå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setResult(int value) {

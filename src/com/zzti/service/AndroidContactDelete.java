@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zzti.service;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>android_contact_delete complex typeµÄ Java Àà¡£
+ * <p>android_contact_delete complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="android_contact_delete">
@@ -34,7 +34,7 @@ public class AndroidContactDelete {
     protected String string;
 
     /**
-     * »ñÈ¡stringÊôĞÔµÄÖµ¡£
+     * è·å–stringå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class AndroidContactDelete {
     }
 
     /**
-     * ÉèÖÃstringÊôĞÔµÄÖµ¡£
+     * è®¾ç½®stringå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is

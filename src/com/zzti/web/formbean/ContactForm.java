@@ -1,4 +1,4 @@
-package com.zzti.web.formbean;
+ï»¿package com.zzti.web.formbean;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -85,45 +85,45 @@ public class ContactForm {
 		this.errors = errors;
 	}
 	/**
-	 * ÑéÖ¤±íµ¥
+	 * éªŒè¯è¡¨å•
 	 * @return
 	 */
 	public boolean validate()
 	{
 		boolean flag = true;
-		//ÑéÖ¤ĞÕÃû
+		//éªŒè¯å§“å
 		if(this.name==null|| this.name.trim().equals(""))
 		{
 			flag=false;
-			this.errors.put("name", "ĞÕÃû²»ÄÜÎª¿Õ£¡");
+			this.errors.put("name", "å§“åä¸èƒ½ä¸ºç©ºï¼");
 		}
-		//ÑéÖ¤°à¼¶
+		//éªŒè¯ç­çº§
 		if(this.cid ==0)
 		{
 			flag=false;
-			this.errors.put("cid", "ÇëÑ¡Ôñ°à¼¶");
+			this.errors.put("cid", "è¯·é€‰æ‹©ç­çº§");
 		}
-		//ÑéÖ¤ÊÖ»úºÅ
+		//éªŒè¯æ‰‹æœºå·
 		if(this.phone ==null || this.phone.trim().equals(""))
 		{
 			flag = false;
-			this.errors.put("phone", "ÊÖ»úºÅ²»ÄÜÎª¿Õ");
+			this.errors.put("phone", "æ‰‹æœºå·ä¸èƒ½ä¸ºç©º");
 		}
-		else//ÑéÖ¤ÊÖ»úºÅÊÇ·ñÕıÈ·
+		else//éªŒè¯æ‰‹æœºå·æ˜¯å¦æ­£ç¡®
 		{
 			if(!RegexUtil.isPhone(this.phone))
 			{
 				flag = false;
-				this.errors.put("phone", "ÇëÊäÈëÕıÈ·µÄÊÖ»úºÅÂë£¡");
+				this.errors.put("phone", "è¯·è¾“å…¥æ­£ç¡®çš„æ‰‹æœºå·ç ï¼");
 			}
 		}
-		//ÑéÖ¤ÓÊÏä£¨¿É¿Õ£©
+		//éªŒè¯é‚®ç®±ï¼ˆå¯ç©ºï¼‰
 		if(this.email!=null && !this.email.trim().equals(""))
 		{
 			if(!RegexUtil.isEmail(this.email))
 			{
 				flag= false;
-				this.errors.put("email", "ÇëÊäÈëÕıÈ·µÄÓÊÏäµØÖ·£¡");
+				this.errors.put("email", "è¯·è¾“å…¥æ­£ç¡®çš„é‚®ç®±åœ°å€ï¼");
 			}
 		}
 		

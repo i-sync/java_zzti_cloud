@@ -1,4 +1,4 @@
-package com.zzti.utils;
+﻿package com.zzti.utils;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
@@ -49,10 +49,10 @@ public class PagingTag extends TagSupport {
 	public int doStartTag() throws JspException {
 		String str = "";
 		if (pageIndex == 1) {
-			str += "��ҳ ��һҳ ";
+			str += "首页 上一页 ";
 		} else {
-			str += " <a href='" + url + "pageIndex=1'>��ҳ</a> " + "<a href='"
-					+ url + "pageIndex=" + (pageIndex - 1) + "'>��һҳ</a> ";
+			str += " <a href='" + url + "pageIndex=1'>首页</a> " + "<a href='"
+					+ url + "pageIndex=" + (pageIndex - 1) + "'>上一页</a> ";
 		}
 		if (pageIndex / 6 < 1.0 || pageMax < 10) {
 			for (int i = 1; i <= 9; i++) {
@@ -87,11 +87,11 @@ public class PagingTag extends TagSupport {
 			}
 		}
 		if (pageIndex == pageMax || pageMax < 2) {
-			str += "��һҳ βҳ";
+			str += "下一页 尾页";
 		} else {
 			str += "<a href='" + url + "pageIndex=" + (pageIndex + 1)
-					+ "'>��һҳ</a> " + "<a href='" + url + "pageIndex=" + pageMax
-					+ "'>βҳ</a>";
+					+ "'>下一页</a> " + "<a href='" + url + "pageIndex=" + pageMax
+					+ "'>尾页</a>";
 		}
 		try {
 			if (str != "") {
