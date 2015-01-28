@@ -26,6 +26,16 @@
 									.attr("src",
 											"${pageContext.request.contextPath }/servlet/ContactListUIServlet");
 						});
+		
+		$("#a_download").hover(
+			function(){
+				$("#div_barcode").css({left:event.pageX ,top:event.pageY});
+				$("#div_barcode").show();
+			},
+			function(){
+				$("#div_barcode").hide();
+			}
+		);
 	});
 
 	function SetPageHeight() {
@@ -70,14 +80,34 @@ ul li
 {
 	list-style-type:none;
 }
+
+#div_barcode
+{
+	display:none;
+	width:210px;
+    position:absolute;
+}
+#div_barcode img
+{
+	width:200px;
+	height:200px;
+}
 </style>
 </head>
 <body>
 	<div>
 		<div class="title">
 			<h2 style="display: inline;">通讯录</h2>
-			<a style="margin-left: 50px;"
+			<a id="a_download" style="margin-left: 50px;"
 				href="${pageContext.request.contextPath }/android/java_zzti_contact.apk">android版下载</a>
+		</div>
+		<div id="div_barcode">
+			<div>
+				<img src="img/barcode_download.png"/>	
+			</div>		
+			<h4>
+				Scan with your phone to download it!
+			</h4>
 		</div>
 		<div class="mainbox">
 			<div id="left">
