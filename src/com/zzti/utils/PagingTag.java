@@ -5,6 +5,39 @@ import javax.servlet.jsp.tagext.TagSupport;
 
 public class PagingTag extends TagSupport {
 
+	public enum PageType {
+		English("First", "Prev", "Next", "Last"), Chinese("首页", "上一页", "下一页",
+				"末页"), Sign("<<", "<", ">", ">>");
+
+		private String first;
+		private String prev;
+		private String next;
+		private String last;
+
+		public String getFirst() {
+			return first;
+		}
+
+		public String getPrev() {
+			return prev;
+		}
+
+		public String getNext() {
+			return next;
+		}
+
+		public String getLast() {
+			return last;
+		}
+
+		PageType(String first, String prev, String next, String last) {
+			this.first = first;
+			this.prev = prev;
+			this.next = next;
+			this.last = last;
+		}
+	}
+
 	/**
 	 * 
 	 */
@@ -13,6 +46,8 @@ public class PagingTag extends TagSupport {
 	private int pageIndex;
 	private int pageMax;
 	private String url;
+
+	private PageType type = PageType.English;
 
 	public int getPageIndex() {
 		return pageIndex;
@@ -49,17 +84,25 @@ public class PagingTag extends TagSupport {
 	public int doStartTag() throws JspException {
 		String str = "";
 		if (pageIndex == 1) {
-			str += "首页 上一页 ";
+			str += String.format("%1$s %2$s", type.getFirst(), type.getPrev());
 		} else {
-			str += " <a href='" + url + "pageIndex=1'>首页</a> " + "<a href='"
-					+ url + "pageIndex=" + (pageIndex - 1) + "'>上一页</a> ";
+			// str += " <a href='" + url + "pageIndex=1'>First</a> " +
+			// "<a href='"
+			// + url + "pageIndex=" + (pageIndex - 1) + "'>Prev</a> ";
+			str += String
+					.format(" <a href='%1$spageIndex=1'>%2$s</a> <a href='%1$spageIndex=%3$s'>%4$s</a> ",
+							url, type.getFirst(), pageIndex - 1, type.getPrev());
 		}
 		if (pageIndex / 6 < 1.0 || pageMax < 10) {
 			for (int i = 1; i <= 9; i++) {
 				if (i <= pageMax) {
 					if (pageIndex != i) {
-						str += "<a href='" + url + "pageIndex=" + i + "'>[" + i
-								+ "]</a> ";
+						// str += "<a href='" + url + "pageIndex=" + i + "'>[" +
+						// i
+						// + "]</a> ";
+						str += String.format(
+								"<a href='%1$spageIndex=%2$s'>[%2$s]</a> ",
+								url, i);
 					} else {
 						str += "  " + i + " ";
 					}
@@ -78,8 +121,12 @@ public class PagingTag extends TagSupport {
 			for (int i = fri; i <= max; i++) {
 				if (i <= pageMax) {
 					if (pageIndex != i) {
-						str += "<a href='" + url + "pageIndex=" + i + "'>[" + i
-								+ "]</a> ";
+						// str += "<a href='" + url + "pageIndex=" + i + "'>[" +
+						// i
+						// + "]</a> ";
+						str += String.format(
+								"<a href='%1$spageIndex=%2$s'>[%2$s]</a> ",
+								url, i);
 					} else {
 						str += "  " + i + " ";
 					}
@@ -87,11 +134,15 @@ public class PagingTag extends TagSupport {
 			}
 		}
 		if (pageIndex == pageMax || pageMax < 2) {
-			str += "下一页 尾页";
+			str += String.format("%1$s %2$s", type.getNext(), type.getLast());
 		} else {
-			str += "<a href='" + url + "pageIndex=" + (pageIndex + 1)
-					+ "'>下一页</a> " + "<a href='" + url + "pageIndex=" + pageMax
-					+ "'>尾页</a>";
+			// str += "<a href='" + url + "pageIndex=" + (pageIndex + 1)
+			// + "'>Next</a> " + "<a href='" + url + "pageIndex="
+			// + pageMax + "'>Last</a>";
+			str += String
+					.format("<a href='%1$spageIndex=%2$s'>%3$s</a> <a href='%1$spageIndex=%4$s'>%5$s</a>",
+							url, pageIndex + 1, type.getNext(), pageMax,
+							type.getLast());
 		}
 		try {
 			if (str != "") {
