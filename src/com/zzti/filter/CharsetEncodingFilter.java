@@ -24,12 +24,13 @@ public class CharsetEncodingFilter implements Filter {
 
 		servletRequest.setCharacterEncoding(encoding);
 		filterChain.doFilter(servletRequest, servletResponse);
+		servletResponse.setCharacterEncoding(encoding);
 	}
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.encoding = filterConfig.getInitParameter("encode");
-		//System.out.println(this.encoding);
+		// System.out.println(this.encoding);
 	}
 
 }

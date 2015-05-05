@@ -1,16 +1,18 @@
 ï»¿package com.zzti.web.formbean;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.zzti.utils.RegexUtil;
+import com.zzti.utils.StringUtils;
 
 public class ContactForm {
 
 	public ContactForm() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	private int id;
 	private String name;
 	private int cid;
@@ -20,77 +22,100 @@ public class ContactForm {
 	private String living;
 	private String company;
 	private String remark;
-	private Map<String,String> errors = new HashMap<String,String>();
+	private Map<String, String> errors = new HashMap<String, String>();
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getCid() {
 		return cid;
 	}
+
 	public void setCid(int cid) {
 		this.cid = cid;
 	}
+
 	public String getCname() {
 		return cname;
 	}
+
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
+
 	public String getPhone() {
 		return phone;
 	}
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getLiving() {
 		return living;
 	}
+
 	public void setLiving(String living) {
 		this.living = living;
 	}
+
 	public String getCompany() {
 		return company;
 	}
+
 	public void setCompany(String company) {
 		this.company = company;
 	}
+
 	public String getRemark() {
 		return remark;
 	}
+
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	
-	
-	
+
 	public Map<String, String> getErrors() {
 		return errors;
 	}
+
 	public void setErrors(Map<String, String> errors) {
 		this.errors = errors;
 	}
+
 	/**
+<<<<<<< HEAD
 	 * éªŒè¯è¡¨å•
+=======
+	 * ÑéÖ¤±íµ¥
+	 * 
+>>>>>>> f168441e13d90241f3f0ba83388b887e152f7f8d
 	 * @return
 	 */
-	public boolean validate()
-	{
+	public boolean validate() {
 		boolean flag = true;
+<<<<<<< HEAD
 		//éªŒè¯å§“å
 		if(this.name==null|| this.name.trim().equals(""))
 		{
@@ -110,10 +135,27 @@ public class ContactForm {
 			this.errors.put("phone", "æ‰‹æœºå·ä¸èƒ½ä¸ºç©º");
 		}
 		else//éªŒè¯æ‰‹æœºå·æ˜¯å¦æ­£ç¡®
+=======
+		// ÑéÖ¤ÐÕÃû
+		if (this.name == null || this.name.trim().equals("")) {
+			flag = false;
+			this.errors.put("name", "ÐÕÃû²»ÄÜÎª¿Õ!");
+		}
+		// ÑéÖ¤°à¼¶
+		if (this.cid == 0) {
+			flag = false;
+			this.errors.put("cid", "ÇëÑ¡Ôñ°à¼¶!");
+		}
+		// ÑéÖ¤ÊÖ»úºÅ
+		if (this.phone == null || this.phone.trim().equals("")) {
+			flag = false;
+			this.errors.put("phone", "ÊÖ»úºÅ²»ÄÜÎª¿Õ!");
+		} else// ÑéÖ¤ÊÖ»úºÅÊÇ·ñÕýÈ·
+>>>>>>> f168441e13d90241f3f0ba83388b887e152f7f8d
 		{
-			if(!RegexUtil.isPhone(this.phone))
-			{
+			if (!RegexUtil.isPhone(this.phone)) {
 				flag = false;
+<<<<<<< HEAD
 				this.errors.put("phone", "è¯·è¾“å…¥æ­£ç¡®çš„æ‰‹æœºå·ç ï¼");
 			}
 		}
@@ -124,10 +166,19 @@ public class ContactForm {
 			{
 				flag= false;
 				this.errors.put("email", "è¯·è¾“å…¥æ­£ç¡®çš„é‚®ç®±åœ°å€ï¼");
+=======
+				this.errors.put("phone", "ÇëÊäÈëÕýÈ·µÄÊÖ»úºÅÂë!");
 			}
 		}
-		
-		
+		// ÑéÖ¤ÓÊÏä£¨¿É¿Õ£©
+		if (this.email != null && !this.email.trim().equals("")) {
+			if (!RegexUtil.isEmail(this.email)) {
+				flag = false;
+				this.errors.put("email", "ÇëÊäÈëÕýÈ·µÄÓÊÏäµØÖ·!");
+>>>>>>> f168441e13d90241f3f0ba83388b887e152f7f8d
+			}
+		}
+
 		return flag;
 	}
 }

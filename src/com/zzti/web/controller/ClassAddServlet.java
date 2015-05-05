@@ -34,6 +34,7 @@ public class ClassAddServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
 		ClassForm form = WebUtils.requestToBean(request, ClassForm.class);
 		boolean flag = form.validate();
 		if(!flag)//ÑéÖ¤Ê§°Ü
