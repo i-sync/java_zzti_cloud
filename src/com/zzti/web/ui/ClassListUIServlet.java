@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zzti.business.ClassBusiness;
-import com.zzti.service.ListResult;
+import com.zzti.bean.ListResult;
 
 /**
  * Servlet implementation class ClassListUIServlet
@@ -33,7 +33,7 @@ public class ClassListUIServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//获取班级列表 
-		ListResult<com.zzti.service.Class> result = new ClassBusiness().getList();
+		ListResult<com.zzti.bean.Class> result = new ClassBusiness().getList();
 		if(result.getResult()==0)
 		{
 			request.setAttribute("message", result.getMessage());

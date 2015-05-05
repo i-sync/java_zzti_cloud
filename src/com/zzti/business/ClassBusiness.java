@@ -1,55 +1,57 @@
 ﻿package com.zzti.business;
 
-import com.zzti.service.ContactSEI;
-import com.zzti.service.ListResult;
-import com.zzti.service.Result;
-import com.zzti.service.TResult;
+import javax.ws.rs.core.MediaType;
+ 
+import com.zzti.bean.ListResult;
+import com.zzti.bean.Result;
+import com.zzti.bean.TResult;
 
 public class ClassBusiness {
-	private ContactSEI service = Common.getInstace().getService();
+	//private ContactSEI service = Common.getInstace().getService();
 	
 	/**
-	 * 添加班级对象
+	 * add class
 	 * @param data
 	 * @return
 	 */
-	public Result add(com.zzti.service.Class data)
+	public Result add(com.zzti.bean.Class data)
 	{
-		return service.classAdd(data);
+		//return service.classAdd(data);
+		return Common.postT("/class/add", MediaType.APPLICATION_JSON, data,Result.class);
 	}
 	/**
-	 * 修改班级对象
+	 * update class object
 	 * @param data
 	 * @return
 	 */
-	public Result update(com.zzti.service.Class data)
+	public Result update(com.zzti.bean.Class data)
 	{
-		return service.classUpdate(data);
+		return Common.postT("/class/update", MediaType.APPLICATION_JSON, data,Result.class);
 	}
 	/**
-	 * 删除班级对象
+	 * delete class object
 	 * @param data
 	 * @return
 	 */
-	public Result delete(com.zzti.service.Class data)
+	public Result delete(com.zzti.bean.Class data)
 	{
-		return service.classDelete(data);
+		return Common.postT("/class/detele", MediaType.APPLICATION_JSON, data,Result.class);
 	}
 	/**
-	 * 获取班级对象
+	 * get class object 
 	 * @param data
 	 * @return
 	 */
-	public TResult<com.zzti.service.Class> getModel(com.zzti.service.Class data)
+	public com.zzti.bean.TResult<com.zzti.bean.Class> getModel(com.zzti.bean.Class data)
 	{
-		return service.classGetModel(data);
+		return Common.postT("/class/model", MediaType.APPLICATION_JSON, data,com.zzti.bean.TResult.class);
 	}
 	/**
-	 * 获取班级对象列表
+	 * get class list
 	 * @return
 	 */
-	public ListResult<com.zzti.service.Class> getList()
+	public com.zzti.bean.ListResult<com.zzti.bean.Class> getList()
 	{
-		return service.classGetList();
+		return Common.getT("/class/list", MediaType.APPLICATION_JSON,com.zzti.bean.ListResult.class);
 	}
 }

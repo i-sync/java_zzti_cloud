@@ -6,12 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.jsp.PageContext;
+import javax.servlet.http.HttpServletResponse; 
 
 import com.zzti.business.ClassBusiness;
-import com.zzti.service.Class;
-import com.zzti.service.Result;
+import com.zzti.bean.Class;
+import com.zzti.bean.Result;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ClassForm;
 

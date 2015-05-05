@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 import com.zzti.business.ClassBusiness;
 import com.zzti.business.ContactBusiness;
-import com.zzti.service.Contact;
-import com.zzti.service.ListResult;
-import com.zzti.service.Result;
+import com.zzti.bean.Contact;
+import com.zzti.bean.ListResult;
+import com.zzti.bean.Result;
 import com.zzti.utils.DateUtils;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ContactForm;
@@ -43,7 +43,7 @@ public class ContactAddServlet extends HttpServlet {
 		if(!flag)
 		{
 			//获取班级列表 
-			ListResult<com.zzti.service.Class> result = new ClassBusiness().getList();
+			ListResult<com.zzti.bean.Class> result = new ClassBusiness().getList();
 			if(result.getResult()!=1)
 			{
 				request.setAttribute("message", result.getMessage());
@@ -69,7 +69,7 @@ public class ContactAddServlet extends HttpServlet {
 				//错误信息
 				form.getErrors().put("name", result.getMessage());
 				//获取班级列表 
-				ListResult<com.zzti.service.Class> result1 = new ClassBusiness().getList();				
+				ListResult<com.zzti.bean.Class> result1 = new ClassBusiness().getList();				
 				request.setAttribute("list", result1.getList());				
 				
 				//表单

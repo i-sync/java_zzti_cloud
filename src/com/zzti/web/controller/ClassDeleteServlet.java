@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zzti.business.ClassBusiness;
-import com.zzti.service.Class;
-import com.zzti.service.Result;
+import com.zzti.bean.Class;
+import com.zzti.bean.Result;
 import com.zzti.utils.RegexUtil;
 
 /**

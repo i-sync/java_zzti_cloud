@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zzti.business.ContactBusiness;
-import com.zzti.service.Contact;
-import com.zzti.service.Result;
+import com.zzti.bean.Contact;
+import com.zzti.bean.Result;
 import com.zzti.utils.RegexUtil;
 
 /**

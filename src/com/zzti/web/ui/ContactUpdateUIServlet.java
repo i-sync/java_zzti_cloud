@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.zzti.business.ClassBusiness;
 import com.zzti.business.ContactBusiness;
-import com.zzti.service.Class;
-import com.zzti.service.Contact;
-import com.zzti.service.ListResult;
-import com.zzti.service.TResult;
+import com.zzti.bean.Class;
+import com.zzti.bean.Contact;
+import com.zzti.bean.ListResult;
+import com.zzti.bean.TResult;
 import com.zzti.utils.RegexUtil;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ContactForm;

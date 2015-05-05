@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.zzti.business.ClassBusiness;
 import com.zzti.business.ContactBusiness;
-import com.zzti.service.Contact;
-import com.zzti.service.ListResult;
-import com.zzti.service.Page;
+import com.zzti.bean.Contact;
+import com.zzti.bean.ListResult;
+import com.zzti.bean.Page;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ContactForm;
 
@@ -47,7 +47,7 @@ public class ContactListUIServlet extends HttpServlet {
 		page.setPageSize(10);
 		data.setPage(page);
 		// 获取班级列表
-		ListResult<com.zzti.service.Class> result = new ClassBusiness()
+		ListResult<com.zzti.bean.Class> result = new ClassBusiness()
 				.getList();
 		if (result.getResult() != 1) {
 			request.setAttribute("message", result.getMessage());
