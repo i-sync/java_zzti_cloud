@@ -3,9 +3,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-import com.ctc.wstx.util.StringUtil;
-import com.zzti.utils.StringUtils;
-
 public class ClassForm {
 
 	public ClassForm() {
@@ -50,17 +47,11 @@ public class ClassForm {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * 楠岃瘉
-=======
-	 * 验证
-	 * 
->>>>>>> f168441e13d90241f3f0ba83388b887e152f7f8d
 	 * @return
 	 */
 	public boolean validate() {
 		boolean flag = true;
-<<<<<<< HEAD
 		if(this.name ==null ||this.name.trim().equals(""))
 		{
 			this.errors.put("name", "鍚嶇О涓嶈兘涓虹┖");
@@ -69,14 +60,6 @@ public class ClassForm {
 		if(this.vocational ==null || this.vocational.trim().equals(""))
 		{
 			this.errors.put("vocational", "涓撲笟涓嶈兘涓虹┖");
-=======
-		if (this.name == null || this.name.trim().equals("")) {
-			this.errors.put("name", "名称不能为空!");
-			flag = false;
-		}
-		if (this.vocational == null || this.vocational.trim().equals("")) {
-			this.errors.put("vocational", "专业不能为空!");
->>>>>>> f168441e13d90241f3f0ba83388b887e152f7f8d
 			flag = false;
 		}
 

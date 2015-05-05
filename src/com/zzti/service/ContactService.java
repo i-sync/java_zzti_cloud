@@ -23,7 +23,6 @@ public class ContactService extends Service {
 
 	public final static URL WSDL_LOCATION;
 
-<<<<<<< HEAD
     public final static QName SERVICE = new QName("http://service.zzti.com/", "ContactService");
     public final static QName ServicePort = new QName("http://service.zzti.com/", "ServicePort");
     static {
@@ -37,28 +36,6 @@ public class ContactService extends Service {
         }
         WSDL_LOCATION = url;
     }
-=======
-	public final static QName SERVICE = new QName("http://service.zzti.com/",
-			"ContactService");
-	public final static QName ServicePort = new QName(
-			"http://service.zzti.com/", "ServicePort");
-	static {
-		URL url = null;
-		try {
-			url = new URL(
-			//"http://contact09.duapp.com/java_zzti_clouddb/Service?wsdl");
-					"http://localhost/java_zzti_clouddb/Service?wsdl");
-		} catch (MalformedURLException e) {
-			java.util.logging.Logger
-					.getLogger(ContactService.class.getName())
-					.log(java.util.logging.Level.INFO,
-							"Can not initialize the default wsdl from {0}",
-							 //"http://contact09.duapp.com/java_zzti_clouddb/Service?wsdl");
-							"http://localhost/java_zzti_clouddb/Service?wsdl");
-		}
-		WSDL_LOCATION = url;
-	}
->>>>>>> f168441e13d90241f3f0ba83388b887e152f7f8d
 
 	public ContactService(URL wsdlLocation) {
 		super(wsdlLocation, SERVICE);

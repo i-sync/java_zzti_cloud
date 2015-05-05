@@ -6,7 +6,7 @@ import javax.servlet.jsp.tagext.TagSupport;
 public class PagingTag extends TagSupport {
 
 	public enum PageType {
-		English("First", "Prev", "Next", "Last"), Chinese("��ҳ", "��һҳ", "��һҳ",
+		English("First", "Prev", "Next", "Last"), Chinese("��ҳ", "��һҳ", "��һҳ",
 				"ĩҳ"), Sign("<<", "<", ">", ">>");
 
 		private String first;
@@ -84,21 +84,11 @@ public class PagingTag extends TagSupport {
 	public int doStartTag() throws JspException {
 		String str = "";
 		if (pageIndex == 1) {
-<<<<<<< HEAD
-			str += "首页 上一页 ";
-		} else {
-			str += " <a href='" + url + "pageIndex=1'>首页</a> " + "<a href='"
-					+ url + "pageIndex=" + (pageIndex - 1) + "'>上一页</a> ";
-=======
 			str += String.format("%1$s %2$s", type.getFirst(), type.getPrev());
 		} else {
-			// str += " <a href='" + url + "pageIndex=1'>First</a> " +
-			// "<a href='"
-			// + url + "pageIndex=" + (pageIndex - 1) + "'>Prev</a> ";
 			str += String
 					.format(" <a href='%1$spageIndex=1'>%2$s</a> <a href='%1$spageIndex=%3$s'>%4$s</a> ",
 							url, type.getFirst(), pageIndex - 1, type.getPrev());
->>>>>>> f168441e13d90241f3f0ba83388b887e152f7f8d
 		}
 		if (pageIndex / 6 < 1.0 || pageMax < 10) {
 			for (int i = 1; i <= 9; i++) {
@@ -141,23 +131,12 @@ public class PagingTag extends TagSupport {
 			}
 		}
 		if (pageIndex == pageMax || pageMax < 2) {
-<<<<<<< HEAD
-			str += "下一页 尾页";
-		} else {
-			str += "<a href='" + url + "pageIndex=" + (pageIndex + 1)
-					+ "'>下一页</a> " + "<a href='" + url + "pageIndex=" + pageMax
-					+ "'>尾页</a>";
-=======
 			str += String.format("%1$s %2$s", type.getNext(), type.getLast());
 		} else {
-			// str += "<a href='" + url + "pageIndex=" + (pageIndex + 1)
-			// + "'>Next</a> " + "<a href='" + url + "pageIndex="
-			// + pageMax + "'>Last</a>";
 			str += String
 					.format("<a href='%1$spageIndex=%2$s'>%3$s</a> <a href='%1$spageIndex=%4$s'>%5$s</a>",
 							url, pageIndex + 1, type.getNext(), pageMax,
 							type.getLast());
->>>>>>> f168441e13d90241f3f0ba83388b887e152f7f8d
 		}
 		try {
 			if (str != "") {
