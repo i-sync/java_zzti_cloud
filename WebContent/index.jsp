@@ -36,6 +36,10 @@
 				$("#div_barcode").hide();
 			}
 		);
+		$("#div_barcode").hover(
+			function(){$(this).show();},
+			function(){$(this).hide();}
+		);
 	});
 
 	function SetPageHeight() {
@@ -99,15 +103,15 @@ ul li
 		<div class="title">
 			<h2 style="display: inline;">通讯录</h2>
 			<a id="a_download" style="margin-left: 50px;"
-				href="${pageContext.request.contextPath }/android/java_zzti_contact.apk">android版下载</a>
+				href="${pageContext.request.contextPath }/android/java_zzti_contact.apk">Android版下载</a>
 		</div>
 		<div id="div_barcode">
 			<div>
 				<img src="img/barcode_download.png"/>	
 			</div>		
-			<h4>
+			<div>
 				Scan with your phone to download it!
-			</h4>
+			</div>
 		</div>
 		<div class="mainbox">
 			<div id="left">
