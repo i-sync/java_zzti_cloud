@@ -9,8 +9,12 @@
 	href="${pageContext.request.contextPath }/css/main.css">
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery.qrcode.js"></script>
 <script type="text/javascript">
 	$(function() {
+		//generate QR
+		$("#divBarcode").qrcode({size:190,fill:"#3a3",text:"http://www.contacts09.tk/android/java_zzti_contact.apk"})
 		$("#linkClass")
 				.click(
 						function() {
@@ -90,12 +94,10 @@ ul li
 	display:none;
 	width:210px;
     position:absolute;
+    background-color:white;
+    padding:4px;
 }
-#div_barcode img
-{
-	width:200px;
-	height:200px;
-}
+
 </style>
 </head>
 <body>
@@ -106,8 +108,8 @@ ul li
 				href="${pageContext.request.contextPath }/android/java_zzti_contact.apk">Android版下载</a>
 		</div>
 		<div id="div_barcode">
-			<div>
-				<img src="img/barcode_download.png"/>	
+			<div id="divBarcode">
+				
 			</div>		
 			<div>
 				Scan with your phone to download it!
