@@ -53,7 +53,8 @@ public class Contact implements Serializable {
 	private Date addDate;
 	private Date updateDate;
 	private String ip;
-
+	private String password;
+	
 	private Page page;
 
 	public int getId() {
@@ -150,6 +151,14 @@ public class Contact implements Serializable {
 
 	public void setIp(String ip) {
 		this.ip = ip;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Page getPage() {

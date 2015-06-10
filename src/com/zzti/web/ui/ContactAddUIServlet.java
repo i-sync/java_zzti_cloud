@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.zzti.business.ClassBusiness;
 import com.zzti.bean.Class;
+import com.zzti.bean.Contact;
 import com.zzti.bean.ListResult;
 
 /**
@@ -31,6 +32,15 @@ public class ContactAddUIServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//check user is login
+		Object obj = request.getSession().getAttribute("id");
+		int id = obj ==null?0:Integer.parseInt(obj.toString());
+		if(id==0)
+		{
+			response.sendRedirect(request.getContextPath()+"/servlet/LoginUIServlet");
+			return;
+		}
+		
 		//获取班级列表
 		ListResult<Class> result = new ClassBusiness().getList();
 		if(result.getResult()!=1)

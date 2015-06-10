@@ -36,7 +36,7 @@ public class ClassAddServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		ClassForm form = WebUtils.requestToBean(request, ClassForm.class);
 		boolean flag = form.validate();
-		if(!flag)//ÑéÖ¤Ê§°Ü
+		if(!flag)
 		{
 			request.setAttribute("form", form);
 			request.getRequestDispatcher("/WEB-INF/jsp/class/class_add.jsp").forward(request, response);

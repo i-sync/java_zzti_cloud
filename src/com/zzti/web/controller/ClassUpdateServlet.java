@@ -34,7 +34,7 @@ public class ClassUpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ClassForm form = WebUtils.requestToBean(request, ClassForm.class);
 		boolean flag = form.validate();
-		if(!flag)//ÑéÖ¤Ê§°Ü
+		if(!flag)
 		{
 			request.setAttribute("form", form);
 			request.getRequestDispatcher("/WEB-INF/jsp/class/class_update.jsp").forward(request, response);

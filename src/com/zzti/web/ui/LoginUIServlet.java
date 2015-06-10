@@ -1,4 +1,4 @@
-﻿package com.zzti.web.ui;
+package com.zzti.web.ui;
 
 import java.io.IOException;
 
@@ -8,56 +8,42 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zzti.business.ClassBusiness;
-import com.zzti.bean.Contact;
-import com.zzti.bean.ListResult;
-
 /**
- * Servlet implementation class ClassListUIServlet
+ * Servlet implementation class LoginUIServlet
  */
-@WebServlet("/ClassListUIServlet")
-public class ClassListUIServlet extends HttpServlet {
+@WebServlet("/LoginUIServlet")
+public class LoginUIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-	private int pageIndex = 1;
-	private int pageSize = 10;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ClassListUIServlet() {
+    public LoginUIServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//check user is login
+		// TODO Auto-generated method stub
 		Object obj = request.getSession().getAttribute("id");
 		int id = obj ==null?0:Integer.parseInt(obj.toString());
-		if(id==0)
+		if(id!=0)
 		{
-			response.sendRedirect(request.getContextPath()+"/servlet/LoginUIServlet");
+			response.sendRedirect(request.getContextPath()+"/servlet/IndexUIServlet");	
 			return;
 		}
-		//获取班级列表 
-		ListResult<com.zzti.bean.Class> result = new ClassBusiness().getList();
-		if(result.getResult()==0)
-		{
-			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
-			return ;
-		}
-		request.setAttribute("list", result.getList());
-		request.getRequestDispatcher("/WEB-INF/jsp/class/class_list.jsp").forward(request, response);
-		
+		request.getRequestDispatcher("/").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		// TODO Auto-generated method stub
+		doGet(request,response);
 	}
 
 }

@@ -5,6 +5,14 @@
 	text-align: center;
 }
 
+#login 
+{
+    width:400px;
+    height:300px;
+    vertical-align:central;
+    text-align:center;
+}
+
 div.title
 {
 	text-align:left;

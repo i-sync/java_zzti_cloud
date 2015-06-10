@@ -11,6 +11,17 @@ public class ContactBusiness {
 	//private ContactSEI service = Common.getInstace().getService();
 	public ContactBusiness() {
 	}
+	
+	/**
+	 * login
+	 * @param data
+	 * @return
+	 */
+	public TResult<Contact> login(Contact data)
+	{
+		return Common.postT("/contact/login", MediaType.APPLICATION_JSON, data, TResult.class);
+	}
+	
 	/**
 	 * add contact
 	 * @param data
@@ -29,6 +40,17 @@ public class ContactBusiness {
 	{
 		return Common.postT("/contact/update", MediaType.APPLICATION_JSON, data, Result.class);
 	}
+	
+	/**
+	 * update contact password
+	 * @param data
+	 * @return
+	 */
+	public Result updatePwd(Contact data)
+	{
+		return Common.postT("/contact/updatepwd", MediaType.APPLICATION_JSON, data, Result.class);
+	}
+	
 	/**
 	 * delete contact
 	 * @param data

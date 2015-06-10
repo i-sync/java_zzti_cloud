@@ -106,6 +106,11 @@ ul li
 			<h2 style="display: inline;">通讯录</h2>
 			<a id="a_download" style="margin-left: 50px;"
 				href="${pageContext.request.contextPath }/android/java_zzti_contact.apk">Android版下载</a>
+			
+			<label style="float:right;">
+				<a href="#">${user.name}</a>&nbsp;&nbsp;
+				<a href="${ pageContext.request.contextPath}/servlet/LogoutServlet">登出</a>
+			</label>
 		</div>
 		<div id="div_barcode">
 			<div id="divBarcode">
@@ -125,7 +130,7 @@ ul li
 			<div id="main">
 				<iframe id="ifContent" onload="javascript:SetPageHeight()"
 					width="1100px"
-					src="${pageContext.request.contextPath }/servlet/ClassListUIServlet"
+					src="${pageContext.request.contextPath }/servlet/ContactListUIServlet"
 					name="Content" frameborder="0"> </iframe>
 			</div>
 			<div class="clear"></div>

@@ -36,6 +36,16 @@ public class ContactListUIServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		
+		//check user is login
+		Object obj = request.getSession().getAttribute("id");
+		int id = obj ==null?0:Integer.parseInt(obj.toString());
+		if(id==0)
+		{
+			response.sendRedirect(request.getContextPath()+"/servlet/LoginUIServlet");
+			return;
+		}
+		
 		ContactForm form = WebUtils.requestToBean(request, ContactForm.class);
 		Contact data = new Contact();
 		WebUtils.copyBean(form, data);
