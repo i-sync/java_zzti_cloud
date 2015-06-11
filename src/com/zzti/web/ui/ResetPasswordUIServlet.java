@@ -36,8 +36,8 @@ public class ResetPasswordUIServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String guid = request.getParameter("guid").trim();
-		if(guid==null || guid.equals("")|| guid.length()!=36)
+		String guid = request.getParameter("guid");
+		if(guid==null || guid.trim().equals("")|| guid.trim().length()!=36)
 		{			
 			request.setAttribute("message", "参数错误!");
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
@@ -57,8 +57,8 @@ public class ResetPasswordUIServlet extends HttpServlet {
 		
 		//compare date 
 		Date date = DateUtils.StringToDate(data.getAddTime(), DateStyle.YYYY_MM_DD_HH_MM_SS);
-		date = DateUtils.addHour(date, 1);		
-		if(date.after(new Date()))//invalid
+		date = DateUtils.addHour(date, 1);	
+		if(date.before(new Date()))//invalid
 		{
 			request.setAttribute("message", "链接已经失效!");
 			request.getRequestDispatcher("/message.jsp").forward(request, response);

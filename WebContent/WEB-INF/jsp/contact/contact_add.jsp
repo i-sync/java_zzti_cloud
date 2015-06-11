@@ -56,6 +56,7 @@
 					<div>
 						<span class="title">邮箱：</span>
 						<input type="text" name="email" value="${form.email}"/>
+						<strong class="important">*</strong>
 						<span class="error">${form.errors.email }</span>
 					</div>
 					<div>

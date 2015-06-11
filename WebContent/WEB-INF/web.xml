@@ -47,6 +47,22 @@
     <url-pattern>/servlet/PasswordUpdateUIServlet</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>ForgotPasswordUIServlet</servlet-name>
+    <servlet-class>com.zzti.web.ui.ForgotPasswordUIServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForgotPasswordUIServlet</servlet-name>
+    <url-pattern>/servlet/ForgotPasswordUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ResetPasswordUIServlet</servlet-name>
+    <servlet-class>com.zzti.web.ui.ResetPasswordUIServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResetPasswordUIServlet</servlet-name>
+    <url-pattern>/servlet/ResetPasswordUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ClassListUIServlet</servlet-name>
     <servlet-class>com.zzti.web.ui.ClassListUIServlet</servlet-class>
   </servlet>
@@ -117,6 +133,22 @@
   <servlet-mapping>
     <servlet-name>PasswordUpdateServlet</servlet-name>
     <url-pattern>/servlet/PasswordUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ForgotPasswordServlet</servlet-name>
+    <servlet-class>com.zzti.web.controller.ForgotPasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForgotPasswordServlet</servlet-name>
+    <url-pattern>/servlet/ForgotPasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ResetPasswordServlet</servlet-name>
+    <servlet-class>com.zzti.web.controller.ResetPasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResetPasswordServlet</servlet-name>
+    <url-pattern>/servlet/ResetPasswordServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ClassAddServlet</servlet-name>

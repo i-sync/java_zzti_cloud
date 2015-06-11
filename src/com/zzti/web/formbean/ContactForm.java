@@ -133,14 +133,16 @@ public class ContactForm {
 				this.errors.put("phone", "请输入正确的手机号码！");
 			}
 		}
-		//验证邮箱（可空）
-		if(this.email!=null && !this.email.trim().equals(""))
+		//验证邮箱
+		if(this.email==null || this.email.trim().equals(""))
 		{
-			if(!RegexUtil.isEmail(this.email))
-			{
-				flag= false;
-				this.errors.put("email", "请输入正确的邮箱地址！");
-			}
+			flag= false;
+			this.errors.put("email", "邮箱地址不可为空！");
+		} 
+		else if(!RegexUtil.isEmail(this.email))
+		{
+			flag= false;
+			this.errors.put("email", "请输入正确的邮箱地址！");
 		}
 
 		return flag;

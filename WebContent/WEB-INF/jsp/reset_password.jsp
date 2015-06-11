@@ -12,7 +12,7 @@
 			<h3>Reset Password</h3>
 		</div>
 		<div>
-			<form action="${pageContext.request.contextPath }/servlet/ResetPasswordServlet" method="post">
+			<form action="${pageContext.request.contextPath }/servlet/ResetPasswordServlet?guid=${param.guid}" method="post">
 				<div>
 					<span>新&nbsp;&nbsp;密&nbsp;&nbsp;码：</span>
 					<input type="password" name="newpassword" value="${form.newpassword}"/>

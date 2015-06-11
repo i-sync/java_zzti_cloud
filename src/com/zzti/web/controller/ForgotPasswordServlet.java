@@ -38,7 +38,7 @@ public class ForgotPasswordServlet extends HttpServlet {
 		if(!form.validate())
 		{
 			request.setAttribute("form", form);
-			request.getRequestDispatcher("/forgot_password.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/forgot_password.jsp").forward(request, response);
 			return;
 		}
 		
@@ -48,7 +48,7 @@ public class ForgotPasswordServlet extends HttpServlet {
 		{
 			form.getErrors().put("email", "邮箱不存在!");
 			request.setAttribute("form", form);
-			request.getRequestDispatcher("/forgot_password.jsp").forward(request,response);
+			request.getRequestDispatcher("/WEB-INF/jsp/forgot_password.jsp").forward(request,response);
 			return;
 		}
 		

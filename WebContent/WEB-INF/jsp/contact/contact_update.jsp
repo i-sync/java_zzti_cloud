@@ -35,34 +35,41 @@
 				<div class="form">
 					<input type="hidden" name="id" value="${form.id }" />
 					<div>
-						<span class="title">姓名：</span> <input type="text" name="name"
-							value="${form.name}" /> <strong class="important">*</strong> <span
-							class="error">${form.errors.name }</span>
+						<span class="title">姓名：</span>
+						<input type="text" name="name" value="${form.name}" />
+						<strong class="important">*</strong>
+						<span class="error">${form.errors.name }</span>
 					</div>
 					<div>
-						<span class="title">班级：</span> <select name="cid">
+						<span class="title">班级：</span>
+						<select name="cid">
 							<c:forEach var="item" items="${list}">
 								<option value="${item.id }"
 									<c:if test="${form.cid==item.id }">selected="selected"</c:if>>${item.name }</option>
 							</c:forEach>
-						</select> <strong class="important">*</strong> <span class="error">${form.errors.cid }</span>
+						</select>
+						<strong class="important">*</strong>
+						<span class="error">${form.errors.cid }</span>
 					</div>
 					<div>
-						<span class="title">手机号：</span> <input type="text" name="phone"
-							value="${form.phone}" /> <strong class="important">*</strong> <span
-							class="error">${form.errors.phone }</span>
+						<span class="title">手机号：</span>
+						<input type="text" name="phone" value="${form.phone}" />
+						<strong class="important">*</strong>
+						<span class="error">${form.errors.phone }</span>
 					</div>
 					<div>
-						<span class="title">邮箱：</span> <input type="text" name="email"
-							value="${form.email}" /> <span class="error">${form.errors.email }</span>
+						<span class="title">邮箱：</span>
+						<input type="text" name="email" value="${form.email}" />
+						<strong class="important">*</strong>
+						<span class="error">${form.errors.email }</span>
 					</div>
 					<div>
-						<span class="title">现居地：</span> <input type="text" name="living"
-							value="${form.living}" />
+						<span class="title">现居地：</span>
+						<input type="text" name="living" value="${form.living}" />
 					</div>
 					<div>
-						<span class="title">公司：</span> <input type="text" name="company"
-							value="${form.company}" />
+						<span class="title">公司：</span>
+						<input type="text" name="company" value="${form.company}" />
 					</div>
 					<div>
 						<span class="title">备注：</span>
@@ -71,7 +78,8 @@
 				</div>
 				<br />
 				<div>
-					<input type="submit" value="提交" /> <input type="button"
+					<input type="submit" value="提交" />
+					<input type="button"
 						onclick="window.location.href='${pageContext.request.contextPath}/servlet/ContactListUIServlet'"
 						value="返回" />
 				</div>

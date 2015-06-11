@@ -62,6 +62,16 @@ public class ContactBusiness {
 	}
 	
 	/**
+	 * reset contact password
+	 * @param data
+	 * @return
+	 */
+	public Result resetPwd(Contact data)
+	{
+		return Common.postT("/contact/resetpwd",MediaType.APPLICATION_JSON, data, Result.class)	;	
+	}
+	
+	/**
 	 * delete contact
 	 * @param data
 	 * @return

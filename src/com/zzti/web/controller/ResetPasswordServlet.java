@@ -10,11 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zzti.bean.Contact;
 import com.zzti.bean.PasswordChangeRequest;
+import com.zzti.bean.Result;
 import com.zzti.bean.TResult;
+import com.zzti.utils.Common;
 import com.zzti.utils.DateUtils;
-import com.zzti.utils.WebUtils;
 import com.zzti.utils.DateUtils.DateStyle;
+import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ResetPasswordForm;
 
 /**
@@ -59,7 +62,7 @@ public class ResetPasswordServlet extends HttpServlet {
 		//compare date 
 		Date date = DateUtils.StringToDate(data.getAddTime(), DateStyle.YYYY_MM_DD_HH_MM_SS);
 		date = DateUtils.addHour(date, 1);		
-		if(date.after(new Date()))//invalid
+		if(date.before(new Date()))//invalid
 		{
 			request.setAttribute("message", "链接已经失效!");
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
@@ -75,7 +78,29 @@ public class ResetPasswordServlet extends HttpServlet {
 			return;
 		}
 		
+		//update passwordchangerequest status
+		Result result1 = new com.zzti.business.PasswordChangeRequestBusiness().update(data);
+		if(result.getResult()!=1)
+		{
+			request.setAttribute("message", result.getMessage());
+			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			return;
+		}
 		
+		//reset contact password
+		Contact contact = new Contact();
+		contact.setEmail(data.getEmail());
+		contact.setPassword(Common.getMD5(form.getConfirmpassword()));
+		result1 = new com.zzti.business.ContactBusiness().resetPwd(contact);
+		if(result1.getResult()!=1)
+		{
+			request.setAttribute("message", result1.getMessage());
+		}
+		else
+		{
+			request.setAttribute("message", "重置密码成功...");
+		}
+		request.getRequestDispatcher("/message.jsp").forward(request, response);
 	}
 
 	/**

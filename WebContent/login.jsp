@@ -25,7 +25,8 @@
 					<span class="error">${form.errors.password }</span>
 				</div>
 				<div>
-					<input type="submit" value="登录"/>
+					<input type="submit" value="登录"/>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="${pageContext.request.contextPath }/servlet/ForgotPasswordUIServlet">忘记密码吗?</a>
 				</div>
 			</form>
 		</div>

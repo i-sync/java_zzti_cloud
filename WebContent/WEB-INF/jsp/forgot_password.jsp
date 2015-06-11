@@ -12,7 +12,7 @@
 			<h3>Forgot password</h3>
 		</div>
 		<div>
-			<form action="${pageContext.request.contextPath }/servlet/ForgetPasswordServlet" method="post">
+			<form action="${pageContext.request.contextPath }/servlet/ForgotPasswordServlet" method="post">
 				<div>
 					<span>邮箱：</span>
 					<input type="text" name="email" value="${form.email}"/>

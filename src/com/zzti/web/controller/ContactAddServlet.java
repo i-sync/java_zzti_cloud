@@ -65,10 +65,20 @@ public class ContactAddServlet extends HttpBaseServlet {
 		data.setIp(WebUtils.getRemoteAddress(request));
 		//添加联系人
 		Result result = new ContactBusiness().add(data);
-		if(result.getResult()!=1)
+		switch(result.getResult())
 		{
-			if(result.getResult()==-1)//说明用户名已存在
-			{
+			case -2://email exist
+				//错误信息
+				form.getErrors().put("email", result.getMessage());
+				//获取班级列表 
+				ListResult<com.zzti.bean.Class> result2 = new ClassBusiness().getList();				
+				request.setAttribute("list", result2.getList());				
+				
+				//表单
+				request.setAttribute("form", form);
+				request.getRequestDispatcher("/WEB-INF/jsp/contact/contact_add.jsp").forward(request, response);
+				break;
+			case -1://说明用户名已存在
 				//错误信息
 				form.getErrors().put("name", result.getMessage());
 				//获取班级列表 
@@ -78,14 +88,16 @@ public class ContactAddServlet extends HttpBaseServlet {
 				//表单
 				request.setAttribute("form", form);
 				request.getRequestDispatcher("/WEB-INF/jsp/contact/contact_add.jsp").forward(request, response);
-				return;
-			}
-			
-			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
-			return;
+				break;
+			case 0:
+				request.setAttribute("message", result.getMessage());
+				request.getRequestDispatcher("/message.jsp").forward(request, response);
+				break;
+			default://default success
+				//添加成功  跳转到列表页面
+				response.sendRedirect(request.getContextPath()+"/servlet/ContactListUIServlet");		
+				break;
+		
 		}
-		//添加成功  跳转到列表页面
-		response.sendRedirect(request.getContextPath()+"/servlet/ContactListUIServlet");		
 	}
 }

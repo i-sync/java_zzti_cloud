@@ -64,32 +64,35 @@ public class ContactUpdateServlet extends HttpBaseServlet {
 		data.setIp(WebUtils.getRemoteAddress(request));
 		// 修改联系人
 		Result result = new ContactBusiness().update(data);
-		if (result.getResult() != 1)// 错误
+		switch(result.getResult())
 		{
-			if (result.getResult() == -1)// 说明用户名已存在
-			{
-				form.getErrors().put("name", result.getMessage());
+			case -2:
+				form.getErrors().put("email", result.getMessage());
 				// 获取班级列表
-				ListResult<com.zzti.bean.Class> result1 = new ClassBusiness()
-						.getList();
-				request.setAttribute("list", result1.getList());
-
+				ListResult<com.zzti.bean.Class> result2 = new ClassBusiness().getList();
+				request.setAttribute("list", result2.getList());				
 				// 表单
 				request.setAttribute("form", form);
-				request.getRequestDispatcher(
-						"/WEB-INF/jsp/contact/contact_update.jsp").forward(
-						request, response);
-				return;
-			}
-
-			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request,
-					response);
-			return;
+				request.getRequestDispatcher("/WEB-INF/jsp/contact/contact_update.jsp").forward(request, response);
+				break;
+			case -1://user name exist
+				form.getErrors().put("name", result.getMessage());
+				// 获取班级列表
+				ListResult<com.zzti.bean.Class> result1 = new ClassBusiness().getList();
+				request.setAttribute("list", result1.getList());				
+				// 表单
+				request.setAttribute("form", form);
+				request.getRequestDispatcher("/WEB-INF/jsp/contact/contact_update.jsp").forward(request, response);
+				break;
+			case 0:
+				request.setAttribute("message", result.getMessage());
+				request.getRequestDispatcher("/message.jsp").forward(request,response);
+				break;
+			default://success
+				// 修改成功 跳转到列表页面
+				response.sendRedirect(request.getContextPath() + "/servlet/ContactListUIServlet");
+				break;
 		}
-		// 修改成功 跳转到列表页面
-		response.sendRedirect(request.getContextPath()
-				+ "/servlet/ContactListUIServlet");
 	}
 
 }

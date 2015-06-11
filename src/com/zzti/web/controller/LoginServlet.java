@@ -84,7 +84,7 @@ public class LoginServlet extends HttpServlet {
 				ObjectMapper mapper = new ObjectMapper();
 				data = mapper.convertValue(result.getT(), Contact.class);
 				HttpSession session = request.getSession();
-				System.out.println(data.getId());
+				//System.out.println(data.getId());
 				session.setAttribute("id", data.getId());
 				//登录成功  跳转到首页
 				response.sendRedirect(request.getContextPath()+"/servlet/IndexUIServlet");	
