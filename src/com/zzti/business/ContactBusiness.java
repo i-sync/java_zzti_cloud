@@ -23,6 +23,16 @@ public class ContactBusiness {
 	}
 	
 	/**
+	 * check email if exist
+	 * @param email
+	 * @return
+	 */
+	public Boolean emailExist(String email)
+	{		
+		return Common.getT("/contact/email/"+email, MediaType.TEXT_PLAIN, Boolean.class);
+	}
+	
+	/**
 	 * add contact
 	 * @param data
 	 * @return
