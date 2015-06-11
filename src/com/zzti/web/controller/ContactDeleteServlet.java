@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.zzti.business.ContactBusiness;
 import com.zzti.bean.Contact;
 import com.zzti.bean.Result;
+import com.zzti.common.HttpBaseServlet;
 import com.zzti.utils.RegexUtil;
 
 /**
  * Servlet implementation class ContactDeleteServlet
  */
 @WebServlet("/ContactDeleteServlet")
-public class ContactDeleteServlet extends HttpServlet {
+public class ContactDeleteServlet extends HttpBaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -30,7 +31,7 @@ public class ContactDeleteServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doDeal(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		// 判断参数是否正确
 		if (!RegexUtil.isInteger(id)) {
@@ -51,13 +52,6 @@ public class ContactDeleteServlet extends HttpServlet {
 			return;
 		}
 		response.sendRedirect(request.getContextPath()+"/servlet/ContactListUIServlet");
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }

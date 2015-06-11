@@ -15,6 +15,7 @@ import com.zzti.business.ContactBusiness;
 import com.zzti.bean.Contact;
 import com.zzti.bean.ListResult;
 import com.zzti.bean.Result;
+import com.zzti.common.HttpBaseServlet;
 import com.zzti.utils.DateUtils;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ContactForm;
@@ -23,7 +24,7 @@ import com.zzti.web.formbean.ContactForm;
  * Servlet implementation class ContactAddServlet
  */
 @WebServlet("/ContactAddServlet")
-public class ContactAddServlet extends HttpServlet {
+public class ContactAddServlet extends HttpBaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -32,11 +33,13 @@ public class ContactAddServlet extends HttpServlet {
     public ContactAddServlet() {
         super();
     }
-
+    
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doDeal(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ContactForm form = WebUtils.requestToBean(request, ContactForm.class);
 		boolean flag = form.validate();
 		//验证
@@ -85,12 +88,4 @@ public class ContactAddServlet extends HttpServlet {
 		//添加成功  跳转到列表页面
 		response.sendRedirect(request.getContextPath()+"/servlet/ContactListUIServlet");		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-
 }

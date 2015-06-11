@@ -13,6 +13,7 @@ import com.zzti.business.ContactBusiness;
 import com.zzti.bean.Contact;
 import com.zzti.bean.ListResult;
 import com.zzti.bean.Page;
+import com.zzti.common.HttpBaseServlet;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ContactForm;
 
@@ -20,7 +21,7 @@ import com.zzti.web.formbean.ContactForm;
  * Servlet implementation class ContactListUIServlet
  */
 @WebServlet("/ContactListUIServlet")
-public class ContactListUIServlet extends HttpServlet {
+public class ContactListUIServlet extends HttpBaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -34,18 +35,8 @@ public class ContactListUIServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request,
+	protected void doDeal(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		
-		//check user is login
-		Object obj = request.getSession().getAttribute("id");
-		int id = obj ==null?0:Integer.parseInt(obj.toString());
-		if(id==0)
-		{
-			response.sendRedirect(request.getContextPath()+"/servlet/LoginUIServlet");
-			return;
-		}
-		
 		ContactForm form = WebUtils.requestToBean(request, ContactForm.class);
 		Contact data = new Contact();
 		WebUtils.copyBean(form, data);
@@ -84,14 +75,4 @@ public class ContactListUIServlet extends HttpServlet {
 				.forward(request, response);
 
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-
 }

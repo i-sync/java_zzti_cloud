@@ -13,6 +13,7 @@ import com.zzti.business.ContactBusiness;
 import com.zzti.bean.Contact;
 import com.zzti.bean.ListResult;
 import com.zzti.bean.Result;
+import com.zzti.common.HttpBaseServlet;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ContactForm;
 
@@ -20,7 +21,7 @@ import com.zzti.web.formbean.ContactForm;
  * Servlet implementation class ContactUpdateServlet
  */
 @WebServlet("/ContactUpdateServlet")
-public class ContactUpdateServlet extends HttpServlet {
+public class ContactUpdateServlet extends HttpBaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -34,7 +35,7 @@ public class ContactUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request,
+	protected void doDeal(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		ContactForm form = WebUtils.requestToBean(request, ContactForm.class);
 		boolean flag = form.validate();
@@ -89,15 +90,6 @@ public class ContactUpdateServlet extends HttpServlet {
 		// 修改成功 跳转到列表页面
 		response.sendRedirect(request.getContextPath()
 				+ "/servlet/ContactListUIServlet");
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }

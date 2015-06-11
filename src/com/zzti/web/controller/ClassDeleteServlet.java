@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.zzti.business.ClassBusiness;
 import com.zzti.bean.Class;
 import com.zzti.bean.Result;
+import com.zzti.common.HttpBaseServlet;
 import com.zzti.utils.RegexUtil;
 
 /**
  * Servlet implementation class ClassDeleteServlet
  */
 @WebServlet("/ClassDeleteServlet")
-public class ClassDeleteServlet extends HttpServlet {
+public class ClassDeleteServlet extends HttpBaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -32,10 +33,10 @@ public class ClassDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request,
+	protected void doDeal(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		
 		String id = request.getParameter("id");
-
 		// 判断参数是否正确
 		if (!RegexUtil.isInteger(id)) {
 			request.setAttribute("message", "参数错误！");
@@ -56,14 +57,4 @@ public class ClassDeleteServlet extends HttpServlet {
 		
 		response.sendRedirect(request.getContextPath()+"/servlet/ClassListUIServlet");
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-
 }

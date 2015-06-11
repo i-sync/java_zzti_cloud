@@ -39,6 +39,14 @@
     <url-pattern>/servlet/IndexUIServlet</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>PasswordUpdateUIServlet</servlet-name>
+    <servlet-class>com.zzti.web.ui.PasswordUpdateUIServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PasswordUpdateUIServlet</servlet-name>
+    <url-pattern>/servlet/PasswordUpdateUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ClassListUIServlet</servlet-name>
     <servlet-class>com.zzti.web.ui.ClassListUIServlet</servlet-class>
   </servlet>
@@ -101,6 +109,14 @@
   <servlet-mapping>
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/servlet/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PasswordUpdateServlet</servlet-name>
+    <servlet-class>com.zzti.web.controller.PasswordUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PasswordUpdateServlet</servlet-name>
+    <url-pattern>/servlet/PasswordUpdateServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ClassAddServlet</servlet-name>

@@ -12,12 +12,13 @@ import com.zzti.business.ClassBusiness;
 import com.zzti.bean.Class;
 import com.zzti.bean.Contact;
 import com.zzti.bean.ListResult;
+import com.zzti.common.HttpBaseServlet;
 
 /**
  * Servlet implementation class ContactAddUIServlet
  */
 @WebServlet("/ContactAddUIServlet")
-public class ContactAddUIServlet extends HttpServlet {
+public class ContactAddUIServlet extends HttpBaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -31,16 +32,7 @@ public class ContactAddUIServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//check user is login
-		Object obj = request.getSession().getAttribute("id");
-		int id = obj ==null?0:Integer.parseInt(obj.toString());
-		if(id==0)
-		{
-			response.sendRedirect(request.getContextPath()+"/servlet/LoginUIServlet");
-			return;
-		}
-		
+	protected void doDeal(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		//获取班级列表
 		ListResult<Class> result = new ClassBusiness().getList();
 		if(result.getResult()!=1)
@@ -52,12 +44,4 @@ public class ContactAddUIServlet extends HttpServlet {
 		request.setAttribute("list", result.getList());
 		request.getRequestDispatcher("/WEB-INF/jsp/contact/contact_add.jsp").forward(request, response);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-
 }

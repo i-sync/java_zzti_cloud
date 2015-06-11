@@ -109,6 +109,7 @@ ul li
 			
 			<label style="float:right;">
 				<a href="#">${user.name}</a>&nbsp;&nbsp;
+				<a href="${pageContext.request.contextPath }/servlet/PasswordUpdateUIServlet">修改密码</a>&nbsp;&nbsp;
 				<a href="${ pageContext.request.contextPath}/servlet/LogoutServlet">登出</a>
 			</label>
 		</div>
