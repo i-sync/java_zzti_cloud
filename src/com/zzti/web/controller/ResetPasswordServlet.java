@@ -98,7 +98,7 @@ public class ResetPasswordServlet extends HttpServlet {
 		}
 		else
 		{
-			request.setAttribute("message", "重置密码成功...");
+			request.setAttribute("message", String.format("重置密码成功,点击<a href='%s/servlet/LoginUIServlet'>返回</a>登录...",request.getContextPath()));
 		}
 		request.getRequestDispatcher("/message.jsp").forward(request, response);
 	}

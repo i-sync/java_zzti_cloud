@@ -8,6 +8,9 @@ import java.util.Properties;
 
 public class Common {
 	public static String ServiceURL;
+	public static String EmailHost;
+	public static String EmailPort;
+	public static String EmailFrom;
 	static
 	{
 		readConfig();
@@ -27,7 +30,11 @@ public class Common {
 		}
 		//
 		ServiceURL = pro.getProperty("serviceUrl");
-		System.out.println(ServiceURL);
+		EmailHost = pro.getProperty("emailHost");
+		EmailPort = pro.getProperty("emailPort");
+		EmailFrom = pro.getProperty("emailFrom");
+		
+		System.out.println(String.format("%1$s,%2$s,%3$s,%4$s", ServiceURL,EmailHost,EmailPort,EmailFrom));
 	}
 	
 	
