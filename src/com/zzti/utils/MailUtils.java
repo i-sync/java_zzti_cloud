@@ -45,13 +45,11 @@ public class MailUtils {
 		//properties.setProperty("mail.smtp.socketFactory.port", port);//465
 		//properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		//properties.setProperty("mail.smtp.auth", "true");
-		//Authenticator auth = new SMTPAuthenticator(from, "51168888");
+		//Authenticator auth = new SMTPAuthenticator(from, "xxxx");
 		// Get the default Session object.
 		Session session = Session.getDefaultInstance(properties);
 		
 		try {
-			Transport transport = session.getTransport("smtp");
-			transport.connect();
 			// Create a default MimeMessage object.
 			MimeMessage message = new MimeMessage(session);
 
@@ -72,9 +70,7 @@ public class MailUtils {
 			
 			//message.saveChanges();
 			// Send message
-			//Transport.send(message);
-			transport.sendMessage(message, message.getAllRecipients());
-			transport.close();
+			Transport.send(message);
 		} catch (MessagingException ex) {
 			ex.printStackTrace();
 		}

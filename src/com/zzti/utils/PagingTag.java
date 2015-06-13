@@ -6,8 +6,8 @@ import javax.servlet.jsp.tagext.TagSupport;
 public class PagingTag extends TagSupport {
 
 	public enum PageType {
-		English("First", "Prev", "Next", "Last"), Chinese("��ҳ", "��һҳ", "��һҳ",
-				"ĩҳ"), Sign("<<", "<", ">", ">>");
+		English("First", "Prev", "Next", "Last"), Chinese("首页", "上一页", "下一页",
+				"末页"), Sign("<<", "<", ">", ">>");
 
 		private String first;
 		private String prev;
@@ -47,7 +47,7 @@ public class PagingTag extends TagSupport {
 	private int pageMax;
 	private String url;
 
-	private PageType type = PageType.English;
+	private PageType type =PageType.valueOf(Common.PageType); //PageType.English;
 
 	public int getPageIndex() {
 		return pageIndex;

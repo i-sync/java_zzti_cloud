@@ -11,6 +11,8 @@ public class Common {
 	public static String EmailHost;
 	public static String EmailPort;
 	public static String EmailFrom;
+	public static int PageSize;
+	public static String PageType;
 	static
 	{
 		readConfig();
@@ -33,8 +35,9 @@ public class Common {
 		EmailHost = pro.getProperty("emailHost");
 		EmailPort = pro.getProperty("emailPort");
 		EmailFrom = pro.getProperty("emailFrom");
-		
-		System.out.println(String.format("%1$s,%2$s,%3$s,%4$s", ServiceURL,EmailHost,EmailPort,EmailFrom));
+		PageSize= Integer.parseInt(pro.getProperty("pageSize","20"));
+		PageType = pro.getProperty("pageType","English");
+		//System.out.println(String.format("%1$s,%2$s,%3$s,%4$s", ServiceURL,EmailHost,EmailPort,EmailFrom));
 	}
 	
 	

@@ -14,6 +14,7 @@ import com.zzti.bean.Contact;
 import com.zzti.bean.ListResult;
 import com.zzti.bean.Page;
 import com.zzti.common.HttpBaseServlet;
+import com.zzti.utils.Common;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ContactForm;
 
@@ -45,7 +46,7 @@ public class ContactListUIServlet extends HttpBaseServlet {
 				.parseInt(request.getParameter("pageIndex"));
 		Page page = new Page();
 		page.setPageIndex(pageIndex);
-		page.setPageSize(10);
+		page.setPageSize(Common.PageSize);
 		data.setPage(page);
 		// 获取班级列表
 		ListResult<com.zzti.bean.Class> result = new ClassBusiness()

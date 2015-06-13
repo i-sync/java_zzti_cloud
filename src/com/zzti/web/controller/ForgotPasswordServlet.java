@@ -66,12 +66,12 @@ public class ForgotPasswordServlet extends HttpServlet {
 		}
 		//send an email
 		String content =String.format("<html><body><p><strong>亲爱的用户：</strong></p><br/>"
-				+ "<p>&nbsp;&nbsp;&nbsp;&nbsp;你好!,感谢您使用通讯录服务，您正在进行重置密码，若非本人操作请忽略此邮件...</p>"
+				+ "<p>&nbsp;&nbsp;&nbsp;&nbsp;您好!,感谢您使用通讯录服务，您正在进行重置密码，若非本人操作请忽略此邮件...</p>"
 				+ "<p>请点击此链接进行密码重置:"
 				+ "	<a href='%1$s://%2$s:%3$s%4$s/servlet/ResetPasswordUIServlet?guid=%5$s'>%1$s://%2$s:%3$s%4$s/servlet/ResetPasswordUIServlet?guid=%5$s</a>"
 				+ "	<span style='margin:0px;padding:0px;margin-left:10px;line-height:30px;font-size:14px;color:#979797;'>(为了保障您帐号的安全性，请在1小时内完成验证.)</span>"
 				+ "</p></body></html>",request.getScheme(),request.getServerName(),request.getServerPort(),request.getContextPath(),guid);
-		System.out.println(content);
+		//System.out.println(content);
 		new MailUtils().SendEmail(data.getEmail(), "通讯录--密码重置", content);
 		
 		//success 
