@@ -3,6 +3,8 @@ package com.zzti.web.formbean;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.zzti.utils.RegexUtil;
+
 public class LoginForm {
 	private String phone;
 	private String password;
@@ -37,6 +39,13 @@ public class LoginForm {
 		{
 			flag =false;
 			this.errors.put("phone", "手机号不能为空!");
+		}
+		else//验证手机号是否正确
+		{
+			if (!RegexUtil.isPhone(this.phone)) {
+				flag = false;
+				this.errors.put("phone", "请输入正确的手机号码！");
+			}
 		}
 		if(this.password==null || this.password.trim().equals(""))
 		{

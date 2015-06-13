@@ -8,11 +8,17 @@ import java.util.Properties;
 
 public class Common {
 	public static String ServiceURL;
+	
+	public static int PageSize;
+	public static String PageType;
+	
 	public static String EmailHost;
 	public static String EmailPort;
 	public static String EmailFrom;
-	public static int PageSize;
-	public static String PageType;
+	public static String EmailUser;
+	public static String EmailPwd;
+	public static String EmailAuth;
+	
 	static
 	{
 		readConfig();
@@ -32,11 +38,16 @@ public class Common {
 		}
 		//
 		ServiceURL = pro.getProperty("serviceUrl");
+		
+		PageSize= Integer.parseInt(pro.getProperty("pageSize","20"));
+		PageType = pro.getProperty("pageType","English");
+		
 		EmailHost = pro.getProperty("emailHost");
 		EmailPort = pro.getProperty("emailPort");
 		EmailFrom = pro.getProperty("emailFrom");
-		PageSize= Integer.parseInt(pro.getProperty("pageSize","20"));
-		PageType = pro.getProperty("pageType","English");
+		EmailUser = pro.getProperty("emailUser");
+		EmailPwd = pro.getProperty("emailPwd");
+		EmailAuth = pro.getProperty("emailAuth","false");
 		//System.out.println(String.format("%1$s,%2$s,%3$s,%4$s", ServiceURL,EmailHost,EmailPort,EmailFrom));
 	}
 	

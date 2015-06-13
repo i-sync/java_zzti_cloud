@@ -5,22 +5,18 @@
 <head>
 <title>Forgot password</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/css/style.css">
 </head>
 <body>
-	<div>
-		<div>
-			<h3>Forgot password</h3>
-		</div>
-		<div>
+	<div class="wrapper">
+		<div class="container">
+			<h1>Forgot password?</h1>
 			<form action="${pageContext.request.contextPath }/servlet/ForgotPasswordServlet" method="post">
-				<div>
-					<span>邮箱：</span>
-					<input type="text" name="email" value="${form.email}"/>
-					<span class="error">${form.errors.email }</span>
-				</div>
-				<div>
-					<input type="submit" value="提交"/>
-				</div>
+					<input type="email" name="email" class='${form.errors.email!=null?"error":"" }' placeholder='Email' title="${form.errors.email }" value="${form.email}" required/>
+
+					<input type="submit" value="Submit"/>
+					<a href="${pageContext.request.contextPath }/servlet/LoginUIServlet">Come Back</a>
 			</form>
 		</div>
 	</div>

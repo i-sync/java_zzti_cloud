@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 		Contact data = new Contact();
 		data.setPhone(form.getPhone());
 		data.setPassword(Common.getMD5(form.getPassword()));
-		System.out.println("-------password-------->"+Common.getMD5(form.getPassword()));
+		//System.out.println("-------password-------->"+Common.getMD5(form.getPassword()));
 		TResult<Contact> result = new com.zzti.business.ContactBusiness().login(data);
 		if(result ==null)
 		{

@@ -15,11 +15,18 @@ public class MailUtils {
 	private String host;
 	private String port;
 	private String from;
+	private String user;
+	private String pwd;
+	private Boolean auth;
 
 	public MailUtils() {
 		host = Common.EmailHost;
 		port = Common.EmailPort;
 		from = Common.EmailFrom;
+		
+		user= Common.EmailUser;
+		pwd= Common.EmailPwd;
+		auth = Boolean.parseBoolean(Common.EmailAuth);
 	}
 
 	/**
@@ -36,18 +43,21 @@ public class MailUtils {
 		// Setup mail server
 		properties.setProperty("mail.smtp.host", host);
 		properties.setProperty("mail.smtp.port", port);
-		properties.put("mail.smtp.auth", false);
+		properties.put("mail.smtp.auth", auth);
 
 		//properties.setProperty("mail.transport.protocol", "smtp");
 		//properties.setProperty("mail.smtp.localhost", host); // HELO host
 		//properties.setProperty("mail.smtp.allow8bitmime","true");	    
 	    
-		//properties.setProperty("mail.smtp.socketFactory.port", port);//465
-		//properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-		//properties.setProperty("mail.smtp.auth", "true");
-		//Authenticator auth = new SMTPAuthenticator(from, "xxxx");
+		Authenticator authenticator = null;
+		if (auth)
+		{
+			properties.setProperty("mail.smtp.socketFactory.port", port);//465
+			properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+			authenticator = new SMTPAuthenticator(user,pwd);
+		}
 		// Get the default Session object.
-		Session session = Session.getDefaultInstance(properties);
+		Session session = Session.getDefaultInstance(properties,authenticator);
 		
 		try {
 			// Create a default MimeMessage object.

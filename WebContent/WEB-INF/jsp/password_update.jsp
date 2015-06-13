@@ -8,32 +8,22 @@
 
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath }/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/css/style.css">
 </head>
 <body>
-	<div>
-		<div>
-			<h3>Update Password</h3>
-		</div>
-		<div>
+	<div class="wrapper">
+		<div class="container">
+			<h1>Update Password</h1>
 			<form action="${pageContext.request.contextPath }/servlet/PasswordUpdateServlet" method="post">
-				<div>
-					<span>旧&nbsp;&nbsp;密&nbsp;&nbsp;码：</span>
-					<input type="password" name="oldpassword" value="${form.oldpassword}"/>
-					<span class="error">${form.errors.oldpassword }</span>
-				</div>
-				<div>
-					<span>新&nbsp;&nbsp;密&nbsp;&nbsp;码：</span>
-					<input type="password" name="newpassword" value="${form.newpassword}"/>
-					<span class="error">${form.errors.newpassword }</span>
-				</div>
-				<div>
-					<span>确认密码：</span>
-					<input type="password" name="confirmpassword" value="${form.confirmpassword}"/>
-					<span class="error">${form.errors.confirmpassword }</span>
-				</div>
-				<div>
-					<input type="submit" value="确认"/>
-					<input type="button" onclick="window.location.href='${pageContext.request.contextPath}/servlet/IndexUIServlet'" value="返回"/>
+
+				<input type="password" placeholder="OldPassword" class='${form.errors.oldpassword!=null?"error":"" }' name="oldpassword" value="${form.oldpassword}" title="${form.errors.oldpassword }" required />
+				<input type="password" placeholder="NewPassword" class='${form.errors.newpassword!=null?"error":"" }' name="newpassword" value="${form.newpassword}" title="${form.errors.newpassword }" required />
+				
+				<input type="password" placeholder="ConfirmPassword" class='${form.errors.confirmpassword!=null?"error":"" }' name="confirmpassword" value="${form.confirmpassword}" title="${form.errors.confirmpassword }" required />
+				
+				<input type="submit" value="Submit"/>
+				<a href='${pageContext.request.contextPath}/servlet/IndexUIServlet'>Return Index</a>
 				</div>
 			</form>
 		</div>

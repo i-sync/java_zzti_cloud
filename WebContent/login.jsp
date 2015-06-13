@@ -5,31 +5,50 @@
 <html>
 <head>
 <title>Contact Login</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/css/style.css">
+
 </head>
 <body>
-	<div id="login">
-		<div>
-			<h2>Contact Login</h2>
-		</div>
-		<div>
-			<form action="${pageContext.request.contextPath}/servlet/LoginServlet" method="post">
+	<div class="wrapper">
+		<div class="container">
+			<h1>Welcome</h1>
+			<form
+				action="${pageContext.request.contextPath}/servlet/LoginServlet"
+				method="post">
 				<div>
-					<span>手机号：</span>
-					<input type="text" name="phone" value="${form.phone}"/>
-					<span class="error">${form.errors.phone }</span>
+					<input type="text" name="phone" placeholder="Phone"
+						value="${form.phone }"
+						class='${form.errors.phone!=null?"error":"" }'
+						required title="${form.errors.phone}" />
 				</div>
 				<div>
-					<span>密&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
-					<input type="password" name="password"/>
-					<span class="error">${form.errors.password }</span>
+					<input type="password" name="password" placeholder="Password"
+						class='${form.errors.password!=null?"error":"" }'
+						required title="${form.errors.password }" />
 				</div>
 				<div>
-					<input type="submit" value="登录"/>&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="${pageContext.request.contextPath }/servlet/ForgotPasswordUIServlet">忘记密码吗?</a>
+					<input id="login-button" type="submit" value="Login" />
+					<a class="forgot"
+						href="${pageContext.request.contextPath }/servlet/ForgotPasswordUIServlet">Forgot
+						password?</a>
 				</div>
 			</form>
 		</div>
+		<!-- ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul-->
 	</div>
 </body>
 </html>

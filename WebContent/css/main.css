@@ -58,7 +58,17 @@ table.hovertable td {
 {
 	color:#FF0000;
 }
-.error
+span.error
 {
 	color: #FF0000;
+}
+
+input.error
+{
+	border-color:rgba(255, 0, 0, 0.8);
+}
+
+a
+{
+	text-decoration:none;	
 }
