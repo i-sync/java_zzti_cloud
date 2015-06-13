@@ -32,7 +32,7 @@
 						<td>${item.vocational }</td>
 						<td>
 							<a href="${pageContext.request.contextPath }/servlet/ClassUpdateUIServlet?id=${item.id}">修改</a>
-							<a onclick="return confirm('你确定要删除‘${item.name}’吗？')" href="${pageContext.request.contextPath }/servlet/ClassDeleteServlet?id=${item.id}">删除</a>
+							<%--<a onclick="return confirm('你确定要删除‘${item.name}’吗？')" href="${pageContext.request.contextPath }/servlet/ClassDeleteServlet?id=${item.id}">删除</a> --%>
 						</td>
 					</tr>
 				</c:forEach>

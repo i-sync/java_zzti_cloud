@@ -90,9 +90,8 @@
 					<td title="${item.remark }">${fn:length(item.remark)>20?fn:substring(item.remark,0,15).concat('......') :item.remark }</td>
 					<td><a
 						href="${pageContext.request.contextPath }/servlet/ContactUpdateUIServlet?id=${item.id}">修改</a>
-						<a
-						onclick="return confirm('您确定要删除‘${item.name}’吗？请不要随便删除别人的信息噢！');"
-						href="${pageContext.request.contextPath }/servlet/ContactDeleteServlet?id=${item.id}">删除</a>
+						<%--a onclick="return confirm('您确定要删除‘${item.name}’吗？请不要随便删除别人的信息噢！');"
+						href="${pageContext.request.contextPath }/servlet/ContactDeleteServlet?id=${item.id}">删除</a>--%>
 					</td>
 				</tr>
 			</c:forEach>
