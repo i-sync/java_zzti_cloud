@@ -71,7 +71,7 @@ public class MailUtils {
 					to));
 
 			// Set Subject: header field
-			message.setSubject(title);
+			message.setSubject(title, "UTF-8");
 
 			// Now set the actual message
 			//message.setText(content);
