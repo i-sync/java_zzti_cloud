@@ -21,65 +21,22 @@
 		<div class="col s12 m7">
 			<div class="card large">
 				<div class="card-image waves-effect waves-block waves-light">
-					<img class="activator" src="${pageContext.request.contextPath }/img/office.jpg">
+					<img class="activator" src="${pageContext.request.contextPath }/img/091-2.JPG">
 				</div>
 				<div class="card-content">
-					<span class="card-title activator grey-text text-darken-4">Card
-						Title <i class="mdi-navigation-more-vert right"></i>
+					<span class="card-title activator grey-text text-darken-4">编码091-092 <i class="mdi-navigation-more-vert right"></i>
 					</span>
-					<p>
-						<a href="#">This is a link</a>
-					</p>
 				</div>
 				<div class="card-reveal">
-					<span class="card-title grey-text text-darken-4">Card Title <i
+					<span class="card-title grey-text text-darken-4">编码091-092 <i
 						class="mdi-navigation-close right"></i></span>
-					<p>Here is some more information about this product that is only
-						revealed once clicked on.</p>
-				</div>
-			</div>
-		</div>
-		<div class="col s12 m5">
-			<div class="card medium">
-				<div class="card-image waves-effect waves-block waves-light">
-					<img class="activator" src="${pageContext.request.contextPath }/img/office.jpg">
-				</div>
-				<div class="card-content">
-					<span class="card-title activator grey-text text-darken-4">Card
-						Title <i class="mdi-navigation-more-vert right"></i>
-					</span>
 					<p>
-						<a href="#">This is a link</a>
+					&nbsp;&nbsp;事过境迁，淡定若菊，激情湮没于时间的洪荒里，终日絮絮叨叨，对着墙上的孤影，对着杯里的残茗，对着青冷的荧屏，对着静默的三寸白笺，然后一切皆在梦里释放。
+					</p><p>
+　　					&nbsp;&nbsp;一首音乐，播放着谁的心事？感性的自己竟会听着泪流满面，寂静的夜里，听着这首《中工颂》，梳理着如歌的岁月，抒写着如梦的诗行。是想起推荐这首歌的朋友，还是感动于歌曲本身忧伤的旋律，兴许都有吧。
+					</p><p>
+　　					&nbsp;&nbsp;还好吗？久违的问候自遥远的天际，自浩渺的网络，自魂之幽远，自灵之深处，直抵柔软的心房。总有种期待和向往，如冬之严寒渴盼春暖花开，如涓涓细流渴盼流向大海，只有回不去少年时光，令人徒生怅惘。
 					</p>
-				</div>
-				<div class="card-reveal">
-					<span class="card-title grey-text text-darken-4">Card Title <i
-						class="mdi-navigation-close right"></i></span>
-					<p>Here is some more information about this product that is only
-						revealed once clicked on.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col s12 m7">
-			<div class="card large">
-				<div class="card-image waves-effect waves-block waves-light">
-					<img class="activator" src="${pageContext.request.contextPath }/img/office.jpg">
-				</div>
-				<div class="card-content">
-					<span class="card-title activator grey-text text-darken-4">Card
-						Title <i class="mdi-navigation-more-vert right"></i>
-					</span>
-					<p>
-						<a href="#">This is a link</a>
-					</p>
-				</div>
-				<div class="card-reveal">
-					<span class="card-title grey-text text-darken-4">Card Title <i
-						class="mdi-navigation-close right"></i></span>
-					<p>Here is some more information about this product that is only
-						revealed once clicked on.</p>
 				</div>
 			</div>
 		</div>

@@ -8,25 +8,57 @@
 
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath }/css/main.css">
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath }/css/style.css">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath }/css/materialize.css"
+	media="screen,projection" />
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/materialize.js"></script>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="container">
-			<h1>Update Password</h1>
-			<form action="${pageContext.request.contextPath }/servlet/PasswordUpdateServlet" method="post">
-
-				<input type="password" placeholder="OldPassword" class='${form.errors.oldpassword!=null?"error":"" }' name="oldpassword" value="${form.oldpassword}" title="${form.errors.oldpassword }" required />
-				<input type="password" placeholder="NewPassword" class='${form.errors.newpassword!=null?"error":"" }' name="newpassword" value="${form.newpassword}" title="${form.errors.newpassword }" required />
-				
-				<input type="password" placeholder="ConfirmPassword" class='${form.errors.confirmpassword!=null?"error":"" }' name="confirmpassword" value="${form.confirmpassword}" title="${form.errors.confirmpassword }" required />
-				
-				<input type="submit" value="Submit"/>
-				<a href='${pageContext.request.contextPath}/servlet/IndexUIServlet'>Return Index</a>
+	<%@include file="/WEB-INF/jsp/header.jsp"%>
+	
+	<div class="container ">
+		<div class="align">
+			<h4 class="header">Update Password</h4>
+		</div>
+		<div class="row">
+			<form class="col s12 m8 offset-m2 l6 offset-l3" action="${pageContext.request.contextPath }/servlet/PasswordUpdateServlet" method="post">
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="oldPassword" type="password" class='validate ${form.errors.oldpassword==null?"":"invalid tooltipped"}' name="oldpassword" value="${form.oldpassword}" required 
+						data-position="right" data-delay="50" data-tooltip="${form.errors.oldpassword}"/>
+						<label for="oldPassword">OldPassword</label>
+					</div>
 				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="newPassword" type="password" class='validate ${form.errors.newpassword==null?"":"invalid tooltipped"}' name="newpassword" value="${form.newpassword}" required 
+						data-position="right" data-delay="50" data-tooltip="${form.errors.newpassword}"/>
+						<label for="newPassword">NewPassword</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="confirmPassword" type="password" class='validate ${form.errors.confirmpassword==null?"":"invalid tooltipped"}' name="confirmpassword" value="${form.confirmpassword}" required 
+						data-position="right" data-delay="50" data-tooltip="${form.errors.confirmpassword}"/>
+						<label for="confirmPassword">ConfirmPassword</label>
+					</div>
+				</div>
+				<button class="btn waves-effect waves-light right" type="submit">
+					Submit <i class="mdi-content-send right"></i>
+				</button>
 			</form>
 		</div>
 	</div>
+	
+	
+	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>
 </html>

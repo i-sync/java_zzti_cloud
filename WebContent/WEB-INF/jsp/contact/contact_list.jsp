@@ -38,13 +38,12 @@
 		
 		<!-- fix float btn -->
 		<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-		    <a class="btn-floating btn-large blue" href="${pageContext.request.contextPath }/servlet/ContactAddUIServlet">
-		      <i class="large mdi-content-add"></i>
+		    <a class="btn-floating btn-large red" href="${pageContext.request.contextPath }/servlet/ContactAddUIServlet">
+		      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
 		    </a>
 		</div>
 		
-		<div class="row">
-			<div class="col s12">
+		
 				<div class="row">
 					<div class="input-field col s3">
 						<input id="txtName" type="text" value="${form.name }"/>
@@ -68,46 +67,49 @@
 						<a id="btnSearch" class="btn wave-light wave-effect valign center">检索</a>
 					</div>
 				</div>
-			</div>
-		</div>
+
 
 		<div class="row">
-			<table class="striped">
-				<tr>					
-					<th data-field="ID">ID</th>
-					<th data-field="Name">姓名</th>
-					<th data-field="Class">班级</th>
-					<th data-field="Phone">手机号</th>
-					<th data-field="Email">邮箱</th>
-					<th data-field="Living">现居地</th>
-					<th data-field="Company">公司</th>
-					<th data-field="Remark">备注</th>
-					<th data-field="Operate">操作</th>
-				</tr>
-				<c:forEach var="item" items="${list }">
-					<tr>
-						<td>${item.id }</td>
-						<td>${item.name }</td>
-						<td>${item.cname }</td>
-						<td>${item.phone }</td>
-						<td>${item.email }</td>
-						<td>${item.living }</td>
-						<td>${item.company }</td>
-						<td title="${item.remark }">${fn:length(item.remark)>20?fn:substring(item.remark,0,15).concat('......') :item.remark }</td>
-						<td>
-							<a href="${pageContext.request.contextPath }/servlet/ContactUpdateUIServlet?id=${item.id}">
-								<i class="small mdi-editor-mode-edit"></i>
-							</a>
-							<%--a onclick="return confirm('您确定要删除‘${item.name}’吗？请不要随便删除别人的信息噢！');"
-							href="${pageContext.request.contextPath }/servlet/ContactDeleteServlet?id=${item.id}">删除</a>--%>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
-			<br />
-			<page:pageOut
-				url="${pageContext.request.contextPath }/servlet/ContactListUIServlet?name=${form.name }&phone=${form.phone }&cid=${form.cid }"
-				pageIndex="${page.pageIndex }" pageMax="${page.totalCount }"></page:pageOut>
+			<div class="col s12">
+				<div class="row">
+					<table class="striped responsive-table">
+						<tr>					
+							<th data-field="ID">ID</th>
+							<th data-field="Name">姓名</th>
+							<th data-field="Class">班级</th>
+							<th data-field="Phone">手机号</th>
+							<th data-field="Email">邮箱</th>
+							<th data-field="Living">现居地</th>
+							<th data-field="Company">公司</th>
+							<th data-field="Remark">备注</th>
+							<th data-field="Operate">操作</th>
+						</tr>
+						<c:forEach var="item" items="${list }">
+							<tr>
+								<td>${item.id }</td>
+								<td>${item.name }</td>
+								<td>${item.cname }</td>
+								<td>${item.phone }</td>
+								<td>${item.email }</td>
+								<td>${item.living }</td>
+								<td>${item.company }</td>
+								<td title="${item.remark }">${fn:length(item.remark)>20?fn:substring(item.remark,0,15).concat('......') :item.remark }</td>
+								<td style="padding:0px 5px">
+									<a href="${pageContext.request.contextPath }/servlet/ContactUpdateUIServlet?id=${item.id}">
+										<i class="small mdi-editor-mode-edit"></i>
+									</a>
+									<%--a onclick="return confirm('您确定要删除‘${item.name}’吗？请不要随便删除别人的信息噢！');"
+									href="${pageContext.request.contextPath }/servlet/ContactDeleteServlet?id=${item.id}">删除</a>--%>
+								</td>
+							</tr>
+						</c:forEach>
+					</table>
+					<br />
+					<page:pageOut
+						url="${pageContext.request.contextPath }/servlet/ContactListUIServlet?name=${form.name }&phone=${form.phone }&cid=${form.cid }"
+						pageIndex="${page.pageIndex }" pageMax="${page.totalCount }"></page:pageOut>
+				</div>
+			</div>
 		</div>
 	
 		<%@include file="/WEB-INF/jsp/footer.jsp" %>

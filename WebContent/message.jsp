@@ -4,17 +4,45 @@
 <html>
 <head>
 <title>Information</title>
+
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath }/css/style.css">
+	href="${pageContext.request.contextPath }/css/main.css">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath }/css/materialize.css"
+	media="screen,projection" />
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/materialize.js"></script>
+
 </head>
 <body>
-	<div class="wrapper">
-		<div class="container">
-			<h1>Information</h1>
+	<div class="row">
+		<nav>
+			<div class="nav-wrapper">
+				<div class="col s12">
+					<a href="#!" class="brand-logo" style="position:inherit">Contacts</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+	
+	<div class="container section">
+		<div class="row">
+			<h4 class="header">Information</h4>
+		</div>
+		<div class="row">
 			<div>
 				${message }
 			</div>
 		</div>
 	</div>
+	
+	<%--@include file="/WEB-INF/jsp/footer.jsp"--%>
 </body>
 </html>

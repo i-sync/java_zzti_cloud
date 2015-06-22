@@ -1,21 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
+	<div class="row">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo">Contacts</a>
-			<ul id="nav-mobile" class="right hide-off-med-and-down">
-				<li class="active"><a href="${pageContext.request.contextPath }/servlet/IndexUIServlet">首页</a></li>
-				<li><a href="${pageContext.request.contextPath }/servlet/ContactListUIServlet">联系人管理</a></li>
-				<li><a href="${pageContext.request.contextPath }/servlet/ClassListUIServlet">班级管理</a></li>
-				<li><a href="/about.html">关于</a></li>
-			</ul>
+			<div class="col s12">
+				<a href="#!" class="brand-logo" style="position:inherit">Contacts</a>
+				<ul class="right hide-off-med-and-down">
+					<li><a href="${pageContext.request.contextPath }/servlet/IndexUIServlet">首页</a></li>
+					<li><a href="${pageContext.request.contextPath }/servlet/ContactListUIServlet">联系人管理</a></li>
+					<li><a href="${pageContext.request.contextPath }/servlet/ClassListUIServlet">班级管理</a></li>
+					<li><a href="${pageContext.request.contextPath }/servlet/AboutUIServlet">关于</a></li>
+				</ul>
+			</div>
 		</div>
 	</nav>
+	</div>
 	<div class="row">
 		<div class="col s12 right-align">
 			<a href="#">${user.name}</a>&nbsp;&nbsp;
