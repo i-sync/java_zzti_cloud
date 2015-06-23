@@ -19,6 +19,8 @@ public class Common {
 	public static String EmailPwd;
 	public static String EmailAuth;
 	
+	public static String ImagePath;
+	
 	static
 	{
 		readConfig();
@@ -48,6 +50,8 @@ public class Common {
 		EmailUser = pro.getProperty("emailUser");
 		EmailPwd = pro.getProperty("emailPwd");
 		EmailAuth = pro.getProperty("emailAuth","false");
+		
+		ImagePath= pro.getProperty("imagePath");
 		//System.out.println(String.format("%1$s,%2$s,%3$s,%4$s", ServiceURL,EmailHost,EmailPort,EmailFrom));
 	}
 	

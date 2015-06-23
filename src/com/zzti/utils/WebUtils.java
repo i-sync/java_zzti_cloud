@@ -1,10 +1,20 @@
 ﻿package com.zzti.utils;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.Date;
 import java.util.Enumeration;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FilenameUtils;
 
 public class WebUtils {
 
@@ -22,6 +32,51 @@ public class WebUtils {
 				
 				BeanUtils.setProperty(bean, name, value);
 			}
+
+			return bean;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+	public static <T> T requestToBean(HttpServletRequest request,
+			Class<T> beanClass,String root) {
+		try {
+			// 1/创建要封装数据的Bean
+			T bean = beanClass.newInstance();
+			List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+	        for (FileItem item : items) {
+	            if (item.isFormField()) {
+	                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
+	                String name = item.getFieldName();
+	                String value = item.getString();
+	                // ... (do your job here)
+	                BeanUtils.setProperty(bean, name, value);
+	            } else {
+	                // Process form file field (input type="file").
+	                String fieldName = item.getFieldName();
+	                String fileName = FilenameUtils.getName(item.getName());
+	                InputStream fileContent = item.getInputStream();
+	                // ... (do your job here)
+	                if(fileContent==null || fileName==null || fileName.trim().equals(""))
+	                	continue;
+	                //save image	                
+	                fileName= String.format("%d%s",new Date().getTime(),fileName.substring(fileName.indexOf(".")));
+	                //System.out.println(fileName);	           
+	                String filePath = String.format("%s/%s/%s",root,Common.ImagePath,fileName);
+	                System.out.println(filePath);
+
+	                FileOutputStream out=new FileOutputStream(new File(filePath));
+	                byte[] byteBuffer = new byte[1024];
+	                int length = 0;
+	                while ((fileContent != null) && ((length = fileContent.read(byteBuffer)) != -1)){
+	                	out.write(byteBuffer,0,length);
+	                }
+	                out.flush();
+	                out.close();
+	                fileContent.close();
+	                BeanUtils.setProperty(bean, fieldName, fileName);	                
+	            }
+	        }
 
 			return bean;
 		} catch (Exception e) {

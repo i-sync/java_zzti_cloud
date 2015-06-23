@@ -17,6 +17,14 @@
 </head>
 <body>
 	<%@include file="/WEB-INF/jsp/header.jsp" %>
+	
+	<!-- fix float btn -->
+	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+	    <a class="btn-floating btn-large red" href="${pageContext.request.contextPath }/servlet/GalleryAddUIServlet">
+	      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
+	    </a>
+	</div>
+	
 	<div class="row">
 		<div class="col s12 m6">
 			<div class="card large">
