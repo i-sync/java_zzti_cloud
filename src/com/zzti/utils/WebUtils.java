@@ -1,7 +1,9 @@
 ﻿package com.zzti.utils;
 
 import java.util.Enumeration;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.beanutils.BeanUtils;
 
 public class WebUtils {
@@ -12,10 +14,12 @@ public class WebUtils {
 			// 1/创建要封装数据的Bean
 			T bean = beanClass.newInstance();
 			// 2/把request中的数据库封装到Bean
-			Enumeration<String> e = request.getParameterNames();
+			Boolean getMethod = request.getMethod().equalsIgnoreCase("get")?true:false;
+			Enumeration<String> e =getMethod?request.getAttributeNames(): request.getParameterNames();
 			while (e.hasMoreElements()) {
 				String name = e.nextElement();
-				String value = request.getParameter(name);
+				String value = getMethod ? (String) request.getAttribute(name): request.getParameter(name);
+				
 				BeanUtils.setProperty(bean, name, value);
 			}
 
@@ -56,13 +60,13 @@ public class WebUtils {
 		String ip = request.getHeader("x-forwarded-for");
 		if (ip == null || ip.length() == 0 || ip.equalsIgnoreCase("unknown"))
 			ip = request.getHeader("Proxy-Client-IP");
-		System.out.println(ip);
+		//System.out.println(ip);
 		if (ip == null || ip.length() == 0 || ip.equalsIgnoreCase("unknown"))
 			ip = request.getHeader("WL-Proxy-Client-IP");
-		System.out.println(ip);
+		//System.out.println(ip);
 		if (ip == null || ip.length() == 0 || ip.equalsIgnoreCase("unknown"))
 			ip = request.getRemoteAddr();
-		System.out.println(ip);
+		//System.out.println(ip);
 		return ip;
 	}
 }
