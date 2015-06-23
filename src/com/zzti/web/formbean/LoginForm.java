@@ -42,7 +42,7 @@ public class LoginForm {
 		}
 		else//验证手机号是否正确
 		{
-			if (!RegexUtil.isPhone(this.phone)) {
+			if (!RegexUtil.isMobile(this.phone)) {
 				flag = false;
 				this.errors.put("phone", "请输入正确的手机号码！");
 			}

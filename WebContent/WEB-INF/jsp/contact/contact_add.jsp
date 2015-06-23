@@ -1,86 +1,102 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>联系人添加</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/main.css">
-<style rel ="stylesheet" type="text/css">
-	.form .title 
-	{
-		display:inline-block;
-		text-align: right;
-		width:50px;
-	}
-	.form div input
-	{
-		width:150px;
-	}
-	.form div select
-	{
-		width:154px;
-	}
-</style>
+<title>Add Contact</title>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/css/main.css">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath }/css/materialize.css"
+	media="screen,projection" />
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/materialize.js"></script>
+
+<script>
+	$(function() {
+		$("#ddlClass").material_select();
+	});
+</script>
 </head>
 <body>
+	<%@include file="/WEB-INF/jsp/header.jsp"%>
+
 	<div class="container">
-		<div class="title">
-			<h3>联系人添加</h3>
+		<div class="left-align">
+			<h4 class="header">添加联系人</h4>
 		</div>
-		<div class="main">
-			<form action="${pageContext.request.contextPath }/servlet/ContactAddServlet" method="post">
-				<div class="form">
-					<div>
-						<span class="title">姓名：</span>
-						<input type="text" name="name" value="${form.name}"/>
-						<strong class="important">*</strong>
-						<span class="error">${form.errors.name }</span>
+		<div class="row">
+			<form class="col s12 "
+				action="${pageContext.request.contextPath }/servlet/ContactAddServlet"
+				method="post">
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="name" name="name" type="text" class="validate ${form.errors.name==null?'':'invalid tooltipped'}"  value="${form.name}" required 
+						data-position="right" data-delay="50" data-tooltip="${form.errors.name}">
+						<label for="name">name</label>
 					</div>
-					<div>
-						<span class="title">班级：</span>
-						<select name="cid">
+				</div>
+	
+				<div class="row">
+					<div class="input-field col s12">
+						<select id="ddlClass" name="cid">
 							<c:forEach var="item" items="${list}">
-								<option value="${item.id }" <c:if test="${form.cid==item.id }">selected="selected"</c:if>>${item.name }</option>
+								<option value="${item.id }"
+									<c:if test="${form.cid==item.id }">selected="selected"</c:if>>${item.name }</option>
 							</c:forEach>
 						</select>
-						<strong class="important">*</strong>
-						<span class="error">${form.errors.cid }</span>
+						<label>class</label>
 					</div>
-					<div>
-						<span class="title">手机号：</span>
-						<input type="text" name="phone" value="${form.phone}"/>
-						<strong class="important">*</strong>
-						<span class="error">${form.errors.phone }</span>
-					</div>
-					<div>
-						<span class="title">邮箱：</span>
-						<input type="text" name="email" value="${form.email}"/>
-						<strong class="important">*</strong>
-						<span class="error">${form.errors.email }</span>
-					</div>
-					<div>
-						<span class="title">现居地：</span>
-						<input type="text" name="living" value="${form.living}"/>
-					</div>
-					<div>
-						<span class="title">公司：</span>
-						<input type="text" name="company" value="${form.company}"/>
-					</div>
-					<div>
-						<span class="title">备注：</span>						
-						<textarea name="remark" rows="6" cols="40"></textarea>
-					</div>
-				</div><br/>				
-				<div>
-					<input type="submit" value="提交"/>
-					<input type="button" onclick="window.location.href='${pageContext.request.contextPath}/servlet/ContactListUIServlet'" value="返回"/>
 				</div>
+	
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="phone" name="phone" type="text" class="validate ${form.errors.phone==null?'':'invalid tooltipped'}"  value="${form.phone}" required
+						data-position="right" data-delay="50" data-tooltip="${form.errors.phone}">
+						<label for="phone">phone</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="email" name="email" type="email" class="validate ${form.errors.email==null?'':'invalid tooltipped'}" value="${form.email}" required
+						data-position="right" data-delay="50" data-tooltip="${form.errors.email}">
+						<label for="email">email</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="living" name="living" type="text"  value="${form.living}">
+						<label for="living">living</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="company" name="company" type="text"  value="${form.company}">
+						<label for="company">company</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea id="remark" name="remark" class="materialize-textarea">${form.remark}</textarea>
+						<label for="remark">remark</label>
+					</div>
+				</div>
+				<button class="btn waves-effect waves-light right" type="submit">
+					Submit <i class="mdi-content-send right"></i>
+				</button>
 			</form>
-			
-			<br/>
-			<strong class="important"><span>*</span>表示必输项</strong>
 		</div>
 	</div>
+	
+
+	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>
 </html>

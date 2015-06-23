@@ -62,6 +62,15 @@
     <servlet-name>ResetPasswordUIServlet</servlet-name>
     <url-pattern>/servlet/ResetPasswordUIServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AboutUIServlet</servlet-name>
+    <servlet-class>com.zzti.web.ui.AboutUIServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AboutUIServlet</servlet-name>
+    <url-pattern>/servlet/AboutUIServlet</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>ClassListUIServlet</servlet-name>
     <servlet-class>com.zzti.web.ui.ClassListUIServlet</servlet-class>

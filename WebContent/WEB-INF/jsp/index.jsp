@@ -3,139 +3,65 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>首页</title>
-
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath }/css/main.css">
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/js/jquery.qrcode.js"></script>
-<script type="text/javascript">
-	$(function() {
-		//generate QR
-		$("#divBarcode").qrcode({size:190,fill:"#3a3",text:"http://www.contacts09.tk/android/java_zzti_contact.apk"})
-		$("#linkClass")
-				.click(
-						function() {
-							$("#ifContent")
-									.attr("src",
-											"${pageContext.request.contextPath }/servlet/ClassListUIServlet");
-						});
-
-		$("#linkContact")
-				.click(
-						function() {
-							$("#ifContent")
-									.attr("src",
-											"${pageContext.request.contextPath }/servlet/ContactListUIServlet");
-						});
-		
-		$("#a_download").hover(
-			function(){
-				$("#div_barcode").css({left:event.pageX ,top:event.pageY});
-				$("#div_barcode").show();
-			},
-			function(){
-				$("#div_barcode").hide();
-			}
-		);
-		$("#div_barcode").hover(
-			function(){$(this).show();},
-			function(){$(this).hide();}
-		);
-	});
-
-	function SetPageHeight() {
-		var myiframe = window.document.getElementById("ifContent");
-		iframeLoaded(myiframe);
-	}
-	var iframeLoaded = function(iframe) {
-		if (iframe.src.length > 0) {
-			if (!iframe.readyState || iframe.readyState == "complete") {
-				var bHeight = iframe.contentWindow.document.body.scrollHeight;
-				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
-				var height = Math.max(bHeight, dHeight);
-				iframe.height = height;
-			}
-		}
-	}
-</script>
-<style>
-.mainbox {
-	width: 1250px;
-	margin: 10px 0px;
-}
-
-.title {
-	margin: 10px;
-	padding-left: 50px;
-}
-
-#left {
-	float: left;
-	width: 120px;
-	padding: 5px;
-	overflow-y: auto;	
-	text-align: left;
-}
-
-#main {
-	float: left;
-}
-
-ul li
-{
-	list-style-type:none;
-}
-
-#div_barcode
-{
-	display:none;
-	width:210px;
-    position:absolute;
-    background-color:white;
-    padding:4px;
-}
-
-</style>
+	<title>Contacts</title>
+	<link rel="stylesheet" type="text/css"
+		href="${pageContext.request.contextPath }/css/main.css">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/css/materialize.css"  media="screen,projection"/>
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/js/materialize.js"></script>
 </head>
 <body>
-	<div>
-		<div class="title">
-			<h2 style="display: inline;">通讯录</h2>
-			<a id="a_download" style="margin-left: 50px;"
-				href="${pageContext.request.contextPath }/android/java_zzti_contact.apk">Android版下载</a>
-			
-			<label style="float:right;">
-				<a href="#">${user.name}</a>&nbsp;&nbsp;
-				<a href="${pageContext.request.contextPath }/servlet/PasswordUpdateUIServlet">修改密码</a>&nbsp;&nbsp;
-				<a href="${ pageContext.request.contextPath}/servlet/LogoutServlet">登出</a>
-			</label>
-		</div>
-		<div id="div_barcode">
-			<div id="divBarcode">
-				
-			</div>		
-			<div>
-				Scan with your phone to download it!
+	<%@include file="/WEB-INF/jsp/header.jsp" %>
+	<div class="row">
+		<div class="col s12 m7">
+			<div class="card large">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="${pageContext.request.contextPath }/img/091-2.JPG">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">编码091-092 <i class="mdi-navigation-more-vert right"></i>
+					</span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">编码091-092 <i
+						class="mdi-navigation-close right"></i></span>
+					<p>
+					&nbsp;&nbsp;事过境迁，淡定若菊，激情湮没于时间的洪荒里，终日絮絮叨叨，对着墙上的孤影，对着杯里的残茗，对着青冷的荧屏，对着静默的三寸白笺，然后一切皆在梦里释放。
+					</p><p>
+　　					&nbsp;&nbsp;一首音乐，播放着谁的心事？感性的自己竟会听着泪流满面，寂静的夜里，听着这首《中工颂》，梳理着如歌的岁月，抒写着如梦的诗行。是想起推荐这首歌的朋友，还是感动于歌曲本身忧伤的旋律，兴许都有吧。
+					</p><p>
+　　					&nbsp;&nbsp;还好吗？久违的问候自遥远的天际，自浩渺的网络，自魂之幽远，自灵之深处，直抵柔软的心房。总有种期待和向往，如冬之严寒渴盼春暖花开，如涓涓细流渴盼流向大海，只有回不去少年时光，令人徒生怅惘。
+					</p>
+				</div>
 			</div>
 		</div>
-		<div class="mainbox">
-			<div id="left">
-				<ul style="">
-					<li><a id="linkClass" href="#">班级管理</a></li>
-					<li><a id="linkContact" href="#">联系人管理</a></li>
-				</ul>
+		<div class="col s12 m5">
+			<div class="card medium">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="${pageContext.request.contextPath }/img/office.jpg">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">Card
+						Title <i class="mdi-navigation-more-vert right"></i>
+					</span>
+					<p>
+						<a href="#">This is a link</a>
+					</p>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">Card Title <i
+						class="mdi-navigation-close right"></i></span>
+					<p>Here is some more information about this product that is only
+						revealed once clicked on.</p>
+				</div>
 			</div>
-			<div id="main">
-				<iframe id="ifContent" onload="javascript:SetPageHeight()"
-					width="1100px"
-					src="${pageContext.request.contextPath }/servlet/ContactListUIServlet"
-					name="Content" frameborder="0"> </iframe>
-			</div>
-			<div class="clear"></div>
 		</div>
 	</div>
+	<%@include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
 </html>

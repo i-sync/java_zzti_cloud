@@ -3,35 +3,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>添加班级</title>
+<title>AddClass</title>
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/css/main.css">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath }/css/materialize.css"
+	media="screen,projection" />
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/materialize.js"></script>
+
 </head>
 <body>
+	<%@include file="/WEB-INF/jsp/header.jsp"%>
+	
 	<div class="container">
-		<div class="title">
-			<h3>班级添加</h3>
+		<div class="left-align">
+			<h4 class="header">添加班级</h4>
 		</div>
-		<div class="main">
+		<div class="row h300">
 			<form action="${pageContext.request.contextPath }/servlet/ClassAddServlet" method="post">
-				<div>
-					<div>
-						<span>名称：</span>
-						<input type="text" name="name" value="${form.name}"/>
-						<span class="error">${form.errors.name }</span>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="name" name="name" type="text" class="validate ${form.errors.name==null?'':'invalid tooltipped'}"  value="${form.name}" required 
+						data-position="right" data-delay="50" data-tooltip="${form.errors.name}">
+						<label for="name">name</label>
 					</div>
-					<div>
-						<span>专业：</span>
-						<input type="text" name="vocational" value="${form.vocational }"/>
-						<span class="error">${form.errors.vocational }</span>
-					</div>
-				</div><br/>				
-				<div>
-					<input type="submit" value="提交"/>
-					<input type="button" onclick="window.location.href='${pageContext.request.contextPath}/servlet/ClassListUIServlet'" value="返回"/>
 				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="vocational" name="vocational" type="text" class="validate ${form.errors.vocational==null?'':'invalid tooltipped'}"  value="${form.vocational}" required 
+						data-position="right" data-delay="50" data-tooltip="${form.errors.vocational}">
+						<label for="vocational">vocational</label>
+					</div>
+				</div>			
+				<button class="btn waves-effect waves-light right" type="submit">
+					Submit <i class="mdi-content-send right"></i>
+				</button>
 			</form>
 		</div>
 	</div>
+	
+	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>
 </html>

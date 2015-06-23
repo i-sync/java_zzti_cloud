@@ -7,38 +7,63 @@
 <head>
 <title>班级列表</title>
 
-<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath }/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/css/main.css">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath }/css/materialize.css"
+	media="screen,projection" />
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/materialize.js"></script>
+
 </head>
 <body>
-	<div id="container">
-		<div class="main">
-			<div>
-				<a href="${pageContext.request.contextPath }/servlet/ClassAddUIServlet">添加班级</a>
-				<%-- <a href="${pageContext.request.contextPath }/index.jsp">首页</a> --%>
+	<%@include file="/WEB-INF/jsp/header.jsp"%>
+	
+	<!-- fix float btn -->
+	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+	    <a class="btn-floating btn-large green" href="${pageContext.request.contextPath }/servlet/ClassAddUIServlet">
+	      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
+	    </a>
+	</div>
+
+	<div class="container section">
+		<div class="row h300">
+			<div class="col s12">
+				<div class="row">
+					<table class="striped">
+						<tr>
+							<th>ID</th>
+							<th>名称</th>
+							<th>专业</th>
+							<th>操作</th>
+						</tr>
+						<c:forEach var="item" items="${list }">
+							<tr>
+								<td>${item.id }</td>
+								<td>${item.name }</td>
+								<td>${item.vocational }</td>
+								<td style="padding: 0px 5px"><a
+										href="${pageContext.request.contextPath }/servlet/ClassUpdateUIServlet?id=${item.id}">
+										<i class="small mdi-editor-mode-edit"></i>
+									</a> <%--<a onclick="return confirm('你确定要删除‘${item.name}’吗？')" href="${pageContext.request.contextPath }/servlet/ClassDeleteServlet?id=${item.id}">删除</a> --%>
+								</td>
+							</tr>
+						</c:forEach>
+					</table>
+
+				</div>
 			</div>
-			<br/>
-			<table class="hovertable">
-				<tr>
-					<th style="width:40px">ID</th>
-					<th style="width:100px">名称</th>
-					<th style="width:200px">专业</th>
-					<th style="width:80px">操作</th>
-				</tr>
-				<c:forEach var="item" items="${list }">
-					<tr onmouseover="this.style.backgroundColor='#ffff66';"
-						onmouseout="this.style.backgroundColor='#d4e3e5';">
-						<td>${item.id }</td>
-						<td>${item.name }</td>
-						<td>${item.vocational }</td>
-						<td>
-							<a href="${pageContext.request.contextPath }/servlet/ClassUpdateUIServlet?id=${item.id}">修改</a>
-							<%--<a onclick="return confirm('你确定要删除‘${item.name}’吗？')" href="${pageContext.request.contextPath }/servlet/ClassDeleteServlet?id=${item.id}">删除</a> --%>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
-			
 		</div>
 	</div>
+	
+	
+	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>
 </html>

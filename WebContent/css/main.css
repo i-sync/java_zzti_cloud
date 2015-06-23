@@ -65,10 +65,33 @@ span.error
 
 input.error
 {
-	border-color:rgba(255, 0, 0, 0.8);
+	border-bottom: 1px solid #F44336;
+    box-shadow: 0 1px 0 0 #F44336;
 }
 
 a
 {
 	text-decoration:none;	
 }
+
+.h300
+{
+	height:300px;
+}
+.h310
+{
+	height:310px;
+}
+.h350
+{
+	height:350px;
+}
+.h400
+{
+	height:400px;
+}
+.h500
+{
+	height:500px;
+}
+
