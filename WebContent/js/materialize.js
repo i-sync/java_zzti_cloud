@@ -758,14 +758,12 @@ if ($) { Vel = $.Velocity } else { Vel = Velocity};
       var originalHeight = 0;
       origin.wrap(placeholder);
       
-      
       origin.on('click', function(){
         var placeholder = origin.parent('.material-placeholder');
         var windowWidth = window.innerWidth;
         var windowHeight = window.innerHeight;
         var originalWidth = origin.width();
         var originalHeight = origin.height();
-        
 
         // If already modal, return to original
         if (doneAnimating === false) {
@@ -884,7 +882,10 @@ if ($) { Vel = $.Velocity } else { Vel = Velocity};
             }
             ); // End Velocity
         }
-
+		
+		var card = origin.parents(".card");
+		if(card!=null || card != undefined)
+			card.removeClass("card").addClass("cardsignal");
     }); // End origin on click
 
 
@@ -910,7 +911,6 @@ if ($) { Vel = $.Velocity } else { Vel = Velocity};
       function returnToOriginal() {
 
           doneAnimating = false;
-
           var placeholder = origin.parent('.material-placeholder');
           var windowWidth = window.innerWidth;
           var windowHeight = window.innerHeight;
@@ -920,6 +920,10 @@ if ($) { Vel = $.Velocity } else { Vel = Velocity};
           origin.velocity("stop", true);
           $('#materialbox-overlay').velocity("stop", true);
           $('.materialbox-caption').velocity("stop", true);
+		  
+		  var card = origin.parents(".cardsignal");
+		  if(card!=null || card != undefined)
+			card.removeClass("cardsignal").addClass("card");
 
 
           $('#materialbox-overlay').velocity({opacity: 0}, {
@@ -968,7 +972,7 @@ if ($) { Vel = $.Velocity } else { Vel = Velocity};
                 position: '',
                 'z-index': ''
               });
-
+			  
               // Remove class
               origin.removeClass('active');
               doneAnimating = true;

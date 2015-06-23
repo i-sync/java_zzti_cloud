@@ -18,10 +18,10 @@
 <body>
 	<%@include file="/WEB-INF/jsp/header.jsp" %>
 	<div class="row">
-		<div class="col s12 m7">
+		<div class="col s12 m6">
 			<div class="card large">
-				<div class="card-image waves-effect waves-block waves-light">
-					<img class="activator" src="${pageContext.request.contextPath }/img/091-2.JPG">
+				<div class="card-image">
+					<img class="materialboxed" src="${pageContext.request.contextPath }/img/091-2.JPG">
 				</div>
 				<div class="card-content">
 					<span class="card-title activator grey-text text-darken-4">编码091-092 <i class="mdi-navigation-more-vert right"></i>
@@ -40,10 +40,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="col s12 m5">
-			<div class="card medium">
-				<div class="card-image waves-effect waves-block waves-light">
-					<img class="activator" src="${pageContext.request.contextPath }/img/office.jpg">
+		<div class="col s12 m6">
+			<div class="card large">
+				<div class="card-image">
+					<img class="materialboxed" src="${pageContext.request.contextPath }/img/office.jpg">
 				</div>
 				<div class="card-content">
 					<span class="card-title activator grey-text text-darken-4">Card
