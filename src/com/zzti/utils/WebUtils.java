@@ -60,7 +60,7 @@ public class WebUtils {
 	                if(fileContent==null || fileName==null || fileName.trim().equals(""))
 	                	continue;
 	                //save image	                
-	                fileName= String.format("%d%s",new Date().getTime(),fileName.substring(fileName.indexOf(".")));
+	                fileName= String.format("%d%s",new Date().getTime(),fileName.substring(fileName.lastIndexOf(".")));
 	                //System.out.println(fileName);	           
 	                String filePath = String.format("%s/%s/%s",root,Common.ImagePath,fileName);
 	                System.out.println(filePath);
@@ -74,7 +74,7 @@ public class WebUtils {
 	                out.flush();
 	                out.close();
 	                fileContent.close();
-	                BeanUtils.setProperty(bean, fieldName, fileName);	                
+	                BeanUtils.setProperty(bean, fieldName, String.format("/%s/%s",Common.ImagePath,fileName));	                
 	            }
 	        }
 

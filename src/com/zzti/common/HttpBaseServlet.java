@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zzti.bean.Contact;
+
 /**
  * Servlet implementation class HttpBaseServlet
  */
@@ -29,9 +32,10 @@ public abstract class HttpBaseServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//check user is login
-		Object obj = request.getSession().getAttribute("id");
-		int id = obj ==null?0:Integer.parseInt(obj.toString());
-		if(id==0)
+		ObjectMapper mapper = new ObjectMapper();
+		Object obj = request.getSession().getAttribute("user");
+		Contact data = mapper.convertValue(obj, Contact.class);
+		if(data ==null)
 		{
 			response.sendRedirect(request.getContextPath()+"/servlet/LoginUIServlet");
 			return ;

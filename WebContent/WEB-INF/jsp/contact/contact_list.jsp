@@ -42,32 +42,30 @@
 		      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
 		    </a>
 		</div>
-		
-		
-				<div class="row">
-					<div class="input-field col s3">
-						<input id="txtName" type="text" value="${form.name }"/>
-						<label for="txtName">Name</label>
-					</div>
-					<div class="input-field col s3">
-						<input id="txtPhone" type="text" value="${form.phone }"/>
-						<label for="txtPhone">Phone</label>
-					</div>
-					<div class="input-field col s3">
-						<select id="ddlClass">
-							<option value="0">--请选择--</option>
-							<c:forEach var="item" items="${ cList}">
-								<option value="${item.id }"
-									<c:if test="${form.cid==item.id }">selected="selected"</c:if>>${item.name }</option>
-							</c:forEach>
-						</select>
-						<label>Class</label>
-					</div>
-					<div class="input-field col s3">		
-						<a id="btnSearch" class="btn wave-light wave-effect valign center">检索</a>
-					</div>
-				</div>
-
+				
+		<div class="row">
+			<div class="input-field col s3">
+				<input id="txtName" type="text" value="${form.name }"/>
+				<label for="txtName">Name</label>
+			</div>
+			<div class="input-field col s3">
+				<input id="txtPhone" type="text" value="${form.phone }"/>
+				<label for="txtPhone">Phone</label>
+			</div>
+			<div class="input-field col s3">
+				<select id="ddlClass">
+					<option value="0">--请选择--</option>
+					<c:forEach var="item" items="${ cList}">
+						<option value="${item.id }"
+							<c:if test="${form.cid==item.id }">selected="selected"</c:if>>${item.name }</option>
+					</c:forEach>
+				</select>
+				<label>Class</label>
+			</div>
+			<div class="input-field col s3">		
+				<a id="btnSearch" class="btn wave-light wave-effect valign center">检索</a>
+			</div>
+		</div>
 
 		<div class="row">
 			<div class="col s12">

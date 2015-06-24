@@ -37,9 +37,10 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Object obj = request.getSession().getAttribute("id");
-		int id = obj ==null?0:Integer.parseInt(obj.toString());
-		if(id!=0)
+		ObjectMapper mapper = new ObjectMapper();
+		Object obj = request.getSession().getAttribute("user");
+		Contact data = mapper.convertValue(obj, Contact.class);
+		if(data !=null)
 		{
 			response.sendRedirect(request.getContextPath()+"/servlet/IndexUIServlet");	
 			return;
@@ -53,10 +54,9 @@ public class LoginServlet extends HttpServlet {
 			request.getRequestDispatcher("/").forward(request, response);
 			return;
 		}
-		Contact data = new Contact();
+		data = new Contact();
 		data.setPhone(form.getPhone());
 		data.setPassword(Common.getMD5(form.getPassword()));
-		//System.out.println("-------password-------->"+Common.getMD5(form.getPassword()));
 		TResult<Contact> result = new com.zzti.business.ContactBusiness().login(data);
 		if(result ==null)
 		{
@@ -81,11 +81,10 @@ public class LoginServlet extends HttpServlet {
 				request.getRequestDispatcher("/message.jsp").forward(request, response);
 				break;
 			default://default success
-				ObjectMapper mapper = new ObjectMapper();
-				data = mapper.convertValue(result.getT(), Contact.class);
+				
 				HttpSession session = request.getSession();
 				//System.out.println(data.getId());
-				session.setAttribute("id", data.getId());
+				session.setAttribute("user", result.getT());
 				//登录成功  跳转到首页
 				response.sendRedirect(request.getContextPath()+"/servlet/IndexUIServlet");	
 				break;

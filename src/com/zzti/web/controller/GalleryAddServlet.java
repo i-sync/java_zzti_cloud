@@ -1,6 +1,8 @@
 package com.zzti.web.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zzti.bean.Class;
+import com.zzti.bean.Contact;
 import com.zzti.bean.Gallery;
 import com.zzti.bean.Result;
 import com.zzti.business.ClassBusiness;
@@ -46,9 +48,15 @@ public class GalleryAddServlet extends HttpBaseServlet {
 			request.getRequestDispatcher("/WEB-INF/jsp/gallery/gallery_add.jsp").forward(request, response);
 			return;
 		}
-		
+		//get user
+		ObjectMapper mapper = new ObjectMapper();
+		Object obj = request.getSession().getAttribute("user");
+		Contact contact = mapper.convertValue(obj, Contact.class);
+					
 		Gallery data = new Gallery();
 		WebUtils.copyBean(form, data);
+		data.setCid(contact.getId());//set create userid and username
+		data.setCname(contact.getName());
 		Result result= new GalleryBusiness().add(data);
 		if(result.getResult() !=1)
 		{

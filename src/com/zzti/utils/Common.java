@@ -21,6 +21,8 @@ public class Common {
 	
 	public static String ImagePath;
 	
+	public static int GalleryPageSize;
+	
 	static
 	{
 		readConfig();
@@ -52,6 +54,8 @@ public class Common {
 		EmailAuth = pro.getProperty("emailAuth","false");
 		
 		ImagePath= pro.getProperty("imagePath");
+		
+		GalleryPageSize= Integer.parseInt(pro.getProperty("galleryPageSize","6"));
 		//System.out.println(String.format("%1$s,%2$s,%3$s,%4$s", ServiceURL,EmailHost,EmailPort,EmailFrom));
 	}
 	

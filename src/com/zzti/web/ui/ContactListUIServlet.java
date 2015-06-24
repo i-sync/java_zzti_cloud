@@ -41,7 +41,6 @@ public class ContactListUIServlet extends HttpBaseServlet {
 		ContactForm form = WebUtils.requestToBean(request, ContactForm.class);
 		Contact data = new Contact();
 		WebUtils.copyBean(form, data);
-		System.out.println(data.getName());
 		request.setAttribute("form", form);
 		int pageIndex = request.getParameter("pageIndex") == null ? 1 : Integer
 				.parseInt(request.getParameter("pageIndex"));
