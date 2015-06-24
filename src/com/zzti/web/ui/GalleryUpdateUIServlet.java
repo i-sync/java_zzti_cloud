@@ -1,12 +1,12 @@
 package com.zzti.web.ui;
 
-import com.zzti.bean.Class;
 import com.zzti.bean.Gallery;
 import com.zzti.bean.TResult;
-import com.zzti.business.ClassBusiness;
 import com.zzti.business.GalleryBusiness;
 import com.zzti.common.HttpBaseServlet;
 import com.zzti.utils.RegexUtil;
+import com.zzti.utils.WebUtils;
+import com.zzti.web.formbean.GalleryForm;
 
 import java.io.IOException;
 
@@ -55,6 +55,13 @@ public class GalleryUpdateUIServlet extends HttpBaseServlet {
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
 			return;
 		}
+		
+		GalleryForm form = new GalleryForm();
+		WebUtils.copyBean(result.getT(),form);
+		request.setAttribute("form", form);
+		
+		request.getRequestDispatcher("/WEB-INF/jsp/gallery/gallery_update.jsp")
+				.forward(request, response);
 	}
 
 }

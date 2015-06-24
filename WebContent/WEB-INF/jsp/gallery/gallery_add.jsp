@@ -28,10 +28,10 @@
 				action="${pageContext.request.contextPath }/servlet/GalleryAddServlet"
 				method="post" enctype="multipart/form-data">
 				<div class="file-field input-field col s12">
-					<input class="file-path validate ${form.errors.picture==null?'':'invalid tooltipped'}" type="text"
+					<input class="file-path validate ${form.errors.picture==null?'':'invalid tooltipped'}" type="text" disabled
 						data-position="right" data-delay="50" data-tooltip="${form.errors.picture}"/>
 					<div class="btn">
-						<span>Image</span>
+						<span>Picture</span>
 						<input type="file" name="picture" accept="image/*" />
 					</div>
 				</div>

@@ -48,7 +48,7 @@
 			<div class="col s12">
 				<div class="card teal darken-1">
 					<div class="card-content white-text">
-						<span class="card-title">项目地址</span>
+						<span class="card-title">Project Source</span>
 						<p>
 							通讯录的项目全部托管在Github上,关于GIT可以去官网了解更多： <a target="_blank" href="http://git-scm.com/">http://git-scm.com/</a>
 							<br/>
@@ -66,7 +66,7 @@
 			<div class="col s12">
 				<div class="card teal darken-1">
 					<div class="card-content white-text">
-						<span class="card-title">大家把自己的想法和建议提出来，让我们一起完善它......</span>
+						<span class="card-title"> Share your ideas and suggestions, let us improve it together ......</span>
 					</div>
 
 				</div>
