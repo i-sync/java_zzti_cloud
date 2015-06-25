@@ -27,9 +27,9 @@
 			<form class="col s12 "
 				action="${pageContext.request.contextPath }/servlet/GalleryUpdateServlet"
 				method="post" enctype="multipart/form-data">
-				<input type="hidden" value="${form.id }"/>
+				<input type="hidden" name="id" value="${form.id }"/>
 				<div class="file-field input-field col s12">
-					<input class="file-path validate ${form.errors.picture==null?'':'invalid tooltipped'}" type="text" placeholder="	not upload,not update." disabled
+					<input class="file-path validate ${form.errors.picture==null?'':'invalid tooltipped'}" type="text" placeholder="	not upload,not update." readonly
 						data-position="right" data-delay="50" data-tooltip="${form.errors.picture}"/>
 					<div class="btn">
 						<span>Picture</span>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="/WEB-INF/pagingMaterialTag.tld" prefix="page"%>
 <html>
 <head>
 	<title>Contacts</title>
@@ -25,7 +26,6 @@
 	    </a>
 	</div>
 	
-	<div class="row">
 	<div class="row">
 	<c:forEach var="item" items="${list }">
 		<c:if test="${item.id!=1 && item.id%3==1 }">
@@ -62,6 +62,15 @@
 			</div>
 	</c:forEach>
 	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<page:pageOut
+					url="${pageContext.request.contextPath }/servlet/IndexUIServlet"
+					pageIndex="${page.pageIndex }" pageMax="${page.totalCount }"></page:pageOut>
+			</div>
+		</div>
 	</div>
 	<%@include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
