@@ -34,7 +34,7 @@ public class ClassAddServlet extends HttpBaseServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doDeal(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("UTF-8");
+		//response.setCharacterEncoding("UTF-8");
 		ClassForm form = WebUtils.requestToBean(request, ClassForm.class);
 		boolean flag = form.validate();
 		if(!flag)
@@ -50,7 +50,7 @@ public class ClassAddServlet extends HttpBaseServlet {
 		if(result.getResult() !=1)
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		

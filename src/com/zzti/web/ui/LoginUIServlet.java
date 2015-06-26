@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zzti.bean.Contact;
+
 /**
  * Servlet implementation class LoginUIServlet
  */
@@ -28,14 +31,15 @@ public class LoginUIServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Object obj = request.getSession().getAttribute("id");
-		int id = obj ==null?0:Integer.parseInt(obj.toString());
-		if(id!=0)
+		ObjectMapper mapper = new ObjectMapper();
+		Object obj = request.getSession().getAttribute("user");
+		Contact data = mapper.convertValue(obj, Contact.class);
+		if(data !=null)
 		{
 			response.sendRedirect(request.getContextPath()+"/servlet/IndexUIServlet");	
 			return;
 		}
-		request.getRequestDispatcher("/").forward(request, response);
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
 	}
 
 	/**

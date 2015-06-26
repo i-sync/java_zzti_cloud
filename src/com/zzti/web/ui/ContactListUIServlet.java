@@ -41,7 +41,6 @@ public class ContactListUIServlet extends HttpBaseServlet {
 		ContactForm form = WebUtils.requestToBean(request, ContactForm.class);
 		Contact data = new Contact();
 		WebUtils.copyBean(form, data);
-		System.out.println(data.getName());
 		request.setAttribute("form", form);
 		int pageIndex = request.getParameter("pageIndex") == null ? 1 : Integer
 				.parseInt(request.getParameter("pageIndex"));
@@ -54,7 +53,7 @@ public class ContactListUIServlet extends HttpBaseServlet {
 				.getList();
 		if (result.getResult() != 1) {
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request,
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request,
 					response);
 			return;
 		}
@@ -64,7 +63,7 @@ public class ContactListUIServlet extends HttpBaseServlet {
 		ListResult<Contact> result1 = new ContactBusiness().getList(data);
 		if (result1.getResult() != 1) {
 			request.setAttribute("message", result1.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request,
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request,
 					response);
 			return;
 		}

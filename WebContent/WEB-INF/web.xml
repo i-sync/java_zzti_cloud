@@ -17,11 +17,16 @@
       <param-name>encode</param-name>
       <param-value>UTF-8</param-value>
     </init-param>
+    <init-param>
+        <param-name>default</param-name>
+        <param-value>iso-8859-1</param-value>
+    </init-param>
   </filter>
   <filter-mapping>
     <filter-name>CharsetEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
   <servlet>
     <servlet-name>LoginUIServlet</servlet-name>
     <servlet-class>com.zzti.web.ui.LoginUIServlet</servlet-class>
@@ -62,7 +67,6 @@
     <servlet-name>ResetPasswordUIServlet</servlet-name>
     <url-pattern>/servlet/ResetPasswordUIServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>AboutUIServlet</servlet-name>
     <servlet-class>com.zzti.web.ui.AboutUIServlet</servlet-class>
@@ -118,6 +122,22 @@
   <servlet-mapping>
     <servlet-name>ContactUpdateUIServlet</servlet-name>
     <url-pattern>/servlet/ContactUpdateUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GalleryAddUIServlet</servlet-name>
+    <servlet-class>com.zzti.web.ui.GalleryAddUIServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GalleryAddUIServlet</servlet-name>
+    <url-pattern>/servlet/GalleryAddUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GalleryUpdateUIServlet</servlet-name>
+    <servlet-class>com.zzti.web.ui.GalleryUpdateUIServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GalleryUpdateUIServlet</servlet-name>
+    <url-pattern>/servlet/GalleryUpdateUIServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
@@ -206,5 +226,29 @@
   <servlet-mapping>
     <servlet-name>ContactDeleteServlet</servlet-name>
     <url-pattern>/servlet/ContactDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GalleryAddServlet</servlet-name>
+    <servlet-class>com.zzti.web.controller.GalleryAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GalleryAddServlet</servlet-name>
+    <url-pattern>/servlet/GalleryAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GalleryUpdateServlet</servlet-name>
+    <servlet-class>com.zzti.web.controller.GalleryUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GalleryUpdateServlet</servlet-name>
+    <url-pattern>/servlet/GalleryUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GalleryDeleteServlet</servlet-name>
+    <servlet-class>com.zzti.web.controller.GalleryDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GalleryDeleteServlet</servlet-name>
+    <url-pattern>/servlet/GalleryDeleteServlet</url-pattern>
   </servlet-mapping>
 </web-app>

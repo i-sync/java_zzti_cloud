@@ -46,14 +46,10 @@ public class PasswordUpdateServlet extends HttpBaseServlet {
 			return;
 		}
 		
-		//get user id ,and get user info form database
-		Object obj = request.getSession().getAttribute("id");
-		int id = Integer.parseInt(obj.toString());
-		Contact data = new Contact();
-		data.setId(id);
-		TResult<Contact> result  = new com.zzti.business.ContactBusiness().getModel(data);
+		//get user id ,and get user info form database		
 		ObjectMapper mapper = new ObjectMapper();
-		data = mapper.convertValue(result.getT(), Contact.class);
+		Object obj = request.getSession().getAttribute("user");
+		Contact data = mapper.convertValue(obj, Contact.class);
 		
 		//oldpasswrod not match user password
 		if(!Common.getMD5(form.getOldpassword()).equals(data.getPassword()))
@@ -65,11 +61,11 @@ public class PasswordUpdateServlet extends HttpBaseServlet {
 		}
 		
 		data.setPassword(Common.getMD5(form.getConfirmpassword()));
-		Result result1 = new com.zzti.business.ContactBusiness().updatePwd(data);
-		if(result1.getResult()!=1)//update error
+		Result result = new com.zzti.business.ContactBusiness().updatePwd(data);
+		if(result.getResult()!=1)//update error
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;			
 		}
 		//password update success

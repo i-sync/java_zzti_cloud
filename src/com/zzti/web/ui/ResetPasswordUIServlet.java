@@ -40,7 +40,7 @@ public class ResetPasswordUIServlet extends HttpServlet {
 		if(guid==null || guid.trim().equals("")|| guid.trim().length()!=36)
 		{			
 			request.setAttribute("message", "参数错误!");
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		
@@ -49,7 +49,7 @@ public class ResetPasswordUIServlet extends HttpServlet {
 		if(result.getResult()!=1)
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		ObjectMapper mapper = new ObjectMapper();
@@ -61,7 +61,7 @@ public class ResetPasswordUIServlet extends HttpServlet {
 		if(date.before(new Date()))//invalid
 		{
 			request.setAttribute("message", "链接已经失效!");
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		

@@ -15,6 +15,7 @@ import org.apache.commons.beanutils.BeanUtils;
 
 public class CharsetEncodingFilter implements Filter {
 
+	private  String defaultcharacter = null;
 	private String encoding = null;
 
 	@Override
@@ -34,7 +35,7 @@ public class CharsetEncodingFilter implements Filter {
 			while (e.hasMoreElements()) {
 				String name = e.nextElement();
 				String value = request.getParameter(name);			
-				value = new String(value.getBytes("iso-8859-1"),encoding);
+				value = new String(value.getBytes(defaultcharacter),encoding);
 				request.setAttribute(name, value);
 			}
 		}
@@ -45,6 +46,7 @@ public class CharsetEncodingFilter implements Filter {
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.encoding = filterConfig.getInitParameter("encode");
+		this.defaultcharacter = filterConfig.getInitParameter("default");
 		// System.out.println(this.encoding);
 	}
 

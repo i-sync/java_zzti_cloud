@@ -44,7 +44,7 @@ public class ResetPasswordServlet extends HttpServlet {
 		if(guid==null || guid.equals("")|| guid.length()!=36)
 		{			
 			request.setAttribute("message", "参数错误!");
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		
@@ -53,7 +53,7 @@ public class ResetPasswordServlet extends HttpServlet {
 		if(result.getResult()!=1)
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		ObjectMapper mapper = new ObjectMapper();
@@ -65,7 +65,7 @@ public class ResetPasswordServlet extends HttpServlet {
 		if(date.before(new Date()))//invalid
 		{
 			request.setAttribute("message", "链接已经失效!");
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		
@@ -83,7 +83,7 @@ public class ResetPasswordServlet extends HttpServlet {
 		if(result.getResult()!=1)
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		
@@ -100,7 +100,7 @@ public class ResetPasswordServlet extends HttpServlet {
 		{
 			request.setAttribute("message", String.format("重置密码成功,点击<a href='%s/servlet/LoginUIServlet'>返回</a>登录...",request.getContextPath()));
 		}
-		request.getRequestDispatcher("/message.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 	}
 
 	/**

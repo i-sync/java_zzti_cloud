@@ -4,14 +4,28 @@
 <head>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script type="text/javascript">
+		$(function(){
+			$(".button-collapse").sideNav();
+		});
+	</script>
 </head>
 <body>
 	<div class="row">
 	<nav>
 		<div class="nav-wrapper">
 			<div class="col s12">
-				<a href="#!" class="brand-logo" style="position:inherit">Contacts</a>
-				<ul class="right hide-off-med-and-down">
+				<div class="left-align">
+					<a href="#!" class="brand-logo" >Contacts</a>
+				</div>
+				<a href="#!" data-activates="mobile-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="${pageContext.request.contextPath }/servlet/IndexUIServlet">首页</a></li>
+					<li><a href="${pageContext.request.contextPath }/servlet/ContactListUIServlet">联系人管理</a></li>
+					<li><a href="${pageContext.request.contextPath }/servlet/ClassListUIServlet">班级管理</a></li>
+					<li><a href="${pageContext.request.contextPath }/servlet/AboutUIServlet">关于</a></li>
+				</ul>
+				<ul id="mobile-nav" class="side-nav right">
 					<li><a href="${pageContext.request.contextPath }/servlet/IndexUIServlet">首页</a></li>
 					<li><a href="${pageContext.request.contextPath }/servlet/ContactListUIServlet">联系人管理</a></li>
 					<li><a href="${pageContext.request.contextPath }/servlet/ClassListUIServlet">班级管理</a></li>
@@ -23,7 +37,7 @@
 	</div>
 	<div class="row">
 		<div class="col s12 right-align">
-			<a href="#">${user.name}</a>&nbsp;&nbsp;
+			<a href="#!">${user.name}</a>&nbsp;&nbsp;
 			<a href="${pageContext.request.contextPath }/servlet/PasswordUpdateUIServlet">修改密码</a>&nbsp;&nbsp;
 			<a href="${ pageContext.request.contextPath}/servlet/LogoutServlet">登出</a>
 		</div>

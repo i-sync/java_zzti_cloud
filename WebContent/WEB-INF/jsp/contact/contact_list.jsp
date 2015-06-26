@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@taglib uri="/WEB-INF/pagingTag.tld" prefix="page"%>
+<%@taglib uri="/WEB-INF/pagingMaterialTag.tld" prefix="page"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,32 +42,30 @@
 		      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
 		    </a>
 		</div>
-		
-		
-				<div class="row">
-					<div class="input-field col s3">
-						<input id="txtName" type="text" value="${form.name }"/>
-						<label for="txtName">Name</label>
-					</div>
-					<div class="input-field col s3">
-						<input id="txtPhone" type="text" value="${form.phone }"/>
-						<label for="txtPhone">Phone</label>
-					</div>
-					<div class="input-field col s3">
-						<select id="ddlClass">
-							<option value="0">--请选择--</option>
-							<c:forEach var="item" items="${ cList}">
-								<option value="${item.id }"
-									<c:if test="${form.cid==item.id }">selected="selected"</c:if>>${item.name }</option>
-							</c:forEach>
-						</select>
-						<label>Class</label>
-					</div>
-					<div class="input-field col s3">		
-						<a id="btnSearch" class="btn wave-light wave-effect valign center">检索</a>
-					</div>
-				</div>
-
+				
+		<div class="row">
+			<div class="input-field col s3">
+				<input id="txtName" type="text" value="${form.name }"/>
+				<label for="txtName">Name</label>
+			</div>
+			<div class="input-field col s3">
+				<input id="txtPhone" type="text" value="${form.phone }"/>
+				<label for="txtPhone">Phone</label>
+			</div>
+			<div class="input-field col s3">
+				<select id="ddlClass">
+					<option value="0">--请选择--</option>
+					<c:forEach var="item" items="${ cList}">
+						<option value="${item.id }"
+							<c:if test="${form.cid==item.id }">selected="selected"</c:if>>${item.name }</option>
+					</c:forEach>
+				</select>
+				<label>Class</label>
+			</div>
+			<div class="input-field col s3">		
+				<a id="btnSearch" class="btn wave-light wave-effect valign center">检索</a>
+			</div>
+		</div>
 
 		<div class="row">
 			<div class="col s12">
@@ -104,14 +102,18 @@
 							</tr>
 						</c:forEach>
 					</table>
-					<br />
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
 					<page:pageOut
 						url="${pageContext.request.contextPath }/servlet/ContactListUIServlet?name=${form.name }&phone=${form.phone }&cid=${form.cid }"
 						pageIndex="${page.pageIndex }" pageMax="${page.totalCount }"></page:pageOut>
 				</div>
 			</div>
 		</div>
-	
 		<%@include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
 </html>

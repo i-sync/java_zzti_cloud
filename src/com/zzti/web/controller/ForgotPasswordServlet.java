@@ -61,7 +61,7 @@ public class ForgotPasswordServlet extends HttpServlet {
 		if(result.getResult()!=1)
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		//send an email
@@ -76,7 +76,7 @@ public class ForgotPasswordServlet extends HttpServlet {
 		
 		//success 
 		request.setAttribute("message", "邮件发送成功，请查收邮件...");
-		request.getRequestDispatcher("/message.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 	}
 
 	/**

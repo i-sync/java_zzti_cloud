@@ -95,3 +95,13 @@ a
 	height:500px;
 }
 
+li.disabled
+{
+	pointer-events: none;
+    cursor: default;
+}
+li.active
+{
+	pointer-events: none;
+    cursor: default;
+}

@@ -28,9 +28,9 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Object obj = request.getSession().getAttribute("id");
+		Object obj = request.getSession().getAttribute("user");
 		if(obj!=null)
-			request.getSession().removeAttribute("id");
+			request.getSession().removeAttribute("user");
 		response.sendRedirect(request.getContextPath()+"/servlet/LoginUIServlet");
 	}
 

@@ -38,7 +38,7 @@ public class ClassListUIServlet extends HttpBaseServlet {
 		if(result.getResult()==0)
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return ;
 		}
 		request.setAttribute("list", result.getList());

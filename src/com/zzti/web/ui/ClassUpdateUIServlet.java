@@ -39,7 +39,7 @@ public class ClassUpdateUIServlet extends HttpServlet {
 		if(!RegexUtil.isInteger(id))
 		{
 			request.setAttribute("message", "参数错误！");
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		
@@ -51,7 +51,7 @@ public class ClassUpdateUIServlet extends HttpServlet {
 		if(result.getResult()!=1)//如果获取失败
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		//把结果转换为formbean

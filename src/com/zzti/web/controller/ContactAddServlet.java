@@ -50,7 +50,7 @@ public class ContactAddServlet extends HttpBaseServlet {
 			if(result.getResult()!=1)
 			{
 				request.setAttribute("message", result.getMessage());
-				request.getRequestDispatcher("/message.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 				return;
 			}
 			request.setAttribute("list", result.getList());
@@ -91,7 +91,7 @@ public class ContactAddServlet extends HttpBaseServlet {
 				break;
 			case 0:
 				request.setAttribute("message", result.getMessage());
-				request.getRequestDispatcher("/message.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 				break;
 			default://default success
 				//添加成功  跳转到列表页面
