@@ -28,8 +28,8 @@
 	
 	<main>
 		<div class="row">
-		<c:forEach var="item" items="${list }">
-			<c:if test="${item.id!=1 && item.id%3==1 }">
+		<c:forEach var="item" items="${list }" varStatus="loop">
+			<c:if test="${loop.count!=1 && loop.count%3==1 }">
 				</div>
 				<div class="row">
 			</c:if>
