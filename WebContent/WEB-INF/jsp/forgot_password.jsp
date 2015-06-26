@@ -21,50 +21,45 @@
 	src="${pageContext.request.contextPath }/js/materialize.js"></script>
 
 </head>
-<body>
-	<div class="row">
+<body>	
+	<header>
 		<nav>
 			<div class="nav-wrapper">
-				<div class="col s12">
-					<a href="#!" class="brand-logo" style="position:inherit">Contacts</a>
-				</div>
+				<a href="#!" class="brand-logo">Contacts</a>
 			</div>
 		</nav>
-	</div>
-	<div class="container section">
-		
-	</div>
+	</header>
 	
-	<div class="container section">
-		<div class="align">
-			<h4 class="header">Forgot Password?</h4>
-		</div>
-		<div class="row">
-			<form class="col s12 m8 offset-m2 l6 offset-l3" action="${pageContext.request.contextPath }/servlet/ForgotPasswordServlet" method="post">
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="email" type="email" name="email" value="${form.email }"
-							class='${form.errors.email==null?"":"invalid tooltipped" }'
-							required data-position="right" data-delay="50"
-							data-tooltip="${form.errors.email}" />
-						<label for="email">Email</label>
-					</div>
+	<main>
+		<div class="container section">
+			<div class="row">
+				<div class="col s12 m8 offset-m2 l6 offset-l3">
+					<h4 class="header">Forgot Password?</h4>
 				</div>
-				<div class="row">
-					<button class="btn waves-effect waves-light right" type="submit">
-						Submit <i class="mdi-content-send right"></i>
-					</button>
-					<div class="align">
-						<a href="${pageContext.request.contextPath }/servlet/LoginUIServlet">Come Back</a>
+			</div>
+			<div class="row">
+				<form class="col s12 m8 offset-m2 l6 offset-l3" action="${pageContext.request.contextPath }/servlet/ForgotPasswordServlet" method="post">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="email" type="email" name="email" value="${form.email }"
+								class='${form.errors.email==null?"":"invalid tooltipped" }'
+								required data-position="right" data-delay="50"
+								data-tooltip="${form.errors.email}" />
+							<label for="email">Email</label>
+						</div>
 					</div>
-				</div>
-			</form>
+					<div class="section">
+						<button class="btn waves-effect waves-light right" type="submit">
+							Submit <i class="mdi-content-send right"></i>
+						</button>
+						<p class="center-align">
+							<a href="${pageContext.request.contextPath }/servlet/LoginUIServlet">Come Back</a>
+						</p>
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-	<div class="container section">
-		<div class="row"></div>
-	</div>
-	
+	</main>
 	
 	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>

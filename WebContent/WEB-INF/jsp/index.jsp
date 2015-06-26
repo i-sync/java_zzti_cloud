@@ -26,44 +26,44 @@
 	    </a>
 	</div>
 	
-	<div class="row">
-	<c:forEach var="item" items="${list }">
-		<c:if test="${item.id!=1 && item.id%3==1 }">
-			</div>
-			<div class="row">
-		</c:if>
-			<div class="col s12 m4">
-				<div class="card medium">
-					<div class="card-image">
-						<img class="materialboxed" src="${pageContext.request.contextPath}${item.picture}">
-					</div>
-					<div class="card-content left-align">
-						<span class="card-title activator grey-text text-darken-4">
-							${item.title } <i class="mdi-navigation-more-vert right"></i>
-						</span>
-						<p style="margin-top:5px">
-							${item.caption }
-							<c:if test="${item.cid==user.id }">
-								<a href="${pageContext.request.contextPath}/servlet/GalleryUpdateUIServlet?id=${item.id}">
-									<i class="small mdi-editor-mode-edit right"></i>
-								</a>
-							</c:if>
-						</p>
-						<p style="margin-top:10px">
-							<span class="blue-text lighten-4">${item.cname }&nbsp;&nbsp;创建于:${item.addDate }</span>
-						</p>						
-					</div>
-					<div class="card-reveal left-align">
-						<span class="card-title grey-text text-darken-4">
-							${item.title }<i class="mdi-navigation-close right"></i></span>
-						<p>${item.content }</p>
+	<main>
+		<div class="row">
+		<c:forEach var="item" items="${list }">
+			<c:if test="${item.id!=1 && item.id%3==1 }">
+				</div>
+				<div class="row">
+			</c:if>
+				<div class="col s12 m4">
+					<div class="card medium">
+						<div class="card-image">
+							<img class="materialboxed" src="${pageContext.request.contextPath}${item.picture}">
+						</div>
+						<div class="card-content left-align">
+							<span class="card-title activator grey-text text-darken-4">
+								${item.title } <i class="mdi-navigation-more-vert right"></i>
+							</span>
+							<p style="margin-top:5px">
+								${item.caption }
+								<c:if test="${item.cid==user.id }">
+									<a href="${pageContext.request.contextPath}/servlet/GalleryUpdateUIServlet?id=${item.id}">
+										<i class="small mdi-editor-mode-edit right"></i>
+									</a>
+								</c:if>
+							</p>
+							<p style="margin-top:10px">
+								<span class="blue-text lighten-4">${item.cname }&nbsp;&nbsp;创建于:${item.addDate }</span>
+							</p>						
+						</div>
+						<div class="card-reveal left-align">
+							<span class="card-title grey-text text-darken-4">
+								${item.title }<i class="mdi-navigation-close right"></i></span>
+							<p>${item.content }</p>
+						</div>
 					</div>
 				</div>
-			</div>
-	</c:forEach>
-	</div>
+		</c:forEach>
+		</div>
 	
-	<div class="container">
 		<div class="row">
 			<div class="col s12">
 				<page:pageOut
@@ -71,7 +71,8 @@
 					pageIndex="${page.pageIndex }" pageMax="${page.totalCount }"></page:pageOut>
 			</div>
 		</div>
-	</div>
+	</main>
+	
 	<%@include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
 </html>

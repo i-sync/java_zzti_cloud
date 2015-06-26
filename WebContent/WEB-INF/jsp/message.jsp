@@ -24,17 +24,18 @@
 <body>
 	<%@include file="/WEB-INF/jsp/header.jsp"%>
 	
-	<div class="container section">
-		<div class="row">
-			<h4 class="header">Information</h4>
-		</div>
-		<div class="row">
-			<div>
-				${message }
+	<main>
+		<div class="container section">
+			<div class="row">
+				<h4 class="header">Information</h4>
+			</div>
+			<div class="row">
+				<div>
+					${message }
+				</div>
 			</div>
 		</div>
-	</div>
-	
-	<%--@include file="/WEB-INF/jsp/footer.jsp"--%>
+	</main>
+	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>
 </html>

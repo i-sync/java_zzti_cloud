@@ -22,15 +22,13 @@
 
 </head>
 <body>
-	<div class="row">
+	<header>
 		<nav>
 			<div class="nav-wrapper">
-				<div class="col s12">
-					<a href="#!" class="brand-logo" style="position:inherit">Contacts</a>
-				</div>
+				<a href="#!" class="brand-logo">Contacts</a>
 			</div>
 		</nav>
-	</div>
+	</header>
 	
 	<div class="container section">
 		<div class="align">

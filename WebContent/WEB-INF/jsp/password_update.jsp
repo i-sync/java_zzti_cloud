@@ -24,9 +24,12 @@
 <body>
 	<%@include file="/WEB-INF/jsp/header.jsp"%>
 	
+	<main>
 	<div class="container ">
-		<div class="align">
-			<h4 class="header">Update Password</h4>
+		<div class="row">
+			<div class="col s12 m8 offset-m2 l6 offset-l3">
+				<h4 class="header">Update Password</h4>
+			</div>
 		</div>
 		<div class="row">
 			<form class="col s12 m8 offset-m2 l6 offset-l3" action="${pageContext.request.contextPath }/servlet/PasswordUpdateServlet" method="post">
@@ -57,7 +60,7 @@
 			</form>
 		</div>
 	</div>
-	
+	</main>
 	
 	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>

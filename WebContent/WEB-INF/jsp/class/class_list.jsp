@@ -32,37 +32,38 @@
 	      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
 	    </a>
 	</div>
-
-	<div class="container section">
-		<div class="row h300">
-			<div class="col s12">
-				<div class="row">
-					<table class="striped">
-						<tr>
-							<th>ID</th>
-							<th>名称</th>
-							<th>专业</th>
-							<th>操作</th>
-						</tr>
-						<c:forEach var="item" items="${list }">
+	
+	<main>
+		<div class="container section">
+			<div class="row">
+				<div class="col s12">
+					<div class="row">
+						<table class="striped">
 							<tr>
-								<td>${item.id }</td>
-								<td>${item.name }</td>
-								<td>${item.vocational }</td>
-								<td style="padding: 0px 5px"><a
-										href="${pageContext.request.contextPath }/servlet/ClassUpdateUIServlet?id=${item.id}">
-										<i class="small mdi-editor-mode-edit"></i>
-									</a> <%--<a onclick="return confirm('你确定要删除‘${item.name}’吗？')" href="${pageContext.request.contextPath }/servlet/ClassDeleteServlet?id=${item.id}">删除</a> --%>
-								</td>
+								<th>ID</th>
+								<th>名称</th>
+								<th>专业</th>
+								<th>操作</th>
 							</tr>
-						</c:forEach>
-					</table>
-
+							<c:forEach var="item" items="${list }">
+								<tr>
+									<td>${item.id }</td>
+									<td>${item.name }</td>
+									<td>${item.vocational }</td>
+									<td style="padding: 0px 5px"><a
+											href="${pageContext.request.contextPath }/servlet/ClassUpdateUIServlet?id=${item.id}">
+											<i class="small mdi-editor-mode-edit"></i>
+										</a> <%--<a onclick="return confirm('你确定要删除‘${item.name}’吗？')" href="${pageContext.request.contextPath }/servlet/ClassDeleteServlet?id=${item.id}">删除</a> --%>
+									</td>
+								</tr>
+							</c:forEach>
+						</table>
+	
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	
+	</main>
 	
 	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>

@@ -11,13 +11,10 @@
 	</script>
 </head>
 <body>
-	<div class="row">
-	<nav>
-		<div class="nav-wrapper">
-			<div class="col s12">
-				<div class="left-align">
-					<a href="#!" class="brand-logo" >Contacts</a>
-				</div>
+	<header>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo" >Contacts</a>
 				<a href="#!" data-activates="mobile-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 				<ul class="right hide-on-med-and-down">
 					<li><a href="${pageContext.request.contextPath }/servlet/IndexUIServlet">首页</a></li>
@@ -32,15 +29,14 @@
 					<li><a href="${pageContext.request.contextPath }/servlet/AboutUIServlet">关于</a></li>
 				</ul>
 			</div>
+		</nav>
+		<div class="row">
+			<div class="col s12 right-align">
+				<a href="#!">${user.name}</a>&nbsp;&nbsp;
+				<a href="${pageContext.request.contextPath }/servlet/PasswordUpdateUIServlet">修改密码</a>&nbsp;&nbsp;
+				<a href="${ pageContext.request.contextPath}/servlet/LogoutServlet">登出</a>
+			</div>
 		</div>
-	</nav>
-	</div>
-	<div class="row">
-		<div class="col s12 right-align">
-			<a href="#!">${user.name}</a>&nbsp;&nbsp;
-			<a href="${pageContext.request.contextPath }/servlet/PasswordUpdateUIServlet">修改密码</a>&nbsp;&nbsp;
-			<a href="${ pageContext.request.contextPath}/servlet/LogoutServlet">登出</a>
-		</div>
-	</div>
+	</header>
 </body>
 </html>

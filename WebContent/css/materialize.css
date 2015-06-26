@@ -5031,6 +5031,7 @@ nav {
       height: 56px;
       line-height: 56px; }
   nav .brand-logo {
+  	margin-left: 20px;
     position: absolute;
     color: #fff;
     display: inline-block;

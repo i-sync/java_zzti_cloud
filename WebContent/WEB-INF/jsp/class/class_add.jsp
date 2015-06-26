@@ -24,11 +24,12 @@
 <body>
 	<%@include file="/WEB-INF/jsp/header.jsp"%>
 	
+	<main>
 	<div class="container">
 		<div class="left-align">
 			<h4 class="header">添加班级</h4>
 		</div>
-		<div class="row h300">
+		<div class="row">
 			<form action="${pageContext.request.contextPath }/servlet/ClassAddServlet" method="post">
 				<div class="row">
 					<div class="input-field col s12">
@@ -50,7 +51,7 @@
 			</form>
 		</div>
 	</div>
-	
+	</main>
 	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>
 </html>
