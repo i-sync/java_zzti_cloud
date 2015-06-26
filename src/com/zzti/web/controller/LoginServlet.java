@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 		if(result ==null)
 		{
 			request.setAttribute("message","未知异常");
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		switch(result.getResult())
@@ -78,7 +78,7 @@ public class LoginServlet extends HttpServlet {
 				break;
 			case 0://Exception
 				request.setAttribute("message", result.getMessage());
-				request.getRequestDispatcher("/message.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 				break;
 			default://default success
 				

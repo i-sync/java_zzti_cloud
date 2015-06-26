@@ -36,7 +36,7 @@ public class ContactDeleteServlet extends HttpBaseServlet {
 		// 判断参数是否正确
 		if (!RegexUtil.isInteger(id)) {
 			request.setAttribute("message", "参数错误！");
-			request.getRequestDispatcher("/message.jsp").forward(request,
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request,
 					response);
 			return;
 		}
@@ -47,7 +47,7 @@ public class ContactDeleteServlet extends HttpBaseServlet {
 		if(result.getResult()!=1)
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request,
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request,
 					response);
 			return;
 		}

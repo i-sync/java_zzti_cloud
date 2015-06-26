@@ -61,7 +61,7 @@ public class GalleryAddServlet extends HttpBaseServlet {
 		if(result.getResult() !=1)
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;
 		}
 		

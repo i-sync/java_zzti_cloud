@@ -53,7 +53,7 @@ public class ContactListUIServlet extends HttpBaseServlet {
 				.getList();
 		if (result.getResult() != 1) {
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request,
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request,
 					response);
 			return;
 		}
@@ -63,7 +63,7 @@ public class ContactListUIServlet extends HttpBaseServlet {
 		ListResult<Contact> result1 = new ContactBusiness().getList(data);
 		if (result1.getResult() != 1) {
 			request.setAttribute("message", result1.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request,
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request,
 					response);
 			return;
 		}

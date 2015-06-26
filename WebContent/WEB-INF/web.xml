@@ -17,11 +17,16 @@
       <param-name>encode</param-name>
       <param-value>UTF-8</param-value>
     </init-param>
+    <init-param>
+        <param-name>default</param-name>
+        <param-value>iso-8859-1</param-value>
+    </init-param>
   </filter>
   <filter-mapping>
     <filter-name>CharsetEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
   <servlet>
     <servlet-name>LoginUIServlet</servlet-name>
     <servlet-class>com.zzti.web.ui.LoginUIServlet</servlet-class>

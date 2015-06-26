@@ -23,6 +23,8 @@ public class Common {
 	
 	public static int GalleryPageSize;
 	
+	public static String DefaultCharacter;
+	
 	static
 	{
 		readConfig();
@@ -56,6 +58,8 @@ public class Common {
 		ImagePath= pro.getProperty("imagePath");
 		
 		GalleryPageSize= Integer.parseInt(pro.getProperty("galleryPageSize","6"));
+		
+		DefaultCharacter=pro.getProperty("defaultCharacter");
 		//System.out.println(String.format("%1$s,%2$s,%3$s,%4$s", ServiceURL,EmailHost,EmailPort,EmailFrom));
 	}
 	

@@ -48,7 +48,7 @@ public class WebUtils {
 	            if (item.isFormField()) {
 	                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
 	                String name = item.getFieldName();
-	                String value = new String(item.getString().getBytes("iso-8859-1"),"UTF-8");
+	                String value = new String(item.getString().getBytes(Common.DefaultCharacter),"UTF-8");
 	                // ... (do your job here)
 	                BeanUtils.setProperty(bean, name, value);
 	            } else {

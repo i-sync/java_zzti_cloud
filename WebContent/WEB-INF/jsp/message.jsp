@@ -22,15 +22,7 @@
 
 </head>
 <body>
-	<div class="row">
-		<nav>
-			<div class="nav-wrapper">
-				<div class="col s12">
-					<a href="#!" class="brand-logo" style="position:inherit">Contacts</a>
-				</div>
-			</div>
-		</nav>
-	</div>
+	<%@include file="/WEB-INF/jsp/header.jsp"%>
 	
 	<div class="container section">
 		<div class="row">

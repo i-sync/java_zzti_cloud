@@ -46,7 +46,7 @@ public class ContactUpdateServlet extends HttpBaseServlet {
 					.getList();
 			if (result.getResult() != 1) {
 				request.setAttribute("message", result.getMessage());
-				request.getRequestDispatcher("/message.jsp").forward(request,
+				request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request,
 						response);
 				return;
 			}
@@ -86,7 +86,7 @@ public class ContactUpdateServlet extends HttpBaseServlet {
 				break;
 			case 0:
 				request.setAttribute("message", result.getMessage());
-				request.getRequestDispatcher("/message.jsp").forward(request,response);
+				request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request,response);
 				break;
 			default://success
 				// 修改成功 跳转到列表页面

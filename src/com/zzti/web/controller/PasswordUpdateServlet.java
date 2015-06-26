@@ -65,7 +65,7 @@ public class PasswordUpdateServlet extends HttpBaseServlet {
 		if(result.getResult()!=1)//update error
 		{
 			request.setAttribute("message", result.getMessage());
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 			return;			
 		}
 		//password update success

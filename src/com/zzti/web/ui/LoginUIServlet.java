@@ -39,7 +39,7 @@ public class LoginUIServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/servlet/IndexUIServlet");	
 			return;
 		}
-		request.getRequestDispatcher("/").forward(request, response);
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
 	}
 
 	/**
