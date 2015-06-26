@@ -30,38 +30,43 @@
 		</nav>
 	</header>
 	
-	<div class="container section">
-		<div class="align">
-			<h4 class="header">Reset Password</h4>
-		</div>
-		<div class="row">
-			<form class="col s12 m8 offset-m2 l6 offset-l3"
-			action="${pageContext.request.contextPath }/servlet/ResetPasswordServlet?guid=${param.guid}" method="post">
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="newPassword" type="password" class='validate ${form.errors.newpassword==null?"":"invalid tooltipped"}' name="newpassword" value="${form.newpassword}" required 
-						data-position="right" data-delay="50" data-tooltip="${form.errors.newpassword}"/>
-						<label for="newPassword">NewPassword</label>
+	<main>
+		<div class="container section">
+			<div class="row">
+				<div class="col s12 m8 offset-m2 l6 offset-l3">
+					<h4 class="header">Reset Password</h4>
+				</div>
+			</div>
+			<div class="row">
+				<form class="col s12 m8 offset-m2 l6 offset-l3"
+				action="${pageContext.request.contextPath }/servlet/ResetPasswordServlet?guid=${param.guid}" method="post">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="newPassword" type="password" class='validate ${form.errors.newpassword==null?"":"invalid tooltipped"}' name="newpassword" value="${form.newpassword}" required 
+							data-position="right" data-delay="50" data-tooltip="${form.errors.newpassword}"/>
+							<label for="newPassword">NewPassword</label>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="confirmPassword" type="password" class='validate ${form.errors.confirmpassword==null?"":"invalid tooltipped"}' name="confirmpassword" value="${form.confirmpassword}" required 
-						data-position="right" data-delay="50" data-tooltip="${form.errors.confirmpassword}"/>
-						<label for="confirmPassword">ConfirmPassword</label>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="confirmPassword" type="password" class='validate ${form.errors.confirmpassword==null?"":"invalid tooltipped"}' name="confirmpassword" value="${form.confirmpassword}" required 
+							data-position="right" data-delay="50" data-tooltip="${form.errors.confirmpassword}"/>
+							<label for="confirmPassword">ConfirmPassword</label>
+						</div>
 					</div>
-				</div>
-				
-				<div class="row">
-					<button class="btn waves-effect waves-light right" type="submit">
-						Submit <i class="mdi-content-send right"></i>
-					</button>
-					<a href="#!" onclick="window.close();">Close Windows</a>				
-				</div>
-			</form>
+					
+					<div class="section">
+						<button class="btn waves-effect waves-light right" type="submit">
+							Submit <i class="mdi-content-send right"></i>
+						</button>
+						<p class="center-align">
+							<a href="#!" onclick="window.close();">Close Windows</a>
+						</p>				
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-	
+	</main>
 	
 	<%@include file="/WEB-INF/jsp/footer.jsp"%>
 </body>

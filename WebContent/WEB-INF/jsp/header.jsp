@@ -30,7 +30,7 @@
 				</ul>
 			</div>
 		</nav>
-		<div class="row">
+		<div class="row" style="margin-top:10px;">
 			<div class="col s12 right-align">
 				<a href="#!">${user.name}</a>&nbsp;&nbsp;
 				<a href="${pageContext.request.contextPath }/servlet/PasswordUpdateUIServlet">修改密码</a>&nbsp;&nbsp;

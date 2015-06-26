@@ -17,3 +17,6 @@ li.active {
 	pointer-events: none;
 	cursor: default;
 }
+
+footer {
+  font-size: .9rem; }

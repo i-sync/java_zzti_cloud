@@ -50,7 +50,7 @@
 									</a>
 								</c:if>
 							</p>
-							<p style="margin-top:10px">
+							<p style="margin-top:10px;font-size:12px">
 								<span class="blue-text lighten-4">${item.cname }&nbsp;&nbsp;创建于:${item.addDate }</span>
 							</p>						
 						</div>
