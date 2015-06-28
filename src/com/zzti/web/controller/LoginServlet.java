@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 		if(!flag)//void
 		{
 			request.setAttribute("form", form);
-			request.getRequestDispatcher("/").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 			return;
 		}
 		data = new Contact();
@@ -69,12 +69,12 @@ public class LoginServlet extends HttpServlet {
 			case -2://输入的密码错误!
 				form.getErrors().put("password", result.getMessage());
 				request.setAttribute("form", form);
-				request.getRequestDispatcher("/").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 				break;
 			case -1://输入的手机号不存在!
 				form.getErrors().put("phone", result.getMessage());
 				request.setAttribute("form", form);
-				request.getRequestDispatcher("/").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 				break;
 			case 0://Exception
 				request.setAttribute("message", result.getMessage());

@@ -22,13 +22,7 @@
 
 </head>
 <body>
-	<header>
-		<nav>
-			<div class="nav-wrapper">
-				<a href="#!" class="brand-logo">Contacts</a>
-			</div>
-		</nav>
-	</header>
+	<%@include file="/WEB-INF/jsp/header.jsp" %>
 	
 	<main>
 		<div class="container section">

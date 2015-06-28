@@ -19,12 +19,14 @@
 <body>
 	<%@include file="/WEB-INF/jsp/header.jsp" %>
 	
-	<!-- fix float btn -->
-	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	    <a class="btn-floating btn-large red" href="${pageContext.request.contextPath }/servlet/GalleryAddUIServlet">
-	      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
-	    </a>
-	</div>
+	<c:if test="${user!=null }">
+		<!-- fix float btn -->
+		<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+		    <a class="btn-floating btn-large red" href="${pageContext.request.contextPath }/servlet/GalleryAddUIServlet">
+		      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
+		    </a>
+		</div>
+	</c:if>
 	
 	<main>
 		<div class="row">
@@ -44,7 +46,7 @@
 							</span>
 							<p style="margin-top:5px">
 								${item.caption }
-								<c:if test="${item.cid==user.id }">
+								<c:if test="${user!=null }">
 									<a href="${pageContext.request.contextPath}/servlet/GalleryUpdateUIServlet?id=${item.id}">
 										<i class="small mdi-editor-mode-edit right"></i>
 									</a>

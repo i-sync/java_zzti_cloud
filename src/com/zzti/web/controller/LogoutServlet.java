@@ -31,7 +31,7 @@ public class LogoutServlet extends HttpServlet {
 		Object obj = request.getSession().getAttribute("user");
 		if(obj!=null)
 			request.getSession().removeAttribute("user");
-		response.sendRedirect(request.getContextPath()+"/servlet/LoginUIServlet");
+		response.sendRedirect(request.getContextPath()+"/servlet/IndexUIServlet");
 	}
 
 	/**

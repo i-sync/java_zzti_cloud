@@ -23,7 +23,7 @@ import com.zzti.utils.Common;
  * Servlet implementation class IndexUIServlet
  */
 @WebServlet("/IndexUIServlet")
-public class IndexUIServlet extends HttpBaseServlet {
+public class IndexUIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -37,7 +37,7 @@ public class IndexUIServlet extends HttpBaseServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doDeal(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int pageIndex = request.getParameter("pageIndex") == null ? 1 : Integer
 				.parseInt(request.getParameter("pageIndex"));
@@ -61,5 +61,13 @@ public class IndexUIServlet extends HttpBaseServlet {
 		request.setAttribute("list", result.getList());
 		request.setAttribute("page", page);
 		request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
+	}
+	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request,response);
 	}
 }

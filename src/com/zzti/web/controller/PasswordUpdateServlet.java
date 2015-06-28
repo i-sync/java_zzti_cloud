@@ -11,11 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zzti.bean.Contact;
 import com.zzti.bean.Result;
-import com.zzti.bean.TResult;
 import com.zzti.common.HttpBaseServlet;
 import com.zzti.utils.Common;
 import com.zzti.utils.WebUtils;
-import com.zzti.web.formbean.LoginForm;
 import com.zzti.web.formbean.PasswordForm;
 
 /**
