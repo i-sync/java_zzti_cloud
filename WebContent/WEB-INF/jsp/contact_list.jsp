@@ -27,7 +27,7 @@
 								var name = $("#txtName").val();
 								var phone = $("#txtPhone").val();
 								var cid = $("#ddlClass").val();
-								window.location.href = "${pageContext.request.contextPath}/servlet/ContactListUIServlet?name="
+								window.location.href = "${pageContext.request.contextPath}/contact/list?name="
 										+ name + "&phone=" + phone + "&cid=" + cid;
 							});
 		});
@@ -38,7 +38,7 @@
 		
 		<!-- fix float btn -->
 		<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-		    <a class="btn-floating btn-large red" href="${pageContext.request.contextPath }/servlet/ContactAddUIServlet">
+		    <a class="btn-floating btn-large red" href="${pageContext.request.contextPath }/contact/add">
 		      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
 		    </a>
 		</div>
@@ -94,7 +94,7 @@
 									<td>${item.company }</td>
 									<td title="${item.remark }">${fn:length(item.remark)>20?fn:substring(item.remark,0,15).concat('......') :item.remark }</td>
 									<td style="padding:0px 5px">
-										<a href="${pageContext.request.contextPath }/servlet/ContactUpdateUIServlet?id=${item.id}">
+										<a href="${pageContext.request.contextPath }/contact/update?id=${item.id}">
 											<i class="small mdi-editor-mode-edit"></i>
 										</a>
 										<%--a onclick="return confirm('您确定要删除‘${item.name}’吗？请不要随便删除别人的信息噢！');"
@@ -110,7 +110,7 @@
 			<div class="row">
 				<div class="col s12">
 					<page:pageOut
-						url="${pageContext.request.contextPath }/servlet/ContactListUIServlet?name=${form.name }&phone=${form.phone }&cid=${form.cid }"
+						url="${pageContext.request.contextPath }/contact/list?name=${form.name }&phone=${form.phone }&cid=${form.cid }"
 						pageIndex="${page.pageIndex }" pageMax="${page.totalCount }"></page:pageOut>
 				</div>
 			</div>

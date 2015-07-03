@@ -35,7 +35,7 @@ public class ClassBusiness {
 	 */
 	public Result delete(com.zzti.bean.Class data)
 	{
-		return Common.postT("/class/detele", MediaType.APPLICATION_JSON, data,Result.class);
+		return Common.postT("/class/delete", MediaType.APPLICATION_JSON, data,Result.class);
 	}
 	/**
 	 * get class object 

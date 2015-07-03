@@ -36,11 +36,11 @@
 			</div>
 			<div class="row">
 				<form class="col s12 "
-					action="${pageContext.request.contextPath }/servlet/ContactAddServlet"
+					action="#" th:action="${pageContext.request.contextPath }/contact/add" th:object="${form }"
 					method="post">
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="name" name="name" type="text" class="validate ${form.errors.name==null?'':'invalid tooltipped'}"  value="${form.name}" required 
+							<input id="name" name="name" th:field="*{name}" type="text" class="validate ${form.errors.name==null?'':'invalid tooltipped'}"  value="${form.name}" required 
 							data-position="right" data-delay="50" data-tooltip="${form.errors.name}">
 							<label for="name">name</label>
 						</div>
@@ -48,7 +48,7 @@
 		
 					<div class="row">
 						<div class="input-field col s12">
-							<select id="ddlClass" name="cid">
+							<select id="ddlClass" name="cid" th:field="*{cid}">
 								<c:forEach var="item" items="${list}">
 									<option value="${item.id }"
 										<c:if test="${form.cid==item.id }">selected="selected"</c:if>>${item.name }</option>
@@ -60,33 +60,33 @@
 		
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="phone" name="phone" type="text" class="validate ${form.errors.phone==null?'':'invalid tooltipped'}"  value="${form.phone}" required
+							<input id="phone" name="phone" th:field="*{phone}" type="text" class="validate ${form.errors.phone==null?'':'invalid tooltipped'}"  value="${form.phone}" required
 							data-position="right" data-delay="50" data-tooltip="${form.errors.phone}">
 							<label for="phone">phone</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="email" name="email" type="email" class="validate ${form.errors.email==null?'':'invalid tooltipped'}" value="${form.email}" required
+							<input id="email" name="email" th:field="*{email}" type="email" class="validate ${form.errors.email==null?'':'invalid tooltipped'}" value="${form.email}" required
 							data-position="right" data-delay="50" data-tooltip="${form.errors.email}">
 							<label for="email">email</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="living" name="living" type="text"  value="${form.living}">
+							<input id="living" name="living" th:field="*{living}" type="text"  value="${form.living}">
 							<label for="living">living</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="company" name="company" type="text"  value="${form.company}">
+							<input id="company" name="company" th:field="*{company}" type="text"  value="${form.company}">
 							<label for="company">company</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<textarea id="remark" name="remark" class="materialize-textarea">${form.remark}</textarea>
+							<textarea id="remark" name="remark" th:field="*{remark}" class="materialize-textarea">${form.remark}</textarea>
 							<label for="remark">remark</label>
 						</div>
 					</div>
