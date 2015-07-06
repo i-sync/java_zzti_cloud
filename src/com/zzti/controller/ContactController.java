@@ -1,5 +1,7 @@
 package com.zzti.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -21,17 +23,19 @@ import com.zzti.business.ContactBusiness;
 import com.zzti.utils.Common;
 import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.ContactForm;
+import com.zzti.bean.Login;
 
 @Controller
 @RequestMapping("/contact")
 public class ContactController {
 
+	@Login
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String getList(
 			@RequestParam(value = "name", defaultValue = "") String name,
 			@RequestParam(value = "phone", defaultValue = "") String phone,
 			@RequestParam(value = "cid", defaultValue = "0") int cid,
-			@RequestParam(value = "pageIndex", defaultValue = "0") int pageIndex,
+			@RequestParam(value = "pageIndex", defaultValue = "1") int pageIndex,
 			ModelMap model) {
 		ContactForm form = new ContactForm();// WebUtils.requestToBean(request,
 												// ContactForm.class);
@@ -44,17 +48,17 @@ public class ContactController {
 		//int pageIndex = request.getParameter("pageIndex") == null ? 1 : Integer
 		//		.parseInt(request.getParameter("pageIndex"));
 		Page page = new Page();
-		page.setPageIndex(pageIndex == 0 ? 1 : pageIndex);
+		page.setPageIndex(pageIndex);
 		page.setPageSize(Common.PageSize);
 		data.setPage(page);
 		// 获取班级列表
-		ListResult<com.zzti.bean.Class> result = new ClassBusiness()
+		/*ListResult<com.zzti.bean.Class> result = new ClassBusiness()
 				.getList();
 		if (result.getResult() != 1) {
 			model.addAttribute("message", result.getMessage());
 			return "message";
 		}
-		model.addAttribute("cList", result.getList());
+		model.addAttribute("cList", result.getList());*/
 
 		// 查询联系人列表
 		ListResult<Contact> result1 = new ContactBusiness().getList(data);
@@ -70,18 +74,29 @@ public class ContactController {
 		
 		return "contact_list";
 	}
+	
+	/**
+	 * get class list
+	 */
+	@ModelAttribute(value = "cList")
+	public List<com.zzti.bean.Class> getClassList()
+	{
+		//获取班级列表 
+		ListResult<com.zzti.bean.Class> result = new ClassBusiness().getList();
+		return result.getList();
+	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addContact(ModelMap model)
 	{
 		//获取班级列表
-		ListResult<Class> result = new ClassBusiness().getList();
+		/*ListResult<Class> result = new ClassBusiness().getList();
 		if(result.getResult()!=1)
 		{
 			model.addAttribute("message", result.getMessage());
 			return "message";
 		}
-		model.addAttribute("list", result.getList());
+		model.addAttribute("list", result.getList());*/
 		return "contact_add";
 	}
 
@@ -93,13 +108,13 @@ public class ContactController {
 		if(!flag)
 		{
 			//获取班级列表 
-			ListResult<com.zzti.bean.Class> result = new ClassBusiness().getList();
+			/*ListResult<com.zzti.bean.Class> result = new ClassBusiness().getList();
 			if(result.getResult()!=1)
 			{
 				model.addAttribute("message", result.getMessage());
 				return "message";
 			}
-			model.addAttribute("list", result.getList());
+			model.addAttribute("list", result.getList());*/
 			//表单
 			model.addAttribute("form", form);
 			return "contact_add";
@@ -116,8 +131,8 @@ public class ContactController {
 				//错误信息
 				form.getErrors().put("email", result.getMessage());
 				//获取班级列表 
-				ListResult<com.zzti.bean.Class> result2 = new ClassBusiness().getList();				
-				model.addAttribute("list", result2.getList());				
+				/*ListResult<com.zzti.bean.Class> result2 = new ClassBusiness().getList();				
+				model.addAttribute("list", result2.getList());*/				
 				
 				//表单
 				model.addAttribute("form", form);
@@ -126,8 +141,8 @@ public class ContactController {
 				//错误信息
 				form.getErrors().put("name", result.getMessage());
 				//获取班级列表 
-				ListResult<com.zzti.bean.Class> result1 = new ClassBusiness().getList();				
-				model.addAttribute("list", result1.getList());				
+				/*ListResult<com.zzti.bean.Class> result1 = new ClassBusiness().getList();				
+				model.addAttribute("list", result1.getList());*/				
 				
 				//表单
 				model.addAttribute("form", form);
@@ -145,12 +160,12 @@ public class ContactController {
 	public String updateContact(@RequestParam int id, ModelMap model)
 	{
 		//获取班级列表
-		ListResult<Class> result = new ClassBusiness().getList();
+		/*ListResult<Class> result = new ClassBusiness().getList();
 		if (result.getResult() != 1) {
 			model.addAttribute("message", result.getMessage());
 			return "message";
 		}
-		model.addAttribute("list", result.getList());
+		model.addAttribute("list", result.getList());*/
 		
 		//获取联系对象 
 		Contact data = new Contact();
@@ -158,7 +173,7 @@ public class ContactController {
 		TResult<Contact> result1 = new ContactBusiness().getModel(data);
 		if(result1.getResult()!=1)
 		{
-			model.addAttribute("message", result.getMessage());
+			model.addAttribute("message", result1.getMessage());
 			return "message";
 		}
 		ContactForm form = new ContactForm();
@@ -176,13 +191,13 @@ public class ContactController {
 		if(!flag)
 		{
 			//获取班级列表 
-			ListResult<com.zzti.bean.Class> result = new ClassBusiness().getList();
+			/*ListResult<com.zzti.bean.Class> result = new ClassBusiness().getList();
 			if(result.getResult()!=1)
 			{
 				model.addAttribute("message", result.getMessage());
 				return "message";
 			}
-			model.addAttribute("list", result.getList());
+			model.addAttribute("list", result.getList());*/
 			//表单
 			model.addAttribute("form", form);
 			return "contact_update";
@@ -199,8 +214,8 @@ public class ContactController {
 				//错误信息
 				form.getErrors().put("email", result.getMessage());
 				//获取班级列表 
-				ListResult<com.zzti.bean.Class> result2 = new ClassBusiness().getList();				
-				model.addAttribute("list", result2.getList());				
+				/*ListResult<com.zzti.bean.Class> result2 = new ClassBusiness().getList();				
+				model.addAttribute("list", result2.getList());*/				
 				
 				//表单
 				model.addAttribute("form", form);
@@ -209,8 +224,8 @@ public class ContactController {
 				//错误信息
 				form.getErrors().put("name", result.getMessage());
 				//获取班级列表 
-				ListResult<com.zzti.bean.Class> result1 = new ClassBusiness().getList();				
-				model.addAttribute("list", result1.getList());				
+				/*ListResult<com.zzti.bean.Class> result1 = new ClassBusiness().getList();				
+				model.addAttribute("list", result1.getList());*/				
 				
 				//表单
 				model.addAttribute("form", form);

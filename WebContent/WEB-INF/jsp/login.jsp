@@ -33,11 +33,11 @@
 			</div>
 			<div class="row">
 				<form class="col s12 m8 offset-m2 l6 offset-l3"
-					action="${pageContext.request.contextPath}/servlet/LoginServlet"
+					action="#" th:action="${pageContext.request.contextPath}/login" th:object="${form }"
 					method="post">
 					<div class="row">
 						<div class="input-field col s12">						
-						<input id="phone" type="text" name="phone"
+						<input id="phone" type="text" name="phone" th:field="*{phone}"
 							value="${form.phone }"
 							class='${form.errors.phone==null?"":"invalid tooltipped" }'
 							required data-position="right" data-delay="50" data-tooltip="${form.errors.phone}"/>
@@ -46,9 +46,9 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-						<input id="password" type="password" name="password"
+						<input id="password" type="password" name="password" th:field="*{password}" 
 							class='${form.errors.password==null?"":"invalid tooltipped" }'
-							required data-position="right" data-delay="50" data-tooltip="${form.errors.password}"" />
+							required data-position="right" data-delay="50" data-tooltip="${form.errors.password}" />
 						<label for="password">Password</label>
 						</div>
 					</div>
@@ -57,7 +57,7 @@
 							Submit <i class="mdi-content-send right"></i>
 						</button>
 						<p class="center-align">
-							<a href="${pageContext.request.contextPath }/servlet/ForgotPasswordUIServlet">Forgot
+							<a href="${pageContext.request.contextPath }/password/forgot">Forgot
 								password?</a>
 						</p>
 					</div>

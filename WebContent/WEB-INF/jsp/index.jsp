@@ -22,7 +22,7 @@
 	<c:if test="${user!=null }">
 		<!-- fix float btn -->
 		<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-		    <a class="btn-floating btn-large red" href="${pageContext.request.contextPath }/servlet/GalleryAddUIServlet">
+		    <a class="btn-floating btn-large red" href="${pageContext.request.contextPath }/gallery/add">
 		      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
 		    </a>
 		</div>
@@ -47,7 +47,7 @@
 							<p style="margin-top:5px">
 								${item.caption }
 								<c:if test="${user!=null }">
-									<a href="${pageContext.request.contextPath}/servlet/GalleryUpdateUIServlet?id=${item.id}">
+									<a href="${pageContext.request.contextPath}/gallery/update?id=${item.id}">
 										<i class="small mdi-editor-mode-edit right"></i>
 									</a>
 								</c:if>
@@ -69,7 +69,7 @@
 		<div class="row">
 			<div class="col s12">
 				<page:pageOut
-					url="${pageContext.request.contextPath }/servlet/IndexUIServlet"
+					url="${pageContext.request.contextPath }/gallery/list"
 					pageIndex="${page.pageIndex }" pageMax="${page.totalCount }"></page:pageOut>
 			</div>
 		</div>

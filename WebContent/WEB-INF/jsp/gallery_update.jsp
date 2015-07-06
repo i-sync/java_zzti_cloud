@@ -26,7 +26,7 @@
 			</div>
 			<div class="row">
 				<form class="col s12 "
-					action="${pageContext.request.contextPath }/servlet/GalleryUpdateServlet"
+					action="#" th:action="${pageContext.request.contextPath }/gallery/update" th:object="${form }"
 					method="post" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="${form.id }"/>
 					<div class="file-field input-field col s12">
@@ -39,21 +39,21 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="title" name="title" type="text" class="validate ${form.errors.title==null?'':'invalid tooltipped'}"  value="${form.title}" required 
+							<input id="title" name="title" th:field="*{title}" type="text" class="validate ${form.errors.title==null?'':'invalid tooltipped'}"  value="${form.title}" required 
 							data-position="right" data-delay="50" data-tooltip="${form.errors.title}">
 							<label for="title">Title</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="caption" name="caption" type="text" class="validate ${form.errors.caption==null?'':'invalid tooltipped'}"  value="${form.caption}" required 
+							<input id="caption" name="caption" th:field="*{caption}" type="text" class="validate ${form.errors.caption==null?'':'invalid tooltipped'}"  value="${form.caption}" required 
 							data-position="right" data-delay="50" data-tooltip="${form.errors.caption}">
 							<label for="caption">Caption</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<textarea id="content" name="content" class="materialize-textarea">${form.content}</textarea>
+							<textarea id="content" name="content" th:field="*{content}" class="materialize-textarea">${form.content}</textarea>
 							<label for="content">Content</label>
 						</div>
 					</div>

@@ -84,6 +84,32 @@ public class WebUtils {
 		}
 	}
 
+	public static String saveFile(InputStream is, String fileName, String path)
+	{
+		if(is==null || fileName==null || fileName.trim().equals(""))
+        	return "";
+        //save image	                
+        fileName= String.format("%d%s",new Date().getTime(),fileName.substring(fileName.lastIndexOf(".")));
+        //System.out.println(fileName);	           
+        String filePath = String.format("%s/%s/%s",path,Common.ImagePath,fileName);
+        //System.out.println(filePath);
+
+		try {
+			FileOutputStream out = new FileOutputStream(new File(filePath));
+			byte[] byteBuffer = new byte[1024];
+			int length = 0;
+			while ((is != null) && ((length = is.read(byteBuffer)) != -1)) {
+				out.write(byteBuffer, 0, length);
+			}
+			out.flush();
+			out.close();
+			is.close();
+		} catch (Exception ex) {
+			throw new RuntimeException(ex);
+		}
+        return String.format("/%s/%s",Common.ImagePath,fileName);
+	}
+	
 	public static void copyBean(Object src, Object dest) {
 		/*
 		 * formbean private String personCode; private String personName;

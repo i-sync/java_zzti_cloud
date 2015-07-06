@@ -49,7 +49,7 @@
 					<div class="row">
 						<div class="input-field col s12">
 							<select id="ddlClass" name="cid" th:field="*{cid}">
-								<c:forEach var="item" items="${list}">
+								<c:forEach var="item" items="${cList}">
 									<option value="${item.id }"
 										<c:if test="${form.cid==item.id }">selected="selected"</c:if>>${item.name }</option>
 								</c:forEach>
