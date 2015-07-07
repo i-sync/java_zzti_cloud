@@ -32,10 +32,11 @@
 				</div>
 			</div>
 			<div class="row">
-				<form class="col s12 m8 offset-m2 l6 offset-l3" action="${pageContext.request.contextPath }/servlet/ForgotPasswordServlet" method="post">
+				<form class="col s12 m8 offset-m2 l6 offset-l3" 
+				action="#" th:action="${pageContext.request.contextPath }/password/forgot" th:object="${form }" method="post">
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="email" type="email" name="email" value="${form.email }"
+							<input id="email" type="email" name="email" th:field="*{email}" value="${form.email }"
 								class='${form.errors.email==null?"":"invalid tooltipped" }'
 								required data-position="right" data-delay="50"
 								data-tooltip="${form.errors.email}" />
@@ -47,7 +48,7 @@
 							Submit <i class="mdi-content-send right"></i>
 						</button>
 						<p class="center-align">
-							<a href="${pageContext.request.contextPath }/servlet/LoginUIServlet">Come Back</a>
+							<a href="${pageContext.request.contextPath }/login">Come Back</a>
 						</p>
 					</div>
 				</form>

@@ -28,7 +28,7 @@
 	
 	<!-- fix float btn -->
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	    <a class="btn-floating btn-large green" href="${pageContext.request.contextPath }/servlet/ClassAddUIServlet">
+	    <a class="btn-floating btn-large green" href="${pageContext.request.contextPath }/class/add">
 	      <i class="large mdi-content-add tooltipped" data-position="top" data-delay="50" data-tooltip="create"></i>
 	    </a>
 	</div>
@@ -51,7 +51,7 @@
 									<td>${item.name }</td>
 									<td>${item.vocational }</td>
 									<td style="padding: 0px 5px"><a
-											href="${pageContext.request.contextPath }/servlet/ClassUpdateUIServlet?id=${item.id}">
+											href="${pageContext.request.contextPath }/class/update?id=${item.id}">
 											<i class="small mdi-editor-mode-edit"></i>
 										</a> <%--<a onclick="return confirm('你确定要删除‘${item.name}’吗？')" href="${pageContext.request.contextPath }/servlet/ClassDeleteServlet?id=${item.id}">删除</a> --%>
 									</td>

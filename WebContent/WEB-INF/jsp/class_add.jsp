@@ -30,17 +30,17 @@
 			<h4 class="header">添加班级</h4>
 		</div>
 		<div class="row">
-			<form action="${pageContext.request.contextPath }/servlet/ClassAddServlet" method="post">
+			<form action="#" th:action="${pageContext.request.contextPath }/class/add" th:object="${form}" method="post">
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="name" name="name" type="text" class="validate ${form.errors.name==null?'':'invalid tooltipped'}"  value="${form.name}" required 
+						<input id="name" th:field="*{name}" name="name" type="text" class="validate ${form.errors.name==null?'':'invalid tooltipped'}"  value="${form.name}" required 
 						data-position="right" data-delay="50" data-tooltip="${form.errors.name}">
 						<label for="name">name</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="vocational" name="vocational" type="text" class="validate ${form.errors.vocational==null?'':'invalid tooltipped'}"  value="${form.vocational}" required 
+						<input id="vocational" th:field="*{vocational}" name="vocational" type="text" class="validate ${form.errors.vocational==null?'':'invalid tooltipped'}"  value="${form.vocational}" required 
 						data-position="right" data-delay="50" data-tooltip="${form.errors.vocational}">
 						<label for="vocational">vocational</label>
 					</div>

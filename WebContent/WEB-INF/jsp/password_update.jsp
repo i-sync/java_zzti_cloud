@@ -32,24 +32,25 @@
 			</div>
 		</div>
 		<div class="row">
-			<form class="col s12 m8 offset-m2 l6 offset-l3" action="${pageContext.request.contextPath }/servlet/PasswordUpdateServlet" method="post">
+			<form class="col s12 m8 offset-m2 l6 offset-l3" 
+			action="#" th:action="${pageContext.request.contextPath }/password/update" th:object="${form }" method="post">
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="oldPassword" type="password" class='validate ${form.errors.oldpassword==null?"":"invalid tooltipped"}' name="oldpassword" value="${form.oldpassword}" required 
+						<input id="oldPassword" type="password" th:field="*{oldpassword}" class='validate ${form.errors.oldpassword==null?"":"invalid tooltipped"}' name="oldpassword" value="${form.oldpassword}" required 
 						data-position="right" data-delay="50" data-tooltip="${form.errors.oldpassword}"/>
 						<label for="oldPassword">OldPassword</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="newPassword" type="password" class='validate ${form.errors.newpassword==null?"":"invalid tooltipped"}' name="newpassword" value="${form.newpassword}" required 
+						<input id="newPassword" type="password" th:field="*{newpassword}" class='validate ${form.errors.newpassword==null?"":"invalid tooltipped"}' name="newpassword" value="${form.newpassword}" required 
 						data-position="right" data-delay="50" data-tooltip="${form.errors.newpassword}"/>
 						<label for="newPassword">NewPassword</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="confirmPassword" type="password" class='validate ${form.errors.confirmpassword==null?"":"invalid tooltipped"}' name="confirmpassword" value="${form.confirmpassword}" required 
+						<input id="confirmPassword" type="password" th:field="*{comfirmpassword}" class='validate ${form.errors.confirmpassword==null?"":"invalid tooltipped"}' name="confirmpassword" value="${form.confirmpassword}" required 
 						data-position="right" data-delay="50" data-tooltip="${form.errors.confirmpassword}"/>
 						<label for="confirmPassword">ConfirmPassword</label>
 					</div>

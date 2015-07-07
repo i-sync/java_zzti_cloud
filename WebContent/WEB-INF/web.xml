@@ -28,7 +28,7 @@
   </filter-mapping>
   
   
-  <servlet>
+  <!--servlet>
       <servlet-name>default</servlet-name>
       <servlet-class>
         org.apache.catalina.servlets.DefaultServlet
@@ -280,5 +280,5 @@
   <servlet-mapping>
     <servlet-name>GalleryDeleteServlet</servlet-name>
     <url-pattern>/servlet/GalleryDeleteServlet</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping-->
 </web-app>
