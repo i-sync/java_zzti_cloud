@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zzti.bean.Contact;
 import com.zzti.bean.Gallery;
 import com.zzti.bean.ListResult;
+import com.zzti.bean.Login;
 import com.zzti.bean.Page;
 import com.zzti.bean.Result;
 import com.zzti.bean.TResult;
@@ -29,14 +30,13 @@ import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.GalleryForm;
 
 @Controller
-@RequestMapping("/gallery")
+@RequestMapping(value = { "/gallery", "/" })
 public class GalleryController {
 	
 	@Autowired
 	ServletContext context;
-	
-	
-	@RequestMapping(value = "/list", method=RequestMethod.GET)
+
+	@RequestMapping(value = { "/list", "/" }, method = RequestMethod.GET)
 	public String getList(
 			@RequestParam(value = "pageIndex", defaultValue = "1") int pageIndex,
 			ModelMap model) {
@@ -62,12 +62,14 @@ public class GalleryController {
 		return "index";
 	}
 
+	@Login
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addGallery(ModelMap model)
 	{
 		return "gallery_add";
 	}
 
+	@Login
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String addGallery(@RequestParam(value="picture") MultipartFile file, ModelMap model, HttpServletRequest request)
 	{
@@ -112,6 +114,7 @@ public class GalleryController {
 		return "redirect:/gallery/list";
 	}
 
+	@Login
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public String updateGallery(@RequestParam int id, ModelMap model)
 	{
@@ -135,6 +138,7 @@ public class GalleryController {
 		return "gallery_update";
 	}
 	
+	@Login
 	@RequestMapping(value="/update", method= RequestMethod.POST)
 	public String updateGallery(@RequestParam(value="picture",required = false) MultipartFile file, ModelMap model, HttpServletRequest request)
 	{
@@ -179,6 +183,7 @@ public class GalleryController {
 		return "redirect:/gallery/list";
 	}
 
+	@Login
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleteGallery(@PathVariable int id, ModelMap model)
 	{

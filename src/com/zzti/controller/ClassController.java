@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zzti.bean.Class;
 import com.zzti.bean.ListResult;
+import com.zzti.bean.Login;
 import com.zzti.bean.Result;
 import com.zzti.bean.TResult;
 import com.zzti.business.ClassBusiness;
@@ -20,6 +21,7 @@ import com.zzti.web.formbean.ClassForm;
 @RequestMapping("/class")
 public class ClassController {
 
+	@Login
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String getList(ModelMap model)
 	{
@@ -34,12 +36,14 @@ public class ClassController {
 		return "class_list";
 	}
 
+	@Login
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addClass(ModelMap model)
 	{		
 		return "class_add";
 	}
 
+	@Login
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String saveClass(@ModelAttribute com.zzti.web.formbean.ClassForm form, ModelMap model)
 	{
@@ -61,6 +65,7 @@ public class ClassController {
 		return "redirect:/class/list";
 	}
 
+	@Login
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public String updateClass(@RequestParam int id,ModelMap model)
 	{
@@ -82,6 +87,7 @@ public class ClassController {
 		return "class_update";
 	}
 	
+	@Login
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String saveUpdateClass(@ModelAttribute com.zzti.web.formbean.ClassForm form, ModelMap model)
 	{
@@ -103,6 +109,7 @@ public class ClassController {
 		return "redirect:/class/list";
 	}
 
+	@Login
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleteClass(@PathVariable int id, ModelMap model)
 	{

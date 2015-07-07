@@ -86,6 +86,7 @@ public class ContactController {
 		return result.getList();
 	}
 
+	@Login
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addContact(ModelMap model)
 	{
@@ -100,6 +101,7 @@ public class ContactController {
 		return "contact_add";
 	}
 
+	@Login
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String saveContact(@ModelAttribute com.zzti.web.formbean.ContactForm form ,HttpServletRequest request, ModelMap model)
 	{
@@ -156,6 +158,7 @@ public class ContactController {
 		}
 	}
 
+	@Login
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public String updateContact(@RequestParam int id, ModelMap model)
 	{
@@ -183,6 +186,7 @@ public class ContactController {
 		return "contact_update";
 	}
 
+	@Login
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String saveUpdateContact(@ModelAttribute com.zzti.web.formbean.ContactForm form ,HttpServletRequest request, ModelMap model)
 	{
@@ -239,6 +243,7 @@ public class ContactController {
 		}
 	}
 
+	@Login
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)	
 	public String deleteContact(@PathVariable int id, ModelMap model)
 	{

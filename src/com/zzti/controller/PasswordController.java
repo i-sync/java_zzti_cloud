@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zzti.bean.Contact;
+import com.zzti.bean.Login;
 import com.zzti.bean.PasswordChangeRequest;
 import com.zzti.bean.Result;
 import com.zzti.bean.TResult;
@@ -182,12 +183,14 @@ public class PasswordController {
 		return "message";
 	}
 
+	@Login
 	@RequestMapping(value = "update", method = RequestMethod.GET)
 	public String updatePassword(ModelMap model)
 	{
 		return "password_update";		
 	}
 
+	@Login
 	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public String updatePasswrod(@ModelAttribute com.zzti.web.formbean.PasswordForm form ,ModelMap model, HttpServletRequest request)
 	{
