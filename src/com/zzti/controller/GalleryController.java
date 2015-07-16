@@ -30,13 +30,13 @@ import com.zzti.utils.WebUtils;
 import com.zzti.web.formbean.GalleryForm;
 
 @Controller
-@RequestMapping(value = { "/gallery", "/" })
+@RequestMapping(value = { "/gallery" })
 public class GalleryController {
 	
 	@Autowired
 	ServletContext context;
 
-	@RequestMapping(value = { "/list", "/" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/list" }, method = RequestMethod.GET)
 	public String getList(
 			@RequestParam(value = "pageIndex", defaultValue = "1") int pageIndex,
 			ModelMap model) {
