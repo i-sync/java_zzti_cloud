@@ -22,7 +22,6 @@
 </head>
 <body>
 	<%@include file="/WEB-INF/jsp/header.jsp"%>
-	
 	<main>
 		<div class="container section">
 			<div class="left-align">
@@ -70,6 +69,8 @@
 					<div class="card teal darken-1">
 						<div class="card-content white-text">
 							<span class="card-title"> Share your ideas and suggestions, let us improve it together ......</span>
+							
+							<span class="card-title"> ${result }</span>
 						</div>
 	
 					</div>
