@@ -39,6 +39,7 @@ public class Common {
 		T t = null;
 		try
 		{
+			t = classType.newInstance();
 			String data = new Gson().toJson(obj);
 			//System.out.println("data:"+data);
 			Form form = new Form();
@@ -61,6 +62,7 @@ public class Common {
 		T t = null;
 		try
 		{
+			t = classType.newInstance();
 			Response res = target.path(path).request().accept(acceptType).get();
 			t = res.readEntity(classType);
 		}
